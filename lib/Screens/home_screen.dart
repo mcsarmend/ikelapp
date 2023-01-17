@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Screens/catalog.dart';
+import 'package:flutterapp/Screens/beer_house_screen.dart';
+import 'package:flutterapp/Screens/candys_party_screen.dart';
+import 'package:flutterapp/Screens/healthy_fun_screeen.dart';
+import 'package:flutterapp/Screens/pistos_mixes_screen.dart';
 import 'package:flutterapp/Screens/prelogin.dart';
-import 'package:flutterapp/Screens/profile.dart';
-import 'package:flutterapp/Widgets/nabbardown.dart';
+
+import 'hard_drinks_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -54,8 +57,61 @@ class _HomeScreenState extends State<HomeScreen> {
             if (_selectedIndex == 0)
               // you can call custom widget here
               Column(
-                children: const [
-                  Text("Home"),
+                children: [
+                  Column(
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      PistosMix(),
+                                ));
+                          },
+                          child: Text("Pistos Mixes")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      HardDrinks(),
+                                ));
+                          },
+                          child: Text("Hard Drinks")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      BeerHouse(),
+                                ));
+                          },
+                          child: Text("Beer House")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      CandysParty(),
+                                ));
+                          },
+                          child: Text("Candys Party")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      HealthyFun(),
+                                ));
+                          },
+                          child: Text("Healthy Fun")),
+                    ],
+                  )
                 ],
               )
             else if (_selectedIndex == 1)

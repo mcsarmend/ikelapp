@@ -106,11 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 btnText: 'Acceder',
                 /* onBtnPressed: () => loginPressed(), */
                 onBtnPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => HomeScreen(),
-                      ));
+                  loginPressed();
                 },
               ),
               TextButton(

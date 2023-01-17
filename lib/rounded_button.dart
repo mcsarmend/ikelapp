@@ -10,7 +10,7 @@ class RoundedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color PRYMARY_COLOR = Color.fromRGBO(143, 164, 58, 1);
-    final Color SECONDARY_COLOR = Color.fromRGBO(141, 166, 199, 1);
+
     return Material(
       elevation: 5,
       color: PRYMARY_COLOR,
