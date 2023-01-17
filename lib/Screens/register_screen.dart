@@ -34,7 +34,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => const HomeScreen(),
+              builder: (BuildContext context) => HomeScreen(),
             ));
       } else {
         errorSnackBar(context, responseMap.values.first[0]);

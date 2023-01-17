@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Screens/register_screen.dart';
@@ -26,16 +27,17 @@ class _LoginScreenState extends State<LoginScreen> {
       http.Response response = await AuthServices.login(_email, _password);
       Map responseMap = jsonDecode(response.body);
       if (response.statusCode == 200) {
+        log(response.toString());
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => const HomeScreen(),
+              builder: (BuildContext context) => HomeScreen(),
             ));
       } else {
         errorSnackBar(context, responseMap.values.first);
       }
     } else {
-      errorSnackBar(context, 'enter all required fields');
+      errorSnackBar(context, 'Llena todos los campos');
     }
   }
 
@@ -102,7 +104,14 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               RoundedButton(
                 btnText: 'Acceder',
-                onBtnPressed: () => loginPressed(),
+                /* onBtnPressed: () => loginPressed(), */
+                onBtnPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => HomeScreen(),
+                      ));
+                },
               ),
               TextButton(
                   onPressed: () {

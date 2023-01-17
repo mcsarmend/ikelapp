@@ -2,8 +2,8 @@
     package="com.flutterapp">
      <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="flutterapp"
-        android:icon="@mipmap/ic_launcher"
+        android:label="IkelDrinks"
+        android:icon="@mipmap/launcher_icon"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
