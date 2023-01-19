@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/Screens/login_screen.dart';
 import 'package:flutterapp/Screens/register_screen.dart';
 
+import '../Services/globals.dart';
+
 class prelogin_screen extends StatelessWidget {
-  final Color PRYMARY_COLOR = Color.fromRGBO(143, 164, 58, 1);
-  final Color SECONDARY_COLOR = Color.fromRGBO(141, 166, 199, 1);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,8 +46,7 @@ class prelogin_screen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const RegisterScreen()),
+                    MaterialPageRoute(builder: (context) => RegisterScreen()),
                   );
                 },
                 style: TextButton.styleFrom(

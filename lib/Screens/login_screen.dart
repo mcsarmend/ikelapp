@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Screens/register_screen.dart';
 import 'package:flutterapp/Services/auth_services.dart';
 import 'package:flutterapp/Services/globals.dart';
 import 'package:flutterapp/rounded_button.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home_screen.dart';
 
@@ -18,6 +18,27 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  late SharedPreferences logindata;
+  late bool newuser;
+  @override
+  void initState() {
+    super.initState();
+    check_if_already_login();
+  }
+
+  // ignore: non_constant_identifier_names
+  void check_if_already_login() async {
+    logindata = await SharedPreferences.getInstance();
+    newuser = (logindata.getBool('login') ?? true);
+    if (newuser == false) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext context) => HomeScreen(),
+          ));
+    }
+  }
+
   String _email = '';
   String _password = '';
   final Color PRYMARY_COLOR = Color.fromRGBO(143, 164, 58, 1);
@@ -27,7 +48,16 @@ class _LoginScreenState extends State<LoginScreen> {
       http.Response response = await AuthServices.login(_email, _password);
       Map responseMap = jsonDecode(response.body);
       if (response.statusCode == 200) {
+        setState(() {});
         log(response.toString());
+        var data = response.body;
+        var data1 = jsonDecode(data);
+        final Map dat = Map.from(data1);
+        var Email = dat["user"]["email"];
+        var name = dat["user"]["name"];
+        HomeScreen objectScreen = HomeScreen();
+        objectScreen.setEmail(Email);
+        objectScreen.setName(name);
         Navigator.push(
             context,
             MaterialPageRoute(
@@ -106,11 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 btnText: 'Acceder',
                 /* onBtnPressed: () => loginPressed(), */
                 onBtnPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => HomeScreen(),
-                      ));
+                  loginPressed();
                 },
               ),
               TextButton(
@@ -118,8 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const RegisterScreen(),
+                          builder: (BuildContext context) => RegisterScreen(),
                         ));
                   },
                   child: Text("Registrarse"))

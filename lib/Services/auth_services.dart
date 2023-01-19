@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutterapp/Services/globals.dart';
 import 'package:http/http.dart' as http;
 
@@ -35,6 +34,7 @@ class AuthServices {
       body: body,
     );
     print(response.body);
+
     return response;
   }
 }

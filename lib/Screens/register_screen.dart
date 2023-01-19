@@ -1,10 +1,7 @@
 import 'dart:convert';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Services/auth_services.dart';
 import 'package:flutterapp/Services/globals.dart';
-
 import '../rounded_button.dart';
 import 'home_screen.dart';
 import 'login_screen.dart';
@@ -21,6 +18,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String _email = '';
   String _password = '';
   String _name = '';
+  bool cargando = true;
+  String? state = '9';
+  String? city = '139979';
+  String? suburb = '2000';
+  String? cp = '2000';
+
+  void initState() {
+    super.initState();
+  }
+
+  // List<String> estados = jsonDecode(res.body);
 
   createAccountPressed() async {
     bool emailValid = RegExp(
@@ -46,8 +54,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final Color PRYMARY_COLOR = Color.fromRGBO(143, 164, 58, 1);
-    final Color SECONDARY_COLOR = Color.fromRGBO(141, 166, 199, 1);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: PRYMARY_COLOR,
@@ -62,7 +68,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           children: [
             const SizedBox(
@@ -77,7 +83,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               },
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             TextField(
               decoration: const InputDecoration(
@@ -88,7 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               },
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             TextField(
               obscureText: true,

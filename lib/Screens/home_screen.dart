@@ -1,14 +1,43 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Screens/catalog.dart';
+import 'package:flutter/services.dart';
+import 'package:flutterapp/Screens/beer_house_screen.dart';
+import 'package:flutterapp/Screens/candys_party_screen.dart';
+import 'package:flutterapp/Screens/healthy_fun_screeen.dart';
+import 'package:flutterapp/Screens/pistos_mixes_screen.dart';
 import 'package:flutterapp/Screens/prelogin.dart';
-import 'package:flutterapp/Screens/profile.dart';
-import 'package:flutterapp/Widgets/nabbardown.dart';
+import 'package:flutterapp/Services/globals.dart';
+import 'package:flutterapp/rounded_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'address_register.dart';
+import 'hard_drinks_screen.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
+  HomeScreen({Key? key}) : super(key: key);
+  var name = "";
+  var email = "";
   @override
   State<HomeScreen> createState() => _HomeScreenState();
+
+  Future<void> setName(name) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('name', name);
+  }
+
+  Future<String?> getName() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString('name');
+  }
+
+  Future<void> setEmail(email) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('email', email);
+  }
+
+  Future<void> getEmail() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    email = prefs.getString('email').toString();
+  }
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -20,14 +49,31 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  late SharedPreferences logindata;
+  void initial() async {
+    logindata = await SharedPreferences.getInstance();
+    WidgetsFlutterBinding.ensureInitialized();
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+    await loadClientName();
+  }
+
+  // ignore: unused_field
+  bool _isLoading = true;
+  @override
+  void initState() {
+    super.initState();
+    _isLoading = false;
+    initial();
+  }
+
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final ButtonStyle style = TextButton.styleFrom(
       foregroundColor: Theme.of(context).colorScheme.onPrimary,
     );
-    final Color PRYMARY_COLOR = Color.fromRGBO(143, 164, 58, 1);
-    final Color SECONDARY_COLOR = Color.fromRGBO(141, 166, 199, 1);
-    bool typing = false;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -54,8 +100,61 @@ class _HomeScreenState extends State<HomeScreen> {
             if (_selectedIndex == 0)
               // you can call custom widget here
               Column(
-                children: const [
-                  Text("Home"),
+                children: [
+                  Column(
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      PistosMix(),
+                                ));
+                          },
+                          child: Text("Pistos Mixes")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      HardDrinks(),
+                                ));
+                          },
+                          child: Text("Hard Drinks")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      BeerHouse(),
+                                ));
+                          },
+                          child: Text("Beer House")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      CandysParty(),
+                                ));
+                          },
+                          child: Text("Candys Party")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      HealthyFun(),
+                                ));
+                          },
+                          child: Text("Healthy Fun")),
+                    ],
+                  )
                 ],
               )
             else if (_selectedIndex == 1)
@@ -95,9 +194,17 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  String nameClient = "";
+  String clientEmail = "";
+  String location = "Sin ubicación registrada";
+  Future<void> loadClientName() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    nameClient = prefs.getString('name').toString();
+    clientEmail = prefs.getString('email').toString();
+    setState(() {});
+  }
+
   List<Widget> get Profile {
-    final Color PRYMARY_COLOR = Color.fromRGBO(143, 164, 58, 1);
-    final Color SECONDARY_COLOR = Color.fromRGBO(141, 166, 199, 1);
     return <Widget>[
       Container(
         height: 400,
@@ -130,7 +237,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 10,
             ),
             Text(
-              'Roberto Herrera Ruiz',
+              nameClient,
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -141,7 +248,18 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20,
             ),
             Text(
-              'Santa Maria Trinidad. N°23 In. 8, San Ignacion, Edo.Mex,70789  ',
+              clientEmail,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              height: 20,
+            ),
+            Text(
+              location,
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -155,20 +273,41 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       Container(
-        color: PRYMARY_COLOR,
-        child: CircleAvatar(
-            backgroundColor: Colors.white,
-            minRadius: 25,
-            child: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => prelogin_screen(),
-                      ));
-                },
-                icon: Icon(Icons.output))),
+        height: 20,
       ),
+      Container(
+          child: RoundedButton(
+        btnText: "Actualizar Ubicacion",
+        onBtnPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => address_register(),
+              ));
+        },
+      )),
+      Container(
+        height: 30,
+      ),
+      Container(
+          padding: const EdgeInsets.all(15),
+          margin: const EdgeInsets.only(left: 40, top: 40),
+          alignment: Alignment.bottomRight,
+          child: FloatingActionButton(
+              child: Icon(
+                Icons.output,
+                color: SECONDARY_COLOR,
+              ),
+              elevation: 50.0,
+              backgroundColor: Colors.white,
+              onPressed: () {
+                logindata.setBool('login', true);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => prelogin_screen(),
+                    ));
+              }))
     ];
   }
 }
