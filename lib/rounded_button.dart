@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Services/globals.dart';
 
 class RoundedButton extends StatelessWidget {
   final String btnText;
@@ -9,8 +10,6 @@ class RoundedButton extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final Color PRYMARY_COLOR = Color.fromRGBO(143, 164, 58, 1);
-
     return Material(
       elevation: 5,
       color: PRYMARY_COLOR,
