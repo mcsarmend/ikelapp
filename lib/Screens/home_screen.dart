@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterapp/Screens/beer_house_screen.dart';
@@ -6,10 +8,12 @@ import 'package:flutterapp/Screens/healthy_fun_screeen.dart';
 import 'package:flutterapp/Screens/pistos_mixes_screen.dart';
 import 'package:flutterapp/Screens/prelogin.dart';
 import 'package:flutterapp/Services/globals.dart';
+import 'package:flutterapp/Services/locations.dart';
 import 'package:flutterapp/rounded_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'address_register.dart';
 import 'hard_drinks_screen.dart';
+import 'package:http/http.dart' as http;
 
 // ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
@@ -56,6 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     await loadClientName();
+    await getaddress();
   }
 
   // ignore: unused_field
@@ -65,6 +70,26 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     _isLoading = false;
     initial();
+  }
+
+  getaddress() async {
+    http.Response response = await locations.getAddrees(clientEmail);
+    if (response.statusCode == 200) {
+      setState(() {});
+      var data = response.body;
+      var data1 = jsonDecode(data);
+      location = data1[0]["calle"] +
+          ", " +
+          data1[0]["numero"] +
+          ", " +
+          data1[0]["colonia"] +
+          ", " +
+          data1[0]["municipio"] +
+          ", " +
+          data1[0]["estado"];
+/*       var Email = dat["user"]["email"];
+      var name = dat["user"]["name"]; */
+    }
   }
 
   @override
@@ -197,6 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String nameClient = "";
   String clientEmail = "";
   String location = "Sin ubicación registrada";
+
   Future<void> loadClientName() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     nameClient = prefs.getString('name').toString();
