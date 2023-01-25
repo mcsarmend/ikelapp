@@ -1,26 +1,16 @@
+import 'package:blogapp/screens/prelogin.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Screens/address_register.dart';
-import 'Screens/prelogin.dart';
-
-class Todo {
-  final String title;
-  final String description;
-
-  Todo(this.title, this.description);
-}
 
 void main() {
-  runApp(const MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: address_register(),
+      home: prelogin_screen(),
     );
   }
 }

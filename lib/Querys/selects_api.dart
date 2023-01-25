@@ -1,4 +1,4 @@
-import 'package:flutterapp/Services/globals.dart';
+import 'package:blogapp/constant.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -9,7 +9,7 @@ class Selects {
     var url = Uri.parse(baseURL + 'estados');
     http.Response response = await http.post(
       url,
-      headers: headers,
+      headers: {'Accept': 'application/json'},
       body: body,
     );
 
