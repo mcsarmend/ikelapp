@@ -5,6 +5,8 @@ class Address {
   String? suburb;
   String? street;
   String? number;
+  int? idCity;
+  int? idState;
 
   Address({
     this.city,
@@ -13,6 +15,8 @@ class Address {
     this.suburb,
     this.street,
     this.number,
+    this.idState,
+    this.idCity,
   });
 
   // function to convert json data to user model
@@ -23,6 +27,8 @@ class Address {
         cp: json['address']['cp'].toString(),
         suburb: json['address']['colonia'],
         street: json['address']['calle'],
-        number: json['address']['numero']);
+        number: json['address']['numero'],
+        idState: json['address']['idestado'],
+        idCity: json['address']['idmunicipio']);
   }
 }

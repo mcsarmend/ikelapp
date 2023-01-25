@@ -123,6 +123,67 @@ Future<ApiResponse> getaddress(String userId) async {
   return apiResponse;
 }
 
+Future<ApiResponse> updateaddressbycp(String userId, String state, String city,
+    String suburb, String street, String number, String cp) async {
+  ApiResponse apiResponse = ApiResponse();
+  try {
+    final response = await http.post(Uri.parse(setaddressByCpURL), headers: {
+      'Accept': 'application/json'
+    }, body: {
+      'userId': userId,
+      'city': city,
+      'state': state,
+      'cp': cp,
+      'street': street,
+      'number': number,
+      'suburb': suburb
+    });
+
+    switch (response.statusCode) {
+      case 200:
+        apiResponse.data = jsonDecode(response.body);
+        break;
+      case 422:
+        final errors = jsonDecode(response.body)['errors'];
+        apiResponse.error = errors[errors.keys.elementAt(0)][0];
+        break;
+      default:
+        apiResponse.error = somethingWentWrong;
+        break;
+    }
+  } catch (e) {
+    apiResponse.error = serverError;
+  }
+  return apiResponse;
+}
+
+Future<ApiResponse> getaddressbycp(String cp) async {
+  ApiResponse apiResponse = ApiResponse();
+  try {
+    final response = await http.post(Uri.parse(addressByCpURL), headers: {
+      'Accept': 'application/json'
+    }, body: {
+      'cp': cp,
+    });
+
+    switch (response.statusCode) {
+      case 200:
+        apiResponse.data = Address.fromJson(jsonDecode(response.body));
+        break;
+      case 422:
+        final errors = jsonDecode(response.body)['errors'];
+        apiResponse.error = errors[errors.keys.elementAt(0)][0];
+        break;
+      default:
+        apiResponse.error = somethingWentWrong;
+        break;
+    }
+  } catch (e) {
+    apiResponse.error = serverError;
+  }
+  return apiResponse;
+}
+
 // Update user
 Future<ApiResponse> updateUser(
   String name,
