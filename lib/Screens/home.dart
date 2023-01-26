@@ -1,5 +1,5 @@
 import 'package:blogapp/screens/pedidos.dart';
-import 'package:blogapp/screens/post_screen.dart';
+import 'package:blogapp/screens/home_screen.dart';
 import 'package:blogapp/screens/profile.dart';
 import 'package:flutter/material.dart';
 import '../constant.dart';
@@ -42,15 +42,24 @@ class _HomeState extends State<Home> {
       body: _buildChild(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
+        color: PRYMARY_COLOR,
         notchMargin: 5,
         elevation: 10,
         clipBehavior: Clip.antiAlias,
         shape: CircularNotchedRectangle(),
         child: BottomNavigationBar(
+          backgroundColor: PRYMARY_COLOR,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
-            BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Pedidos')
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.white,
+                ),
+                label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person, color: Colors.white), label: 'Perfil'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.list, color: Colors.white), label: 'Pedidos')
           ],
           currentIndex: currentIndex,
           onTap: (val) {

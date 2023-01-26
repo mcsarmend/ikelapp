@@ -110,8 +110,7 @@ Future<ApiResponse> getaddress(String userId) async {
         apiResponse.data = Address.fromJson(jsonDecode(response.body));
         break;
       case 422:
-        final errors = jsonDecode(response.body)['errors'];
-        apiResponse.error = errors[errors.keys.elementAt(0)][0];
+        apiResponse.error = jsonDecode(response.body)["error"];
         break;
       default:
         apiResponse.error = somethingWentWrong;

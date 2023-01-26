@@ -1,13 +1,5 @@
-import 'dart:io';
-import 'package:blogapp/models/address.dart';
-import 'package:blogapp/models/api_response.dart';
 import 'package:blogapp/models/user.dart';
-import 'package:blogapp/screens/addres_updtate.dart';
-import 'package:blogapp/services/user_service.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import '../constant.dart';
-import 'login.dart';
 
 class Pedidos extends StatefulWidget {
   @override
@@ -20,8 +12,6 @@ class _PedidosState extends State<Pedidos> {
   bool loading = true;
   int userId = 0;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  File? _imageFile;
-  final _picker = ImagePicker();
   TextEditingController txtNameController = TextEditingController();
   TextEditingController txtEmailController = TextEditingController();
   String location = "Sin ubicación";

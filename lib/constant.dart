@@ -14,6 +14,7 @@ const setaddressByCpURL = baseURL + '/insertupdateaddress';
 const headers = {'Accept': 'application/json'};
 final Color PRYMARY_COLOR = Color.fromRGBO(143, 164, 58, 1);
 final Color SECONDARY_COLOR = Color.fromRGBO(141, 166, 199, 1);
+final Color THYRD_COLOR = Color.fromRGBO(227, 234, 204, 1);
 // ----- Errors -----
 const serverError = 'Error en el servidor';
 const unauthorized = 'no autorizado';

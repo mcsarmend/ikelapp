@@ -1,9 +1,6 @@
-import 'dart:convert';
-
 import 'package:blogapp/screens/home.dart';
 import '../constant.dart';
 import 'package:flutter/material.dart';
-
 import '../models/address.dart';
 import '../models/api_response.dart';
 import '../models/user.dart';
@@ -39,8 +36,6 @@ class _address_registerState extends State<address_register> {
   void getUser() async {
     ApiResponse response = await getUserDetail();
     userId = await getUserId();
-    ApiResponse res = await getaddress(userId.toString());
-
     if (response.error == null) {
       setState(() {
         user = response.data as User;
@@ -93,23 +88,23 @@ class _address_registerState extends State<address_register> {
       appBar: AppBar(
         backgroundColor: PRYMARY_COLOR,
         title: Text("Actualizar ubicacióm"),
-        iconTheme: IconThemeData(
-          color: Colors.white, // <-- SEE HERE
-        ),
+        elevation: 0.0,
         centerTitle: true,
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) => Home()),
-                    (route) => false);
-              },
-              icon: Icon(Icons.arrow_back))
-        ],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => Home()),
+                (route) => false);
+          },
+        ),
       ),
       body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(children: [
+            const SizedBox(
+              height: 20,
+            ),
             Container(
               width: 200,
               height: 30,
@@ -119,6 +114,9 @@ class _address_registerState extends State<address_register> {
                   loading = true;
                 });
               }),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             Form(
                 key: formKey,

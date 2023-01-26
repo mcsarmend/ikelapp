@@ -46,18 +46,23 @@ class _ProfileState extends State<Profile> {
         loading = false;
         txtNameController.text = user!.name ?? '';
         txtEmailController.text = user!.email ?? '';
-        var address = res.data as Address;
-        location = address.street.toString() +
-            ", " +
-            address.number.toString() +
-            ", " +
-            address.suburb.toString() +
-            ", " +
-            address.city.toString() +
-            ", " +
-            address.state.toString() +
-            ", " +
-            address.cp.toString();
+
+        if (res.error != null) {
+          location = "Sin dirección registrada";
+        } else {
+          var address = res.data as Address;
+          location = address.street.toString() +
+              ", " +
+              address.number.toString() +
+              ", " +
+              address.suburb.toString() +
+              ", " +
+              address.city.toString() +
+              ", " +
+              address.state.toString() +
+              ", " +
+              address.cp.toString();
+        }
       });
     } else if (response.error == unauthorized) {
       logout().then((value) => {
