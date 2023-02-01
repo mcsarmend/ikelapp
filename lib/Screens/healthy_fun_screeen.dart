@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:blogapp/screens/cookie_detail.dart';
+import 'package:blogapp/screens/product_detail.dart';
 
 import '../constant.dart';
 
@@ -22,37 +22,69 @@ class HealthyFun extends StatelessWidget {
                 mainAxisSpacing: 15.0,
                 childAspectRatio: 0.8,
                 children: <Widget>[
-                  _buildCard('Alka Seltzer  ', '\$3.99',
-                      'imgs/Healthyfun/AlkaSeltzer.png', false, false, context),
-                  _buildCard('Aspirina', '\$5.99',
-                      'imgs/Healthyfun/Aspirina.png', false, false, context),
                   _buildCard(
-                      'Copade cristal para vino',
-                      '\$1.99',
+                      'Alka Seltzer  2pzs',
+                      '\$10.00',
+                      'imgs/Healthyfun/AlkaSeltzer.png',
+                      false,
+                      false,
+                      "Detalle de AlkaSeltzer",
+                      context),
+                  _buildCard(
+                      'Aspirina 10pzs',
+                      '\$15.00',
+                      'imgs/Healthyfun/Aspirina.png',
+                      false,
+                      false,
+                      "Detalle Aspirina",
+                      context),
+                  _buildCard(
+                      'Copade cristal para vino 1pz',
+                      '\$50.00',
                       'imgs/Healthyfun/Copadecristalparavino.png',
                       false,
                       false,
+                      "Detalle copa",
                       context),
                   _buildCard(
-                      'Cucharas Medianos Biodegradables',
-                      '\$2.99',
+                      'Cucharas Medianos Biodegradables 25pzs',
+                      '\$26.00',
                       'imgs/Healthyfun/CucharasMedianoBiodegradables.png',
                       false,
                       false,
+                      "Detalle cucharas",
                       context),
                   _buildCard(
-                      'Cuchillos Medianos Biodegradables',
-                      '\$2.99',
+                      'Cuchillos Medianos Biodegradables 25pzs',
+                      '\$26.00',
                       'imgs/Healthyfun/CuchillosMedianosBiodegradables.png',
                       false,
                       false,
+                      "Detalle Cuchillos",
                       context),
                   _buildCard(
-                      'Descorchador de dos tiempos',
-                      '\$2.99',
+                      'Descorchador de dos tiempos 1pz',
+                      '\$100.00',
                       'imgs/Healthyfun/DescorchadordedosTiempos.png',
                       false,
                       false,
+                      "Detalle Descorchador",
+                      context),
+                  _buildCard(
+                      'Encendedor Tokai 1pz',
+                      '\$10.00',
+                      'imgs/Healthyfun/EncendedorTokai.png',
+                      false,
+                      false,
+                      "Detalle encendedor",
+                      context),
+                  _buildCard(
+                      'Peptobismol 2pzs',
+                      '\$10.00',
+                      'imgs/Healthyfun/PeptoBismol.png',
+                      false,
+                      false,
+                      "Detalle Peptobismol",
                       context),
                   _buildCard(
                       'Encendedor Tokai',
@@ -60,55 +92,64 @@ class HealthyFun extends StatelessWidget {
                       'imgs/Healthyfun/EncendedorTokai.png',
                       false,
                       false,
+                      "Detalle pepto bismol",
                       context),
-                  _buildCard('Peptobismol', '\$2.99',
-                      'imgs/Healthyfun/PeptoBismol.png', false, false, context),
                   _buildCard(
-                      'Encendedor Tokai',
-                      '\$2.99',
-                      'imgs/Healthyfun/EncendedorTokai.png',
+                      'Pistolitro',
+                      '\$499.00',
+                      'imgs/Healthyfun/pistoslitro.png',
                       false,
                       false,
+                      "Detalle Pistolitro",
                       context),
-                  _buildCard('Pistos Litro', '\$2.99',
-                      'imgs/Healthyfun/pistoslitro.png', false, false, context),
                   _buildCard(
-                      'Plato cuadrado Biodegradable',
-                      '\$2.99',
+                      'Plato cuadrado Biodegradable 10pzs',
+                      '\$50.00',
                       'imgs/Healthyfun/PlatocuadradoBiodegradable.png',
                       false,
                       false,
+                      "Detalle plato cuadrado",
                       context),
                   _buildCard(
-                      'Plato redondo Biodegradable',
-                      '\$2.99',
+                      'Plato redondo Biodegradable 10pzs',
+                      '\$35.00',
                       'imgs/Healthyfun/PlatoredondoBiodegradable.png',
                       false,
                       false,
+                      "Detalle Plato redondo",
                       context),
                   _buildCard(
-                      'Playboy preservativo fresa',
-                      '\$2.99',
+                      'Playboy preservativo fresa 1pz',
+                      '\$15.00',
                       'imgs/Healthyfun/Playboypreservativofresa.png',
                       false,
                       false,
+                      "Detalle Fresa",
                       context),
                   _buildCard(
-                      'Playboy preservativo Uva',
-                      '\$2.99',
+                      'Playboy preservativo Uva 1pz',
+                      '\$15.00',
                       'imgs/Healthyfun/PlayboypreservativoUva.png',
                       false,
                       false,
+                      "Detalle Uva",
                       context),
                   _buildCard(
-                      'Tenedores Medianos Biodegradables',
-                      '\$2.99',
+                      'Tenedores Medianos Biodegradables 25pzs',
+                      '\$26.00',
                       'imgs/Healthyfun/TenedoresMedianosBiodegradables.png',
                       false,
                       false,
+                      "Detalle Tenedores",
                       context),
-                  _buildCard('Vasos Rojos', '\$2.99',
-                      'imgs/Healthyfun/VasosRojos.png', false, false, context),
+                  _buildCard(
+                      'Vasos Rojos 10pzs',
+                      '\$10.00',
+                      'imgs/Healthyfun/VasosRojos.png',
+                      false,
+                      false,
+                      "Detalle vasos rojos",
+                      context),
                 ],
               )),
           SizedBox(height: 15.0)
@@ -118,16 +159,18 @@ class HealthyFun extends StatelessWidget {
   }
 
   Widget _buildCard(String name, String price, String imgPath, bool added,
-      bool isFavorite, context) {
+      bool isFavorite, String detalle, context) {
     return Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => CookieDetail(
-                      assetPath: imgPath,
-                      cookieprice: price,
-                      cookiename: name)));
+                  builder: (context) => ProductDetail(
+                        assetPath: imgPath,
+                        cookieprice: price,
+                        cookiename: name,
+                        detalle: detalle,
+                      )));
             },
             child: Container(
                 decoration: BoxDecoration(

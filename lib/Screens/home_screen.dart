@@ -1,10 +1,14 @@
 import 'package:blogapp/constant.dart';
 import 'package:blogapp/models/api_response.dart';
+import 'package:blogapp/screens/beer_house_screen.dart';
+import 'package:blogapp/screens/candys_party_screen.dart';
+import 'package:blogapp/screens/hard_drinks_screen.dart';
 import 'package:blogapp/services/post_service.dart';
 import 'package:blogapp/services/user_service.dart';
 import 'package:flutter/material.dart';
 import 'bottom_bar.dart';
-import 'cookie_page.dart';
+import 'pistos_mixes_screen.dart';
+import 'product_page.dart';
 import 'healthy_fun_screeen.dart';
 import 'login.dart';
 
@@ -80,10 +84,10 @@ class _HomeScreenState extends State<HomeScreen>
               height: MediaQuery.of(context).size.height - 50.0,
               width: double.infinity,
               child: TabBarView(controller: _tabController, children: [
-                CookiePage(),
-                CookiePage(),
-                CookiePage(),
-                CookiePage(),
+                PistosMix(),
+                HardDrinks(),
+                BeerHouse(),
+                CandysParty(),
                 HealthyFun(),
               ]))
         ],
