@@ -54,7 +54,7 @@ class _address_registerState extends State<address_register> {
         txtCityController.text = address.city.toString();
         txtSuburbController.text = address.suburb.toString();
         stateId = address.idState.toString();
-        cityId = address.idState.toString();
+        cityId = address.idCity.toString();
         suburb = address.suburb.toString();
       });
     }

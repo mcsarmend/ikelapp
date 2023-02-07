@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:blogapp/screens/product_detail.dart';
-
+import 'package:blogapp/screens/product_page.dart';
 import '../constant.dart';
 
 class CandysParty extends StatelessWidget {
+  ProductPage productpage = ProductPage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +23,7 @@ class CandysParty extends StatelessWidget {
                 mainAxisSpacing: 15.0,
                 childAspectRatio: 0.8,
                 children: <Widget>[
-                  _buildCard(
+                  productpage.build(
                       'Agua mineral ciel 1.75lts',
                       '\$23.00',
                       'imgs/Candysparty/Aguamineralciel175lt.png',
@@ -30,7 +31,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Agua mineral Perrier',
                       '\$29.00',
                       'imgs/Candysparty/AguaMineralPerrier.png',
@@ -38,7 +39,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Agua Natural 1lt',
                       '\$8.00',
                       'imgs/Candysparty/AguaNatural1lt.png',
@@ -46,7 +47,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Agua Natural 500ml',
                       '\$5.00',
                       'imgs/Candysparty/AguaNatural500ml.png',
@@ -54,7 +55,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Benson Hedges Gold Cajetilla',
                       '\$63.00',
                       'imgs/Candysparty/BensonHedgesGoldCajetillas.png',
@@ -62,7 +63,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Benson Hedges Mentolados Cajetilla',
                       '\$63.00',
                       'imgs/Candysparty/BensonHedgesMentolCajetillas.png',
@@ -70,7 +71,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bolsa de Hielo',
                       '\$27.00',
                       'imgs/Candysparty/BolsadeHielo.png',
@@ -78,7 +79,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Boost 235ml',
                       '\$25.00',
                       'imgs/Candysparty/Boost235ml.png',
@@ -86,7 +87,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Botana Mixta',
                       '\$29.00',
                       'imgs/Candysparty/BotanaMixta.png',
@@ -94,7 +95,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cacahuate Enchilado',
                       '\$29.00',
                       'imgs/Candysparty/CacahuateEnchilado.png',
@@ -102,7 +103,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cacahuate Garapiñado 200gr',
                       '\$N/A',
                       'imgs/Candysparty/CacahuateGarapinado200gr.png',
@@ -110,7 +111,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cacahuate Japones',
                       '\$69',
                       'imgs/Candysparty/CacahuateJapones.png',
@@ -118,7 +119,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cacahuate japones 160gr',
                       '\$20',
                       'imgs/Candysparty/Cacahuatejapones160gr.png',
@@ -126,7 +127,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cacahuate Salado sol',
                       '\$69',
                       'imgs/Candysparty/CacahuateSaladosol.png',
@@ -134,7 +135,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cacahuate surtido 185gr',
                       '\$20',
                       'imgs/Candysparty/Cacahuatesurtido185gr.png',
@@ -142,7 +143,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cacahuate Tipo Español con Ajo',
                       '\$69',
                       'imgs/Candysparty/CacahuateTipoEspanolconAjo.png',
@@ -150,7 +151,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Canada Dry 237ml',
                       '\$N/A',
                       'imgs/Candysparty/CanadaDry237ml.png',
@@ -158,7 +159,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Candy Camel Cajetilla',
                       '\$63.00',
                       'imgs/Candysparty/candycamelcajetilla.png',
@@ -166,7 +167,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Charritos chile y limón',
                       '\$15.00',
                       'imgs/Candysparty/Charritoschileylimon.png',
@@ -174,7 +175,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Clamato 2.5lts',
                       '\$69.00',
                       'imgs/Candysparty/Clamato25lts.png',
@@ -182,7 +183,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Coca Cola 1lt',
                       '\$20.00',
                       'imgs/Candysparty/CocaCola1lt.png',
@@ -190,7 +191,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Coca Cola 2.5lt',
                       '\$36.00',
                       'imgs/Candysparty/CocaCola25lt.png',
@@ -198,7 +199,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Coca Cola light 2lt',
                       '\$31.00',
                       'imgs/Candysparty/CocaColalight2lt.png',
@@ -206,7 +207,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Crunchi sol Cuadritos',
                       '\$N/A',
                       'imgs/Candysparty/CrunchisolCuadritos.png',
@@ -214,7 +215,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Crunchisol Donitas Enchiladas',
                       '\$N/A',
                       'imgs/Candysparty/CrunchisolDonitasEnchiladas.png',
@@ -222,7 +223,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cueritosde Cerdo 750gr',
                       '\$59.00',
                       'imgs/Candysparty/CueritosdeCerdo750gr.png',
@@ -230,7 +231,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Fresca 2lt',
                       '\$29.00',
                       'imgs/Candysparty/Fresca2lt.png',
@@ -238,7 +239,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'frituras sabor queso sol 300gr',
                       '\$20.00',
                       'imgs/Candysparty/friturassaborquesosol300gr.png',
@@ -246,7 +247,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Garbanzo Enchilado',
                       '\$69.00',
                       'imgs/Candysparty/GarbanzoEnchilado.png',
@@ -254,7 +255,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Garbanzo enchilado 140gr',
                       '\$20.00',
                       'imgs/Candysparty/Garbanzoenchilado140gr.png',
@@ -262,7 +263,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Ginger Ale 237 ml',
                       '\$9.00',
                       'imgs/Candysparty/GingerAle237ml.png',
@@ -270,7 +271,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Haba Enchilada',
                       '\$69.00',
                       'imgs/Candysparty/HabaEnchilada.png',
@@ -278,7 +279,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Haba Enchilada 120gr',
                       '\$20.00',
                       'imgs/Candysparty/HabaEnchilada120gr.png',
@@ -286,7 +287,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Halls Negras',
                       '\$10.00',
                       'imgs/Candysparty/HallsNegras.png',
@@ -294,7 +295,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Marlboro gold cajetilla',
                       '\$63.00',
                       'imgs/Candysparty/Marlborogoldcajetilla.png',
@@ -302,7 +303,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Marlboro Ice Xpress',
                       '\$63.00',
                       'imgs/Candysparty/MarlboroIceXpress.png',
@@ -310,7 +311,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Marlboro Rojo cajetilla',
                       '\$63.00',
                       'imgs/Candysparty/marlboroRojocajetilla.png',
@@ -318,7 +319,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Maruchan',
                       '\$15.00',
                       'imgs/Candysparty/Maruchan.png',
@@ -326,7 +327,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Monster Energy',
                       '\$42.00',
                       'imgs/Candysparty/MonsterEnergy.png',
@@ -334,7 +335,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Mundet Prisco',
                       '\$12.00',
                       'imgs/Candysparty/MundetPrisco.png',
@@ -342,7 +343,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Nectar del Valle Naranja',
                       '\$19.00',
                       'imgs/Candysparty/NectardelValleNaranja.png',
@@ -350,7 +351,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Nectar del Valle Uva',
                       '\$19.00',
                       'imgs/Candysparty/NectardelValleUva.png',
@@ -358,7 +359,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Nectar del Valle Piña',
                       '\$19.00',
                       'imgs/Candysparty/NectarPinaDelValle.png',
@@ -366,7 +367,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Ocean Spray Cranberry',
                       '\$26.00',
                       'imgs/Candysparty/OceanSprayCranberry.png',
@@ -374,7 +375,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Ocean Spray Uva',
                       '\$26.00',
                       'imgs/Candysparty/OceanSprayUva.png',
@@ -382,7 +383,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Papa Adobada sol',
                       '\$59.00',
                       'imgs/Candysparty/PapaAdobadasol.png',
@@ -390,7 +391,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Papa con queso sol',
                       '\$59.00',
                       'imgs/Candysparty/Papaconquesosol.png',
@@ -398,7 +399,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Papa Natural de sal',
                       '\$59.00',
                       'imgs/Candysparty/PapaNaturaldelsal.png',
@@ -406,7 +407,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Peñafiel 1lt',
                       '\$12.00',
                       'imgs/Candysparty/Penafiel1lt.png',
@@ -414,7 +415,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Pepita frita',
                       '\$99.00',
                       'imgs/Candysparty/Pepitafrita.png',
@@ -422,7 +423,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Pepitarusa100gr',
                       '\$20.00',
                       'imgs/Candysparty/Pepitarusa100gr.png',
@@ -430,7 +431,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'RedBull Energy',
                       '\$40.00',
                       'imgs/Candysparty/RedBullEnergy.png',
@@ -438,7 +439,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'RedBull Sugar Free',
                       '\$40.00',
                       'imgs/Candysparty/RedBullSugarFree.png',
@@ -446,7 +447,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'RedBull Tropical',
                       '\$40.00',
                       'imgs/Candysparty/RedBullTropical.png',
@@ -454,7 +455,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Rockaleta',
                       '\$5.00',
                       'imgs/Candysparty/Rockaleta.png',
@@ -462,7 +463,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Sal La Fina',
                       '\$15.00',
                       'imgs/Candysparty/SalLaFina.png',
@@ -470,7 +471,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Salsa Valentina',
                       '\$15.00',
                       'imgs/Candysparty/SalsaValentina.png',
@@ -478,7 +479,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Sangría Señorial 1lt',
                       '\$21.00',
                       'imgs/Candysparty/SangriaSenorial1lt.png',
@@ -486,7 +487,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Sangrita Viuda de Sanchez',
                       '\$71.00',
                       'imgs/Candysparty/SangritaViudadeSanchez.png',
@@ -494,7 +495,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Sidral Mundet 2lt',
                       '\$29.00',
                       'imgs/Candysparty/SidralMundet2lt.png',
@@ -502,7 +503,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Skyy Blue',
                       '\$22.00',
                       'imgs/Candysparty/SkyyBlue.png',
@@ -510,7 +511,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Sangria Señorial 2lt',
                       '\$30.00',
                       'imgs/Candysparty/SnagriaSenorial2lt.png',
@@ -518,7 +519,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Sprite 2lt',
                       '\$29.00',
                       'imgs/Candysparty/Sprite2lt.png',
@@ -526,7 +527,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Trident XtraCare Menta Tabletas',
                       '\$10.00',
                       'imgs/Candysparty/Trident.png',
@@ -534,7 +535,7 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tubi Charro Naturales',
                       '\$N/A',
                       'imgs/Candysparty/TubiCharroNaturales.png',
@@ -542,101 +543,19 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard('Tupsi Pop', '\$5', 'imgs/Candysparty/Tupsi.png',
-                      false, false, "Detalle de Producto", context),
+                  productpage.build(
+                      'Tupsi Pop',
+                      '\$5',
+                      'imgs/Candysparty/Tupsi.png',
+                      false,
+                      false,
+                      "Detalle de Producto",
+                      context),
                 ],
               )),
           SizedBox(height: 15.0)
         ],
       ),
     );
-  }
-
-  Widget _buildCard(String name, String price, String imgPath, bool added,
-      bool isFavorite, String detalle, context) {
-    return Padding(
-        padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
-        child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ProductDetail(
-                        assetPath: imgPath,
-                        cookieprice: price,
-                        cookiename: name,
-                        detalle: detalle,
-                      )));
-            },
-            child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 3.0,
-                          blurRadius: 5.0)
-                    ],
-                    color: Colors.white),
-                child: Column(children: [
-                  Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            isFavorite
-                                ? Icon(Icons.favorite, color: Color(0xFFEF7532))
-                                : Icon(Icons.favorite_border,
-                                    color: Color(0xFFEF7532))
-                          ])),
-                  Hero(
-                      tag: imgPath,
-                      child: Container(
-                          height: 110,
-                          width: 110,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(imgPath),
-                                  fit: BoxFit.contain)))),
-                  SizedBox(height: 7.0),
-                  Text(price,
-                      style: TextStyle(
-                          color: PRYMARY_COLOR,
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Text(name,
-                      style: TextStyle(
-                          color: Color(0xFF575E67),
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
-                  Padding(
-                      padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            if (!added) ...[
-                              Icon(Icons.shopping_basket,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('Add to cart',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
-                                      fontSize: 12.0))
-                            ],
-                            if (added) ...[
-                              Icon(Icons.remove_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('3',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12.0)),
-                              Icon(Icons.add_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                            ]
-                          ]))
-                ]))));
   }
 }

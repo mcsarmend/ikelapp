@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:blogapp/screens/product_detail.dart';
-
+import 'package:blogapp/screens/product_page.dart';
 import '../constant.dart';
 
 class HardDrinks extends StatelessWidget {
+  ProductPage productpage = ProductPage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +23,7 @@ class HardDrinks extends StatelessWidget {
                 mainAxisSpacing: 15.0,
                 childAspectRatio: 0.8,
                 children: <Widget>[
-                  _buildCard(
+                  productpage.build(
                       '100 años 700 ml',
                       '\$140.00',
                       'imgs/HardDrink/100anosreposado.png',
@@ -30,7 +31,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle 100 años",
                       context),
-                  _buildCard(
+                  productpage.build(
                       '400 Conejo',
                       '\$435.00',
                       'imgs/HardDrink/400conejos.png',
@@ -38,7 +39,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       '1800 Cristalino',
                       '\$635.00',
                       'imgs/HardDrink/1800cristalino.png',
@@ -46,7 +47,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Absinth',
                       '\$555.00',
                       'imgs/HardDrink/Absinth.png',
@@ -54,7 +55,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Absolut Azul',
                       '\$259.00',
                       'imgs/HardDrink/AbsolutAzul.png',
@@ -62,7 +63,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Absolut Mandarina',
                       '\$259.00',
                       'imgs/HardDrink/AbsolutMandrin.png',
@@ -70,7 +71,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Alacrán Jóven ',
                       '\$639.00',
                       'imgs/HardDrink/AlacranJoven.png',
@@ -78,7 +79,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Alipús San Juan del Río',
                       '\$717.00',
                       'imgs/HardDrink/AlipusSanJuandelRio.png',
@@ -86,7 +87,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Appleton Estate',
                       '\$250.00',
                       'imgs/HardDrink/AppletonEstate.png',
@@ -94,7 +95,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Appleton Special',
                       '\$635.00',
                       'imgs/HardDrink/AppletonSpecial.png',
@@ -102,7 +103,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Azteca de Oro',
                       '\$150.00',
                       'imgs/HardDrink/AztecadeOro.png',
@@ -110,7 +111,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bacardí Blanco',
                       '\$165.00',
                       'imgs/HardDrink/BacardiBlanco.png',
@@ -118,7 +119,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bacardí Blanco 980 ml',
                       '\$210.00',
                       'imgs/HardDrink/BacardiBlanco980ml.png',
@@ -126,7 +127,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bacardí Blanco 1750',
                       '\$310.00',
                       'imgs/HardDrink/BacardiBlanco1750.png',
@@ -134,7 +135,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bacardi Solera',
                       '\$220.00',
                       'imgs/HardDrink/BacardiSolera.png',
@@ -142,7 +143,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Baileys Original',
                       '\$315.00',
                       'imgs/HardDrink/BaileysOriginal.png',
@@ -150,7 +151,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Beefeater',
                       '\$412.00',
                       'imgs/HardDrink/Beefeater.png',
@@ -158,7 +159,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Beringer White Zinfandel',
                       '\$201.00',
                       'imgs/HardDrink/BeringerWhiteZinfandel.png',
@@ -166,7 +167,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Black & White',
                       '\$200.00',
                       'imgs/HardDrink/BlackWhite.png',
@@ -174,11 +175,23 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard('Bombay', '\$475.00', 'imgs/HardDrink/Bombay.png',
-                      false, false, "Detalle producto", context),
-                  _buildCard('Bruxo', '\$515.00', 'imgs/HardDrink/Bruxo.png',
-                      false, false, "Detalle producto", context),
-                  _buildCard(
+                  productpage.build(
+                      'Bombay',
+                      '\$475.00',
+                      'imgs/HardDrink/Bombay.png',
+                      false,
+                      false,
+                      "Detalle producto",
+                      context),
+                  productpage.build(
+                      'Bruxo',
+                      '\$515.00',
+                      'imgs/HardDrink/Bruxo.png',
+                      false,
+                      false,
+                      "Detalle producto",
+                      context),
+                  productpage.build(
                       'Buchanans 12 años',
                       '\$780.00',
                       'imgs/HardDrink/Buchanans12anos.png',
@@ -186,7 +199,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Buchanans 18 años',
                       '\$780.00',
                       'imgs/HardDrink/Buchanans18anos.png',
@@ -194,7 +207,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Buchanans Master',
                       '\$895.00',
                       'imgs/HardDrink/BuchanansMaster.png',
@@ -202,7 +215,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bulldog',
                       '\$550.00',
                       'imgs/HardDrink/Bulldog.png',
@@ -210,7 +223,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Captain Morgan Spiced 750 ml',
                       '\$149.00',
                       'imgs/HardDrink/CaptainMorganSpiced750ml.png',
@@ -218,7 +231,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cardenal de Mendoza',
                       '\$1063.00',
                       'imgs/HardDrink/Cardenaldeendoza.png',
@@ -226,7 +239,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cazadores Reposado',
                       '\$230.00',
                       'imgs/HardDrink/CazadoresReposado.png',
@@ -234,7 +247,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Centenario Plata 700 ml',
                       '\$305.00',
                       'imgs/HardDrink/CentenarioPlata700ml.png',
@@ -242,7 +255,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Centenario Plata 950 ml',
                       '\$317.00',
                       'imgs/HardDrink/CentenarioPlata950ml.png',
@@ -250,7 +263,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Centenario Reposado',
                       '\$255.00',
                       'imgs/HardDrink/centenarioreposado.png',
@@ -258,7 +271,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Chilensis Reserva',
                       '\$180.00',
                       'imgs/HardDrink/ChilensisReserva.png',
@@ -266,7 +279,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Chivas Regal 12 años',
                       '\$695.00',
                       'imgs/HardDrink/ChivasRegal12anos.png',
@@ -274,7 +287,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Courvoisier V.S.',
                       '\$625.00',
                       'imgs/HardDrink/COURVOISIERVS.png',
@@ -282,7 +295,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cune de Rioja Semidulce',
                       '\$200.00',
                       'imgs/HardDrink/CuneRiojaSemidulce.png',
@@ -290,7 +303,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Don julio 70',
                       '\$570.00',
                       'imgs/HardDrink/Donjulio70.png',
@@ -298,7 +311,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Don Julio 70 Añejo Cristalino',
                       '\$835.00',
                       'imgs/HardDrink/DonJulioReposado.png',
@@ -306,7 +319,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Don Pedro',
                       '\$160.00',
                       'imgs/HardDrink/DonPedro.png',
@@ -314,7 +327,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'El Jimador reposado',
                       '\$195.00',
                       'imgs/HardDrink/ElJimadorreposado.png',
@@ -322,7 +335,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Finca las Moras Malbec',
                       '\$142.00',
                       'imgs/HardDrink/FincalasMorasMalbec.png',
@@ -330,7 +343,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Frangelico',
                       '\$350.00',
                       'imgs/HardDrink/Frangelico.png',
@@ -338,7 +351,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Fundador',
                       '\$185.00',
                       'imgs/HardDrink/Fundador.png',
@@ -346,7 +359,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Glenfiddich 12 años',
                       '\$915.00',
                       'imgs/HardDrink/Glenfiddich12anos.png',
@@ -354,7 +367,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Grey Goose',
                       '\$660.00',
                       'imgs/HardDrink/GreyGoose.png',
@@ -362,7 +375,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Havana Club 750 ml',
                       '\$442.00',
                       'imgs/HardDrink/HavanaClub750ml.png',
@@ -370,7 +383,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Hendricks',
                       '\$750.00',
                       'imgs/HardDrink/Hendricks.png',
@@ -378,7 +391,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Hennessy V.S.O.P',
                       '\$1080.00',
                       'imgs/HardDrink/HennessyVSOP.png',
@@ -386,7 +399,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Herradura Reposado 700',
                       '\$549.00',
                       'imgs/HardDrink/HerraduraReposado700.png',
@@ -394,7 +407,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Hornitos Reposado 700',
                       '\$275.00',
                       'imgs/HardDrink/HornitosReposado700.png',
@@ -402,7 +415,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Hpnotiq',
                       '\$650.00',
                       'imgs/HardDrink/Hpnotiq.png',
@@ -410,7 +423,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Jack Daniels',
                       '\$415.00',
                       'imgs/HardDrink/JackDaniels.png',
@@ -418,7 +431,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Jagermeifter',
                       '\$320.00',
                       'imgs/HardDrink/Jagermeifter.png',
@@ -426,7 +439,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Jameson',
                       '\$371.00',
                       'imgs/HardDrink/Jameson.png',
@@ -434,9 +447,9 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard('J B', '\$240.00', 'imgs/HardDrink/JB.png', false,
-                      false, "Detalle producto", context),
-                  _buildCard(
+                  productpage.build('J B', '\$240.00', 'imgs/HardDrink/JB.png',
+                      false, false, "Detalle producto", context),
+                  productpage.build(
                       'Johnnie Walker Etiqueta Negra',
                       '\$830.00',
                       'imgs/HardDrink/JohnnieWalkerEtiquetaNegra.png',
@@ -444,7 +457,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Johnnie Walker Etiqueta Roja',
                       '\$325.00',
                       'imgs/HardDrink/JohnnieWalkerEtiquetaRoja.png',
@@ -452,7 +465,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Jose Cuervo Especial',
                       '\$205.00',
                       'imgs/HardDrink/JoseCuervoEspecial.png',
@@ -460,7 +473,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Jose Cuervo tradicional',
                       '\$330.00',
                       'imgs/HardDrink/JoseCuervotradicional.png',
@@ -468,7 +481,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Kahlua Licor de Cafe',
                       '\$166.00',
                       'imgs/HardDrink/KahluaLicordeCafe.png',
@@ -476,7 +489,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Karat 1 lt',
                       '\$130.00',
                       'imgs/HardDrink/Karat1lt.png',
@@ -484,7 +497,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Kraken Black Spiced',
                       '\$165.00',
                       'imgs/HardDrink/KrakenBlackSpiced.png',
@@ -492,7 +505,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'L.A. Cetto Cabernet Sauvignon',
                       '\$136.00',
                       'imgs/HardDrink/LACetto.png',
@@ -500,7 +513,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'L.A. Cetto Blanc Zinfandel',
                       '\$131.00',
                       'imgs/HardDrink/LACettoBlancdeZinfandel.png',
@@ -508,7 +521,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Licor 43',
                       '\$430.00',
                       'imgs/HardDrink/Licor43.png',
@@ -516,7 +529,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Macallan Doble Cask',
                       '\$1260.00',
                       'imgs/HardDrink/MacallanDobleCask.png',
@@ -524,7 +537,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Maestro Dobel',
                       '\$650.00',
                       'imgs/HardDrink/MaestroDobel.png',
@@ -532,9 +545,15 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard('Malibu', '\$187.00', 'imgs/HardDrink/Malibu.png',
-                      false, false, "Detalle producto", context),
-                  _buildCard(
+                  productpage.build(
+                      'Malibu',
+                      '\$187.00',
+                      'imgs/HardDrink/Malibu.png',
+                      false,
+                      false,
+                      "Detalle producto",
+                      context),
+                  productpage.build(
                       'Martell V.S.',
                       '\$700.00',
                       'imgs/HardDrink/Martellvs.png',
@@ -542,7 +561,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Martell V.S.O.P',
                       '\$949.00',
                       'imgs/HardDrink/MartellVSOP.png',
@@ -550,7 +569,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Matusalem Clasico',
                       '\$224.00',
                       'imgs/HardDrink/MatusalemClasico.png',
@@ -558,7 +577,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Matusalem Platino',
                       '\$190.00',
                       'imgs/HardDrink/MatusalemPlatino.png',
@@ -566,7 +585,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Mezcal Union Uno',
                       '\$N/A.00',
                       'imgs/HardDrink/MezcalUnionUno.png',
@@ -574,9 +593,15 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard('Midori', '\$405.00', 'imgs/HardDrink/Midori.png',
-                      false, false, "Detalle producto", context),
-                  _buildCard(
+                  productpage.build(
+                      'Midori',
+                      '\$405.00',
+                      'imgs/HardDrink/Midori.png',
+                      false,
+                      false,
+                      "Detalle producto",
+                      context),
+                  productpage.build(
                       'Moet Chandon Brut',
                       '\$1050.00',
                       'imgs/HardDrink/MoetChandonBrut.png',
@@ -584,7 +609,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Moet Chandon Ice Imperial',
                       '\$1655.00',
                       'imgs/HardDrink/MoetChandonIceImperial.png',
@@ -592,7 +617,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Moet Chandon Rose',
                       '\$1295.00',
                       'imgs/HardDrink/MoetChandonRose.png',
@@ -600,7 +625,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Monte Xanic Merlot',
                       '\$545.00',
                       'imgs/HardDrink/MonteXanicMerlot.png',
@@ -608,9 +633,15 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard('Nuvo', '\$770.00', 'imgs/HardDrink/Nuvo.png',
-                      false, false, "Detalle producto", context),
-                  _buildCard(
+                  productpage.build(
+                      'Nuvo',
+                      '\$770.00',
+                      'imgs/HardDrink/Nuvo.png',
+                      false,
+                      false,
+                      "Detalle producto",
+                      context),
+                  productpage.build(
                       'Oso Negro Ginebra',
                       '\$120.00',
                       'imgs/HardDrink/OsoNegroGinebra.png',
@@ -618,7 +649,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Oso Ngero 1 lt',
                       '\$90.00',
                       'imgs/HardDrink/OsoNgero1lt.png',
@@ -626,7 +657,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Passport Scotch',
                       '\$160.00',
                       'imgs/HardDrink/PassportScotch.png',
@@ -634,7 +665,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Remy Martin 1738',
                       '\$1420.00',
                       'imgs/HardDrink/RemyMartin1738.png',
@@ -642,7 +673,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Remy Martin V.S.O.P.',
                       '\$1100.00',
                       'imgs/HardDrink/RemyMartinVSOP.png',
@@ -650,7 +681,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Riunite Lambrusco',
                       '\$140.00',
                       'imgs/HardDrink/RiuniteLambrusco.png',
@@ -658,7 +689,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Riunite Prosecco',
                       '\$280.00',
                       'imgs/HardDrink/RiuniteProsecco.png',
@@ -666,9 +697,15 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard('Sauza', '\$229.00', 'imgs/HardDrink/Sauza.png',
-                      false, false, "Detalle producto", context),
-                  _buildCard(
+                  productpage.build(
+                      'Sauza',
+                      '\$229.00',
+                      'imgs/HardDrink/Sauza.png',
+                      false,
+                      false,
+                      "Detalle producto",
+                      context),
+                  productpage.build(
                       'Skyy Vodka',
                       '\$165.00',
                       'imgs/HardDrink/SkyyVodka.png',
@@ -676,7 +713,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Smirnoff 750 ml',
                       '\$185.00',
                       'imgs/HardDrink/Smirnoff750ml.png',
@@ -684,7 +721,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Smirnoff Tamarindo',
                       '\$200.00',
                       'imgs/HardDrink/SmirnoffTamarindo.png',
@@ -692,7 +729,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Stolichnaya',
                       '\$265.00',
                       'imgs/HardDrink/Stolichnaya.png',
@@ -700,7 +737,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tanqueray',
                       '\$455.00',
                       'imgs/HardDrink/Tanqueray.png',
@@ -708,7 +745,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Terry Centenario',
                       '\$280.00',
                       'imgs/HardDrink/TerryCentenario.png',
@@ -716,7 +753,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Torres 10',
                       '\$290.00',
                       'imgs/HardDrink/Torres10.png',
@@ -724,7 +761,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Torres 15',
                       '\$510.00',
                       'imgs/HardDrink/Torres15.png',
@@ -732,7 +769,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Torres 20',
                       '\$875.00',
                       'imgs/HardDrink/Torres20.png',
@@ -740,7 +777,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Wyborowa',
                       '\$139.00',
                       'imgs/HardDrink/Wyborowa.png',
@@ -748,7 +785,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'XA DOMECQ',
                       '\$120.00',
                       'imgs/HardDrink/XADOMECQ.png',
@@ -756,7 +793,7 @@ class HardDrinks extends StatelessWidget {
                       false,
                       "Detalle producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Zacapa 23',
                       '\$1100.00',
                       'imgs/HardDrink/Zacapa23.png',
@@ -770,93 +807,5 @@ class HardDrinks extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Widget _buildCard(String name, String price, String imgPath, bool added,
-      bool isFavorite, String detalle, context) {
-    return Padding(
-        padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
-        child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ProductDetail(
-                        assetPath: imgPath,
-                        cookieprice: price,
-                        cookiename: name,
-                        detalle: detalle,
-                      )));
-            },
-            child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 3.0,
-                          blurRadius: 5.0)
-                    ],
-                    color: Colors.white),
-                child: Column(children: [
-                  Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            isFavorite
-                                ? Icon(Icons.favorite, color: Color(0xFFEF7532))
-                                : Icon(Icons.favorite_border,
-                                    color: Color(0xFFEF7532))
-                          ])),
-                  Hero(
-                      tag: imgPath,
-                      child: Container(
-                          height: 110,
-                          width: 110,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(imgPath),
-                                  fit: BoxFit.contain)))),
-                  SizedBox(height: 7.0),
-                  Text(price,
-                      style: TextStyle(
-                          color: PRYMARY_COLOR,
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Text(name,
-                      style: TextStyle(
-                          color: Color(0xFF575E67),
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
-                  Padding(
-                      padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            if (!added) ...[
-                              Icon(Icons.shopping_basket,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('Add to cart',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
-                                      fontSize: 12.0))
-                            ],
-                            if (added) ...[
-                              Icon(Icons.remove_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('3',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12.0)),
-                              Icon(Icons.add_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                            ]
-                          ]))
-                ]))));
   }
 }

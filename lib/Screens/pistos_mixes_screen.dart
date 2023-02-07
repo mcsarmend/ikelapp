@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:blogapp/screens/product_detail.dart';
-
+import 'package:blogapp/screens/product_page.dart';
 import '../constant.dart';
 
+// ignore: must_be_immutable
 class PistosMix extends StatelessWidget {
-  var pistoxmixarr = [
+/*   var pistoxmixarr = [
     {
       {
         'Alfa Romeo',
@@ -341,7 +342,9 @@ class PistosMix extends StatelessWidget {
     'XX Ambar',
     'xx Lager',
   ];
+ */
 
+  ProductPage productpage = ProductPage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -360,7 +363,7 @@ class PistosMix extends StatelessWidget {
                 mainAxisSpacing: 15.0,
                 childAspectRatio: 0.8,
                 children: <Widget>[
-                  _buildCard(
+                  productpage.build(
                       'Alfa romeo',
                       '\$95.00',
                       'imgs/PistosMix/Alfaromeo.png',
@@ -368,7 +371,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Michelada tradicional sal, limón y  escarchado",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Aston Martin',
                       '\$129.00',
                       'imgs/PistosMix/astonmartin.png',
@@ -376,7 +379,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Michelada sabor Bluberry con Red Bull",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bentley',
                       '\$109.00',
                       'imgs/PistosMix/Bentley.png',
@@ -384,7 +387,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Cerveza sabor a mango con nieve del mismo sabor",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bugatti',
                       '\$85.00',
                       'imgs/PistosMix/Bugatti.png',
@@ -392,7 +395,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Sangría preparada con limón y sal ",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cadillac',
                       '\$109.00',
                       'imgs/PistosMix/Cadillac.png',
@@ -400,7 +403,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Chabelita cerveza mezclada con refresco rojo, sal Y limón",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Citroen',
                       '\$85.00',
                       'imgs/PistosMix/Citroen.png',
@@ -408,7 +411,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Tehuacan preparado con limón y sal",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Corvette',
                       '\$119.00',
                       'imgs/PistosMix/Corvette.png',
@@ -416,7 +419,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Cerveza con sidra Strongbow gold sabor a frambuesa",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Ferrari',
                       '\$109.00',
                       'imgs/PistosMix/Ferrari.png',
@@ -424,7 +427,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Mezcla de sabor cerveza y chamoy",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Hennessey',
                       '\$129.00',
                       'imgs/PistosMix/Hennessey.png',
@@ -432,7 +435,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Michelada sabor frutos rojos con Red Bull",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Lamborghinni',
                       '\$99.00',
                       'imgs/PistosMix/Lamborghinni.png',
@@ -440,7 +443,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Michelada tradicional sal, limón y  escarchado",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Lexus',
                       '\$129.00',
                       'imgs/PistosMix/Lexus.png',
@@ -448,7 +451,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Michelada sabor manzana verde con Red Bull",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Likan',
                       '\$129.00',
                       'imgs/PistosMix/Likan.png',
@@ -456,7 +459,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Michelada sabor maracuya-chamoy verde con Red Bull",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Masserati',
                       '\$99.00',
                       'imgs/PistosMix/Masserati.png',
@@ -464,7 +467,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Michelada Cubana, salsa inglesa, salsa Maggy, salsa Valentina, salsa Tabasco, limón y sal",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Mastretta',
                       '\$139.00',
                       'imgs/PistosMix/Mastretta.png',
@@ -472,7 +475,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Michelada sabor pepino-morita y una onza de Mezcal ",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Mclaren',
                       '\$109.00',
                       'imgs/PistosMix/Mclaren.png',
@@ -480,9 +483,15 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Clamachela, cerveza con clamato natural",
                       context),
-                  _buildCard('Mg', '\$109.00', 'imgs/PistosMix/Mg.png', false,
-                      false, "Gomichela, mezcla de chamoy y gomitas ", context),
-                  _buildCard(
+                  productpage.build(
+                      'Mg',
+                      '\$109.00',
+                      'imgs/PistosMix/Mg.png',
+                      false,
+                      false,
+                      "Gomichela, mezcla de chamoy y gomitas ",
+                      context),
+                  productpage.build(
                       'NosF1',
                       '\$139.00',
                       'imgs/PistosMix/NosF1.png',
@@ -490,7 +499,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Cerveza sabor a uva y jugo de litchi",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Porshe',
                       '\$109.00',
                       'imgs/PistosMix/porshe.png',
@@ -498,7 +507,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Cerveza con sabores, fresa, coco, maracuya, piña, uva, durazno y chamoy",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'RollRoyce',
                       '\$119.00',
                       'imgs/PistosMix/RollRoyce.png',
@@ -506,7 +515,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Calimocho, Vino tinto con limón, sal y Coca cola",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Saleen',
                       '\$119.00',
                       'imgs/PistosMix/Saleen.png',
@@ -514,7 +523,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Cerveza con Skyy Blue y sabor a mandarina",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Venom',
                       '\$129.00',
                       'imgs/PistosMix/Venom.png',
@@ -522,7 +531,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       "Michelada sabor piña colada con Red Bull",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Viper',
                       '\$109.00',
                       'imgs/PistosMix/Viper.png',
@@ -536,93 +545,5 @@ class PistosMix extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Widget _buildCard(String name, String price, String imgPath, bool added,
-      bool isFavorite, String detalle, context) {
-    return Padding(
-        padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
-        child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ProductDetail(
-                        assetPath: imgPath,
-                        cookieprice: price,
-                        cookiename: name,
-                        detalle: detalle,
-                      )));
-            },
-            child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 3.0,
-                          blurRadius: 5.0)
-                    ],
-                    color: Colors.white),
-                child: Column(children: [
-                  Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            isFavorite
-                                ? Icon(Icons.favorite, color: Color(0xFFEF7532))
-                                : Icon(Icons.favorite_border,
-                                    color: Color(0xFFEF7532))
-                          ])),
-                  Hero(
-                      tag: imgPath,
-                      child: Container(
-                          height: 110,
-                          width: 110,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(imgPath),
-                                  fit: BoxFit.contain)))),
-                  SizedBox(height: 7.0),
-                  Text(price,
-                      style: TextStyle(
-                          color: PRYMARY_COLOR,
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Text(name,
-                      style: TextStyle(
-                          color: Color(0xFF575E67),
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
-                  Padding(
-                      padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            if (!added) ...[
-                              Icon(Icons.shopping_basket,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('Add to cart',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
-                                      fontSize: 12.0))
-                            ],
-                            if (added) ...[
-                              Icon(Icons.remove_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('3',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12.0)),
-                              Icon(Icons.add_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                            ]
-                          ]))
-                ]))));
   }
 }

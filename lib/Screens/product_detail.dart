@@ -1,12 +1,27 @@
+import 'dart:developer';
+import 'package:counter_button/counter_button.dart';
 import 'package:flutter/material.dart';
-import 'package:blogapp/screens/bottom_bar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../constant.dart';
 
-class ProductDetail extends StatelessWidget {
-  final assetPath, cookieprice, cookiename, detalle;
+class ProductDetail extends StatefulWidget {
+  final assetPath, price, productname, detail;
 
-  ProductDetail(
-      {this.assetPath, this.cookieprice, this.cookiename, this.detalle});
+  ProductDetail({this.assetPath, this.price, this.productname, this.detail});
+
+  @override
+  State<ProductDetail> createState() => _ProductDetailState();
+}
+
+class _ProductDetailState extends State<ProductDetail> {
+  int _counterValue = 0;
+
+  void addToCar(List<String> bag) async {
+    print(bag.toString());
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setStringList('shoppingbag', bag);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +48,7 @@ class ProductDetail extends StatelessWidget {
         ],
       ),
       body: ListView(children: [
-        SizedBox(height: 15.0),
+        SizedBox(height: 10.0),
         Padding(
           padding: EdgeInsets.only(left: 20.0),
           child: Text('Detalle',
@@ -43,14 +58,14 @@ class ProductDetail extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: PRYMARY_COLOR)),
         ),
-        SizedBox(height: 15.0),
+        SizedBox(height: 10.0),
         Hero(
-            tag: assetPath,
-            child: Image.asset(assetPath,
-                height: 400, width: 350.0, fit: BoxFit.contain)),
-        SizedBox(height: 20.0),
+            tag: widget.assetPath,
+            child: Image.asset(widget.assetPath,
+                height: 350, width: 300.0, fit: BoxFit.contain)),
+        SizedBox(height: 10.0),
         Center(
-          child: Text(cookieprice,
+          child: Text(widget.price,
               style: TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 22.0,
@@ -59,22 +74,36 @@ class ProductDetail extends StatelessWidget {
         ),
         SizedBox(height: 10.0),
         Center(
-          child: Text(cookiename,
+          child: Text(widget.productname,
               style: TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',
                   fontSize: 24.0)),
         ),
-        SizedBox(height: 20.0),
+        SizedBox(height: 10.0),
         Center(
           child: Container(
             width: MediaQuery.of(context).size.width - 50.0,
-            child: Text(detalle,
+            child: Text(widget.detail,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontFamily: 'Varela',
                     fontSize: 16.0,
                     color: Color(0xFFB4B8B9))),
+          ),
+        ),
+        Center(
+          child: CounterButton(
+            loading: false,
+            onChange: (int val) {
+              setState(() {
+                _counterValue = val;
+              });
+            },
+            count: _counterValue,
+            countColor: Colors.black,
+            buttonColor: PRYMARY_COLOR,
+            progressColor: PRYMARY_COLOR,
           ),
         ),
         SizedBox(height: 20.0),
@@ -86,14 +115,22 @@ class ProductDetail extends StatelessWidget {
                     borderRadius: BorderRadius.circular(25.0),
                     color: PRYMARY_COLOR),
                 child: Center(
-                    child: Text(
-                  'Add to cart',
-                  style: TextStyle(
-                      fontFamily: 'Varela',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ))))
+                    child: TextButton(
+                        onPressed: () {
+                          List<String> bag = [
+                            widget.assetPath,
+                            widget.productname,
+                            widget.price,
+                            _counterValue.toString()
+                          ];
+                          addToCar(bag);
+                        },
+                        child: Text('Add to cart',
+                            style: TextStyle(
+                                fontFamily: 'Varela',
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white))))))
       ]),
     );
   }

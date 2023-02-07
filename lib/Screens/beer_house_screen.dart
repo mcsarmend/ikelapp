@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:blogapp/screens/product_detail.dart';
-
+import 'package:blogapp/screens/product_page.dart';
 import '../constant.dart';
 
 class BeerHouse extends StatelessWidget {
+  ProductPage productpage = ProductPage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +23,7 @@ class BeerHouse extends StatelessWidget {
                 mainAxisSpacing: 15.0,
                 childAspectRatio: 0.8,
                 children: <Widget>[
-                  _buildCard(
+                  productpage.build(
                       'Barrilito 355 ml',
                       '\$11.00',
                       'imgs/Beerhouse/Barrilito355ml.png',
@@ -30,7 +31,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Barrilito 444ml',
                       '\$13.00',
                       'imgs/Beerhouse/Barrilito444ml.png',
@@ -38,7 +39,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bocanegra 355ml',
                       '\$28.00',
                       'imgs/Beerhouse/Bocanegra355ml.png',
@@ -46,7 +47,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bohemia Clara 355 ml',
                       '\$13.00',
                       'imgs/Beerhouse/BohemiaClara355.png',
@@ -54,7 +55,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bohemia Clara No retornable 355',
                       '\$16.00',
                       'imgs/Beerhouse/BohemiaClaraNoretornable355.png',
@@ -62,7 +63,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bohemia Obscura 355',
                       '\$13.00',
                       'imgs/Beerhouse/BohemiaObscura355.png',
@@ -70,7 +71,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Bohemia Obscura No retornable 355',
                       '\$16.00',
                       'imgs/Beerhouse/BohemiaObscuraNoretornable355.png',
@@ -78,7 +79,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Brooklyn 355ml',
                       '\$44.00',
                       'imgs/Beerhouse/Brooklyn355ml.png',
@@ -86,7 +87,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'BudLight 355ml',
                       '\$14.00',
                       'imgs/Beerhouse/BudLight355ml.png',
@@ -94,7 +95,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Carta Blanca 355',
                       '\$16.00',
                       'imgs/Beerhouse/CartaBlanca355.png',
@@ -102,7 +103,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Carta Blanca 940ml',
                       '\$24.00',
                       'imgs/Beerhouse/CartaBlanca940ml.png',
@@ -110,7 +111,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Carta Blanca No retornable 355',
                       '\$16.00',
                       'imgs/Beerhouse/CartaBlancaNoretornable355.png',
@@ -118,7 +119,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Cornona 355ml',
                       '\$14.00',
                       'imgs/Beerhouse/Cornona355.png',
@@ -126,7 +127,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Corona 1.2L',
                       '\$34.00',
                       'imgs/Beerhouse/Corona12L.png',
@@ -134,7 +135,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Corona 940ml',
                       '\$30.00',
                       'imgs/Beerhouse/Corona940ml.png',
@@ -142,7 +143,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Corona Ampolleta',
                       '\$10.00',
                       'imgs/Beerhouse/CoronaAmpolleta.png',
@@ -150,7 +151,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Corona Light 1.2L',
                       '\$34.00',
                       'imgs/Beerhouse/CoronaLight12L.png',
@@ -158,7 +159,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Corona Light 355ml',
                       '\$14.00',
                       'imgs/Beerhouse/CoronaLight355.png',
@@ -166,7 +167,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Goose Island 355ml',
                       '\$49.00',
                       'imgs/Beerhouse/GooseIsland355ml.png',
@@ -174,7 +175,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Gran Modelo 1L',
                       '\$35.00',
                       'imgs/Beerhouse/GranModelo1L.png',
@@ -182,7 +183,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Grimbergen 330ml',
                       '\$32.00',
                       'imgs/Beerhouse/Grimbergen330ml.png',
@@ -190,7 +191,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Heineken 1L',
                       '\$33.00',
                       'imgs/Beerhouse/Heineken1L.png',
@@ -198,7 +199,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Heineken 250 ml',
                       '\$12.00',
                       'imgs/Beerhouse/Heineken250ml.png',
@@ -206,7 +207,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Heineken 355 ml',
                       '\$17.00',
                       'imgs/Beerhouse/Heineken355.png',
@@ -214,7 +215,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Heineken No Retornable 355 ml',
                       '\$17.00',
                       'imgs/Beerhouse/HeinekenNoRetornable355.png',
@@ -222,7 +223,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Hoegaarden 355ml',
                       '\$29.00',
                       'imgs/Beerhouse/Hoegaarden355ml.png',
@@ -230,7 +231,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Indio 1.18L',
                       '\$31.00',
                       'imgs/Beerhouse/Indio118L.png',
@@ -238,7 +239,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Indio 355ml',
                       '\$13.00',
                       'imgs/Beerhouse/Indio355.png',
@@ -246,7 +247,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Indio 940ml',
                       '\$25.00',
                       'imgs/Beerhouse/Indio940ml.png',
@@ -254,7 +255,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Indio ampolleta',
                       '\$7.00',
                       'imgs/Beerhouse/Indioampolleta.png',
@@ -262,7 +263,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Indio No Retornable 355ml',
                       '\$13.00',
                       'imgs/Beerhouse/IndioNoRetornable355.png',
@@ -270,7 +271,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'JabalI 330ml',
                       '\$33.00',
                       'imgs/Beerhouse/JabalI330ml.png',
@@ -278,7 +279,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Lagunitas Ipa 355ml',
                       '\$31.00',
                       'imgs/Beerhouse/LagunitasIpa355ml.png',
@@ -286,7 +287,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Leon 1.2L',
                       '\$34.00',
                       'imgs/Beerhouse/Leon12L.png',
@@ -294,7 +295,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Leon 355ml',
                       '\$14.00',
                       'imgs/Beerhouse/Leon355.png',
@@ -302,7 +303,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Leon No retornable 325',
                       '\$14.00',
                       'imgs/Beerhouse/LeonNoretornable325.png',
@@ -310,7 +311,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Michelob Ultra 355ml',
                       '\$17.00',
                       'imgs/Beerhouse/MichelobUltra355ml.png',
@@ -318,7 +319,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Modelo Ambar 355ml',
                       '\$16.00',
                       'imgs/Beerhouse/ModeloAmbar355.png',
@@ -326,7 +327,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Modelo Especial 355ml',
                       '\$16.00',
                       'imgs/Beerhouse/ModeloEspecial355.png',
@@ -334,7 +335,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Modelo Trigo 355ml',
                       '\$16.00',
                       'imgs/Beerhouse/ModeloTrigo355.png',
@@ -342,7 +343,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Montejo 355ml',
                       '\$16.00',
                       'imgs/Beerhouse/Montejo355.png',
@@ -350,7 +351,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Negra Modelo 355ml',
                       '\$16.00',
                       'imgs/Beerhouse/NegraModelo355.png',
@@ -358,7 +359,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Noche Buena 355ml',
                       '\$15.00',
                       'imgs/Beerhouse/NocheBuena355ml.png',
@@ -366,7 +367,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Pacifico 355',
                       '\$14.00',
                       'imgs/Beerhouse/Pacifico355.png',
@@ -374,7 +375,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Pacifico Ampolleta',
                       '\$10.00',
                       'imgs/Beerhouse/PacificoAmpolleta.png',
@@ -382,7 +383,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Pacifico Light Ampolleta',
                       '\$10.00',
                       'imgs/Beerhouse/PacificoLightAmpolleta.png',
@@ -390,7 +391,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Quilmes 355ml',
                       '\$25.00',
                       'imgs/Beerhouse/Quilmes355ml.png',
@@ -398,9 +399,15 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard('Sol 355', '\$13.00', 'imgs/Beerhouse/Sol355.png',
-                      false, false, "Detalle de Producto", context),
-                  _buildCard(
+                  productpage.build(
+                      'Sol 355',
+                      '\$13.00',
+                      'imgs/Beerhouse/Sol355.png',
+                      false,
+                      false,
+                      "Detalle de Producto",
+                      context),
+                  productpage.build(
                       'Sol 940ml',
                       '\$25.00',
                       'imgs/Beerhouse/Sol940ml.png',
@@ -408,7 +415,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Sol Ampolleta',
                       '\$7.00',
                       'imgs/Beerhouse/SolAmpolleta.png',
@@ -416,7 +423,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Sol No retornable 355ml',
                       '\$13.00',
                       'imgs/Beerhouse/SolNoretornable355.png',
@@ -424,7 +431,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Stella Artois 310ml',
                       '\$19.00',
                       'imgs/Beerhouse/StellaArtois310ml.png',
@@ -432,7 +439,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Superior 355ml',
                       '\$13.00',
                       'imgs/Beerhouse/Superior355ml.png',
@@ -440,7 +447,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tecate Ambar 355ml',
                       '\$10.00',
                       'imgs/Beerhouse/TecateAmbar355.png',
@@ -448,7 +455,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tecate Ambar 940ml',
                       '\$25.00',
                       'imgs/Beerhouse/TecateAmbar940ml.png',
@@ -456,7 +463,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tecate Light 1.18L',
                       '\$31.00',
                       'imgs/Beerhouse/TecateLight118L.png',
@@ -464,7 +471,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tecate Light 355ml',
                       '\$13.00',
                       'imgs/Beerhouse/TecateLight355.png',
@@ -472,7 +479,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tecate Light No Retornable 355ml',
                       '\$10.00',
                       'imgs/Beerhouse/TecateLightNoRetornable355.png',
@@ -480,7 +487,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tecate Roja 1.18L',
                       '\$31.00',
                       'imgs/Beerhouse/TecateRoja118L.png',
@@ -488,7 +495,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tecate Roja 355ml',
                       '\$10.00',
                       'imgs/Beerhouse/TecateRoja355.png',
@@ -496,7 +503,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tempus 355ml',
                       '\$30.00',
                       'imgs/Beerhouse/Tempus355ml.png',
@@ -504,7 +511,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Tuborg 330ml',
                       '\$16.00',
                       'imgs/Beerhouse/Tuborg330ml.png',
@@ -512,7 +519,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Victoria 1.2L',
                       '\$34.00',
                       'imgs/Beerhouse/Victoria12L.png',
@@ -520,7 +527,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Victoria 355ml',
                       '\$14.00',
                       'imgs/Beerhouse/Victoria355ml.png',
@@ -528,7 +535,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Victoria 940ml',
                       '\$30.00',
                       'imgs/Beerhouse/Victoria940ml.png',
@@ -536,7 +543,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'Victoria Ampolleta',
                       '\$10.00',
                       'imgs/Beerhouse/VictoriaAmpolleta.png',
@@ -544,7 +551,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'XX Lager 1.18L',
                       '\$34.00',
                       'imgs/Beerhouse/XXLager118L.png',
@@ -552,7 +559,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'XX Lager 355ml',
                       '\$11.00',
                       'imgs/Beerhouse/XXLager355.png',
@@ -560,7 +567,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'XX Lager Ambar 1.18L',
                       '\$34.00',
                       'imgs/Beerhouse/XXLagerAmbar118L.png',
@@ -568,7 +575,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'XX Lager Ambar 355',
                       '\$11.00',
                       'imgs/Beerhouse/XXLagerAmbar355.png',
@@ -576,7 +583,7 @@ class BeerHouse extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  _buildCard(
+                  productpage.build(
                       'XX lager Ampolleta',
                       '\$8.00',
                       'imgs/Beerhouse/XXlagerAmpolleta.png',
@@ -590,93 +597,5 @@ class BeerHouse extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Widget _buildCard(String name, String price, String imgPath, bool added,
-      bool isFavorite, String detalle, context) {
-    return Padding(
-        padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
-        child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ProductDetail(
-                        assetPath: imgPath,
-                        cookieprice: price,
-                        cookiename: name,
-                        detalle: detalle,
-                      )));
-            },
-            child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 3.0,
-                          blurRadius: 5.0)
-                    ],
-                    color: Colors.white),
-                child: Column(children: [
-                  Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            isFavorite
-                                ? Icon(Icons.favorite, color: Color(0xFFEF7532))
-                                : Icon(Icons.favorite_border,
-                                    color: Color(0xFFEF7532))
-                          ])),
-                  Hero(
-                      tag: imgPath,
-                      child: Container(
-                          height: 110,
-                          width: 110,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(imgPath),
-                                  fit: BoxFit.contain)))),
-                  SizedBox(height: 7.0),
-                  Text(price,
-                      style: TextStyle(
-                          color: PRYMARY_COLOR,
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Text(name,
-                      style: TextStyle(
-                          color: Color(0xFF575E67),
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
-                  Padding(
-                      padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            if (!added) ...[
-                              Icon(Icons.shopping_basket,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('Add to cart',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
-                                      fontSize: 12.0))
-                            ],
-                            if (added) ...[
-                              Icon(Icons.remove_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('3',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12.0)),
-                              Icon(Icons.add_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                            ]
-                          ]))
-                ]))));
   }
 }

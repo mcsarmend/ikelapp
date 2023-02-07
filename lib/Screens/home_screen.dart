@@ -1,16 +1,11 @@
 import 'package:blogapp/constant.dart';
-import 'package:blogapp/models/api_response.dart';
 import 'package:blogapp/screens/beer_house_screen.dart';
 import 'package:blogapp/screens/candys_party_screen.dart';
 import 'package:blogapp/screens/hard_drinks_screen.dart';
-import 'package:blogapp/services/post_service.dart';
-import 'package:blogapp/services/user_service.dart';
 import 'package:flutter/material.dart';
-import 'bottom_bar.dart';
 import 'pistos_mixes_screen.dart';
-import 'product_page.dart';
 import 'healthy_fun_screeen.dart';
-import 'login.dart';
+import 'package:blogapp/screens/product_page.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -20,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
+  ProductPage productpage = ProductPage();
   @override
   void initState() {
     super.initState();

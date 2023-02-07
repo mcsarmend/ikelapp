@@ -1,4 +1,3 @@
-import 'package:blogapp/screens/healthy_fun_screeen.dart';
 import 'package:blogapp/screens/prelogin.dart';
 import 'package:flutter/material.dart';
 

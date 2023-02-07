@@ -1,6 +1,7 @@
 import 'package:blogapp/screens/pedidos.dart';
 import 'package:blogapp/screens/home_screen.dart';
 import 'package:blogapp/screens/profile.dart';
+import 'package:blogapp/screens/shoppingbag_screen.dart';
 import 'package:flutter/material.dart';
 import '../constant.dart';
 
@@ -33,8 +34,9 @@ class _HomeState extends State<Home> {
             ),
             tooltip: 'Carrito',
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Prueba de carrito')));
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => shoppingbag()),
+                  (route) => false);
             },
           ),
         ],
