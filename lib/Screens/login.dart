@@ -4,6 +4,7 @@ import 'package:blogapp/services/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../constant.dart';
+import 'delivery_user_screen.dart';
 import 'home.dart';
 import 'register.dart';
 
@@ -21,7 +22,12 @@ class _LoginState extends State<Login> {
   void _loginUser() async {
     ApiResponse response = await login(txtEmail.text, txtPassword.text);
     if (response.error == null) {
-      _saveAndRedirectToHome(response.data as User);
+      var n = response.data as User;
+      if (n.type == 1) {
+        _saveAndRedirectToHome(n);
+      } else {
+        _saveAndRedirectToHomeR(n);
+      }
     } else {
       setState(() {
         loading = false;
@@ -37,6 +43,15 @@ class _LoginState extends State<Login> {
     await pref.setInt('userId', user.id ?? 0);
     Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => Home()), (route) => false);
+  }
+
+  void _saveAndRedirectToHomeR(User user) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setString('token', user.token ?? '');
+    await pref.setInt('userId', user.id ?? 0);
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => delivery_user_screen()),
+        (route) => false);
   }
 
   @override

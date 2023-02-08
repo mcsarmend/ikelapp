@@ -1,7 +1,7 @@
 // ----- STRINGS ------
 import 'package:flutter/material.dart';
 
-const baseURL = 'http://127.0.0.1:8000/api';
+const baseURL = 'https://seges.com.mx/api';
 const loginURL = baseURL + '/login';
 const registerURL = baseURL + '/register';
 const logoutURL = baseURL + '/logout';
@@ -9,9 +9,11 @@ const userURL = baseURL + '/user';
 const postsURL = baseURL + '/posts';
 const commentsURL = baseURL + '/comments';
 const addressURL = baseURL + '/address';
+const ordersURL = baseURL + '/getorders';
 const addressByCpURL = baseURL + '/addressbycp';
 const setaddressByCpURL = baseURL + '/insertupdateaddress';
 const headers = {'Accept': 'application/json'};
+const MAP_API = "AIzaSyCI9KYYmGxX3_PpRTjvzimwhlfRmemqH7g";
 final Color PRYMARY_COLOR = Color.fromRGBO(143, 164, 58, 1);
 final Color SECONDARY_COLOR = Color.fromRGBO(141, 166, 199, 1);
 final Color THYRD_COLOR = Color.fromRGBO(227, 234, 204, 1);

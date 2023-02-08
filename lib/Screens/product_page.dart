@@ -42,8 +42,8 @@ class ProductPage {
                   Hero(
                       tag: imgPath,
                       child: Container(
-                          height: 110,
-                          width: 110,
+                          height: 80,
+                          width: 80,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage(imgPath),

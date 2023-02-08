@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:blogapp/constant.dart';
 import 'package:blogapp/models/api_response.dart';
+import 'package:blogapp/models/orders.dart';
 import 'package:blogapp/models/user.dart';
 import 'package:blogapp/models/address.dart';
 import 'package:http/http.dart' as http;
@@ -108,6 +109,32 @@ Future<ApiResponse> getaddress(String userId) async {
     switch (response.statusCode) {
       case 200:
         apiResponse.data = Address.fromJson(jsonDecode(response.body));
+        break;
+      case 422:
+        apiResponse.error = jsonDecode(response.body)["error"];
+        break;
+      default:
+        apiResponse.error = somethingWentWrong;
+        break;
+    }
+  } catch (e) {
+    apiResponse.error = serverError;
+  }
+  return apiResponse;
+}
+
+Future<ApiResponse> getorders(String userId) async {
+  ApiResponse apiResponse = ApiResponse();
+  try {
+    final response = await http.post(Uri.parse(ordersURL), headers: {
+      'Accept': 'application/json'
+    }, body: {
+      'user_id': userId,
+    });
+
+    switch (response.statusCode) {
+      case 200:
+        apiResponse.data = Orders.fromJson(jsonDecode(response.body));
         break;
       case 422:
         apiResponse.error = jsonDecode(response.body)["error"];
