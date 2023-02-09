@@ -1,13 +1,11 @@
+import 'package:blogapp/screens/prelogin.dart';
 import 'package:flutter/material.dart';
-import 'Screens/prelogin.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/Screens/login_screen.dart';
-import 'package:flutterapp/Screens/register_screen.dart';
-
-import '../Services/globals.dart';
+import 'package:blogapp/screens/loading.dart';
+import 'package:blogapp/screens/register.dart';
+import 'package:blogapp/constant.dart';
 
 class prelogin_screen extends StatelessWidget {
   @override
@@ -28,8 +27,7 @@ class prelogin_screen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const LoginScreen()),
+                    MaterialPageRoute(builder: (context) => (Loading())),
                   );
                 },
                 style: TextButton.styleFrom(
@@ -44,10 +42,9 @@ class prelogin_screen extends StatelessWidget {
               height: 50,
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => RegisterScreen()),
-                  );
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => Register()),
+                      (route) => false);
                 },
                 style: TextButton.styleFrom(
                     foregroundColor: Colors.white,
