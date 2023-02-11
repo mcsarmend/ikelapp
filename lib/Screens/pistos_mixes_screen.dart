@@ -366,7 +366,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Alfa romeo',
                       '\$95.00',
-                      'imgs/PistosMix/Alfaromeo.png',
+                      'assets/imgs/PistosMix/Alfaromeo.png',
                       false,
                       false,
                       "Michelada tradicional sal, limón y  escarchado",
@@ -374,7 +374,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Aston Martin',
                       '\$129.00',
-                      'imgs/PistosMix/astonmartin.png',
+                      'assets/imgs/PistosMix/astonmartin.png',
                       false,
                       false,
                       "Michelada sabor Bluberry con Red Bull",
@@ -382,7 +382,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Bentley',
                       '\$109.00',
-                      'imgs/PistosMix/Bentley.png',
+                      'assets/imgs/PistosMix/Bentley.png',
                       false,
                       false,
                       "Cerveza sabor a mango con nieve del mismo sabor",
@@ -390,7 +390,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Bugatti',
                       '\$85.00',
-                      'imgs/PistosMix/Bugatti.png',
+                      'assets/imgs/PistosMix/Bugatti.png',
                       false,
                       false,
                       "Sangría preparada con limón y sal ",
@@ -398,7 +398,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Cadillac',
                       '\$109.00',
-                      'imgs/PistosMix/Cadillac.png',
+                      'assets/imgs/PistosMix/Cadillac.png',
                       false,
                       false,
                       "Chabelita cerveza mezclada con refresco rojo, sal Y limón",
@@ -406,7 +406,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Citroen',
                       '\$85.00',
-                      'imgs/PistosMix/Citroen.png',
+                      'assets/imgs/PistosMix/Citroen.png',
                       false,
                       false,
                       "Tehuacan preparado con limón y sal",
@@ -414,7 +414,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Corvette',
                       '\$119.00',
-                      'imgs/PistosMix/Corvette.png',
+                      'assets/imgs/PistosMix/Corvette.png',
                       false,
                       false,
                       "Cerveza con sidra Strongbow gold sabor a frambuesa",
@@ -422,7 +422,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Ferrari',
                       '\$109.00',
-                      'imgs/PistosMix/Ferrari.png',
+                      'assets/imgs/PistosMix/Ferrari.png',
                       false,
                       false,
                       "Mezcla de sabor cerveza y chamoy",
@@ -430,7 +430,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Hennessey',
                       '\$129.00',
-                      'imgs/PistosMix/Hennessey.png',
+                      'assets/imgs/PistosMix/Hennessey.png',
                       false,
                       false,
                       "Michelada sabor frutos rojos con Red Bull",
@@ -438,7 +438,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Lamborghinni',
                       '\$99.00',
-                      'imgs/PistosMix/Lamborghinni.png',
+                      'assets/imgs/PistosMix/Lamborghinni.png',
                       false,
                       false,
                       "Michelada tradicional sal, limón y  escarchado",
@@ -446,7 +446,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Lexus',
                       '\$129.00',
-                      'imgs/PistosMix/Lexus.png',
+                      'assets/imgs/PistosMix/Lexus.png',
                       false,
                       false,
                       "Michelada sabor manzana verde con Red Bull",
@@ -454,7 +454,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Likan',
                       '\$129.00',
-                      'imgs/PistosMix/Likan.png',
+                      'assets/imgs/PistosMix/Likan.png',
                       false,
                       false,
                       "Michelada sabor maracuya-chamoy verde con Red Bull",
@@ -462,7 +462,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Masserati',
                       '\$99.00',
-                      'imgs/PistosMix/Masserati.png',
+                      'assets/imgs/PistosMix/Masserati.png',
                       false,
                       false,
                       "Michelada Cubana, salsa inglesa, salsa Maggy, salsa Valentina, salsa Tabasco, limón y sal",
@@ -470,7 +470,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Mastretta',
                       '\$139.00',
-                      'imgs/PistosMix/Mastretta.png',
+                      'assets/imgs/PistosMix/Mastretta.png',
                       false,
                       false,
                       "Michelada sabor pepino-morita y una onza de Mezcal ",
@@ -478,7 +478,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Mclaren',
                       '\$109.00',
-                      'imgs/PistosMix/Mclaren.png',
+                      'assets/imgs/PistosMix/Mclaren.png',
                       false,
                       false,
                       "Clamachela, cerveza con clamato natural",
@@ -486,7 +486,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Mg',
                       '\$109.00',
-                      'imgs/PistosMix/Mg.png',
+                      'assets/imgs/PistosMix/Mg.png',
                       false,
                       false,
                       "Gomichela, mezcla de chamoy y gomitas ",
@@ -494,7 +494,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'NosF1',
                       '\$139.00',
-                      'imgs/PistosMix/NosF1.png',
+                      'assets/imgs/PistosMix/NosF1.png',
                       false,
                       false,
                       "Cerveza sabor a uva y jugo de litchi",
@@ -502,7 +502,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Porshe',
                       '\$109.00',
-                      'imgs/PistosMix/porshe.png',
+                      'assets/imgs/PistosMix/porshe.png',
                       false,
                       false,
                       "Cerveza con sabores, fresa, coco, maracuya, piña, uva, durazno y chamoy",
@@ -510,7 +510,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'RollRoyce',
                       '\$119.00',
-                      'imgs/PistosMix/RollRoyce.png',
+                      'assets/imgs/PistosMix/RollRoyce.png',
                       false,
                       false,
                       "Calimocho, Vino tinto con limón, sal y Coca cola",
@@ -518,7 +518,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Saleen',
                       '\$119.00',
-                      'imgs/PistosMix/Saleen.png',
+                      'assets/imgs/PistosMix/Saleen.png',
                       false,
                       false,
                       "Cerveza con Skyy Blue y sabor a mandarina",
@@ -526,7 +526,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Venom',
                       '\$129.00',
-                      'imgs/PistosMix/Venom.png',
+                      'assets/imgs/PistosMix/Venom.png',
                       false,
                       false,
                       "Michelada sabor piña colada con Red Bull",
@@ -534,7 +534,7 @@ class PistosMix extends StatelessWidget {
                   productpage.build(
                       'Viper',
                       '\$109.00',
-                      'imgs/PistosMix/Viper.png',
+                      'assets/imgs/PistosMix/Viper.png',
                       false,
                       false,
                       "Cerveza con sabor a fresa- kiwi acompañada de bing picosito",

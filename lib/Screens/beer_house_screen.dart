@@ -26,7 +26,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Barrilito 355 ml',
                       '\$11.00',
-                      'imgs/Beerhouse/Barrilito355ml.png',
+                      'assets/imgs/Beerhouse/Barrilito355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -34,7 +34,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Barrilito 444ml',
                       '\$13.00',
-                      'imgs/Beerhouse/Barrilito444ml.png',
+                      'assets/imgs/Beerhouse/Barrilito444ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -42,7 +42,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Bocanegra 355ml',
                       '\$28.00',
-                      'imgs/Beerhouse/Bocanegra355ml.png',
+                      'assets/imgs/Beerhouse/Bocanegra355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -50,7 +50,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Bohemia Clara 355 ml',
                       '\$13.00',
-                      'imgs/Beerhouse/BohemiaClara355.png',
+                      'assets/imgs/Beerhouse/BohemiaClara355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -58,7 +58,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Bohemia Clara No retornable 355',
                       '\$16.00',
-                      'imgs/Beerhouse/BohemiaClaraNoretornable355.png',
+                      'assets/imgs/Beerhouse/BohemiaClaraNoretornable355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -66,7 +66,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Bohemia Obscura 355',
                       '\$13.00',
-                      'imgs/Beerhouse/BohemiaObscura355.png',
+                      'assets/imgs/Beerhouse/BohemiaObscura355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -74,7 +74,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Bohemia Obscura No retornable 355',
                       '\$16.00',
-                      'imgs/Beerhouse/BohemiaObscuraNoretornable355.png',
+                      'assets/imgs/Beerhouse/BohemiaObscuraNoretornable355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -82,7 +82,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Brooklyn 355ml',
                       '\$44.00',
-                      'imgs/Beerhouse/Brooklyn355ml.png',
+                      'assets/imgs/Beerhouse/Brooklyn355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -90,7 +90,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'BudLight 355ml',
                       '\$14.00',
-                      'imgs/Beerhouse/BudLight355ml.png',
+                      'assets/imgs/Beerhouse/BudLight355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -98,7 +98,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Carta Blanca 355',
                       '\$16.00',
-                      'imgs/Beerhouse/CartaBlanca355.png',
+                      'assets/imgs/Beerhouse/CartaBlanca355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -106,7 +106,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Carta Blanca 940ml',
                       '\$24.00',
-                      'imgs/Beerhouse/CartaBlanca940ml.png',
+                      'assets/imgs/Beerhouse/CartaBlanca940ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -114,7 +114,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Carta Blanca No retornable 355',
                       '\$16.00',
-                      'imgs/Beerhouse/CartaBlancaNoretornable355.png',
+                      'assets/imgs/Beerhouse/CartaBlancaNoretornable355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -122,7 +122,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Cornona 355ml',
                       '\$14.00',
-                      'imgs/Beerhouse/Cornona355.png',
+                      'assets/imgs/Beerhouse/Cornona355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -130,7 +130,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Corona 1.2L',
                       '\$34.00',
-                      'imgs/Beerhouse/Corona12L.png',
+                      'assets/imgs/Beerhouse/Corona12L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -138,7 +138,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Corona 940ml',
                       '\$30.00',
-                      'imgs/Beerhouse/Corona940ml.png',
+                      'assets/imgs/Beerhouse/Corona940ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -146,7 +146,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Corona Ampolleta',
                       '\$10.00',
-                      'imgs/Beerhouse/CoronaAmpolleta.png',
+                      'assets/imgs/Beerhouse/CoronaAmpolleta.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -154,7 +154,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Corona Light 1.2L',
                       '\$34.00',
-                      'imgs/Beerhouse/CoronaLight12L.png',
+                      'assets/imgs/Beerhouse/CoronaLight12L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -162,7 +162,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Corona Light 355ml',
                       '\$14.00',
-                      'imgs/Beerhouse/CoronaLight355.png',
+                      'assets/imgs/Beerhouse/CoronaLight355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -170,7 +170,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Goose Island 355ml',
                       '\$49.00',
-                      'imgs/Beerhouse/GooseIsland355ml.png',
+                      'assets/imgs/Beerhouse/GooseIsland355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -178,7 +178,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Gran Modelo 1L',
                       '\$35.00',
-                      'imgs/Beerhouse/GranModelo1L.png',
+                      'assets/imgs/Beerhouse/GranModelo1L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -186,7 +186,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Grimbergen 330ml',
                       '\$32.00',
-                      'imgs/Beerhouse/Grimbergen330ml.png',
+                      'assets/imgs/Beerhouse/Grimbergen330ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -194,7 +194,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Heineken 1L',
                       '\$33.00',
-                      'imgs/Beerhouse/Heineken1L.png',
+                      'assets/imgs/Beerhouse/Heineken1L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -202,7 +202,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Heineken 250 ml',
                       '\$12.00',
-                      'imgs/Beerhouse/Heineken250ml.png',
+                      'assets/imgs/Beerhouse/Heineken250ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -210,7 +210,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Heineken 355 ml',
                       '\$17.00',
-                      'imgs/Beerhouse/Heineken355.png',
+                      'assets/imgs/Beerhouse/Heineken355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -218,7 +218,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Heineken No Retornable 355 ml',
                       '\$17.00',
-                      'imgs/Beerhouse/HeinekenNoRetornable355.png',
+                      'assets/imgs/Beerhouse/HeinekenNoRetornable355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -226,7 +226,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Hoegaarden 355ml',
                       '\$29.00',
-                      'imgs/Beerhouse/Hoegaarden355ml.png',
+                      'assets/imgs/Beerhouse/Hoegaarden355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -234,7 +234,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Indio 1.18L',
                       '\$31.00',
-                      'imgs/Beerhouse/Indio118L.png',
+                      'assets/imgs/Beerhouse/Indio118L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -242,7 +242,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Indio 355ml',
                       '\$13.00',
-                      'imgs/Beerhouse/Indio355.png',
+                      'assets/imgs/Beerhouse/Indio355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -250,7 +250,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Indio 940ml',
                       '\$25.00',
-                      'imgs/Beerhouse/Indio940ml.png',
+                      'assets/imgs/Beerhouse/Indio940ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -258,7 +258,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Indio ampolleta',
                       '\$7.00',
-                      'imgs/Beerhouse/Indioampolleta.png',
+                      'assets/imgs/Beerhouse/Indioampolleta.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -266,7 +266,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Indio No Retornable 355ml',
                       '\$13.00',
-                      'imgs/Beerhouse/IndioNoRetornable355.png',
+                      'assets/imgs/Beerhouse/IndioNoRetornable355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -274,7 +274,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'JabalI 330ml',
                       '\$33.00',
-                      'imgs/Beerhouse/JabalI330ml.png',
+                      'assets/imgs/Beerhouse/JabalI330ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -282,7 +282,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Lagunitas Ipa 355ml',
                       '\$31.00',
-                      'imgs/Beerhouse/LagunitasIpa355ml.png',
+                      'assets/imgs/Beerhouse/LagunitasIpa355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -290,7 +290,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Leon 1.2L',
                       '\$34.00',
-                      'imgs/Beerhouse/Leon12L.png',
+                      'assets/imgs/Beerhouse/Leon12L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -298,7 +298,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Leon 355ml',
                       '\$14.00',
-                      'imgs/Beerhouse/Leon355.png',
+                      'assets/imgs/Beerhouse/Leon355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -306,7 +306,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Leon No retornable 325',
                       '\$14.00',
-                      'imgs/Beerhouse/LeonNoretornable325.png',
+                      'assets/imgs/Beerhouse/LeonNoretornable325.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -314,7 +314,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Michelob Ultra 355ml',
                       '\$17.00',
-                      'imgs/Beerhouse/MichelobUltra355ml.png',
+                      'assets/imgs/Beerhouse/MichelobUltra355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -322,7 +322,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Modelo Ambar 355ml',
                       '\$16.00',
-                      'imgs/Beerhouse/ModeloAmbar355.png',
+                      'assets/imgs/Beerhouse/ModeloAmbar355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -330,7 +330,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Modelo Especial 355ml',
                       '\$16.00',
-                      'imgs/Beerhouse/ModeloEspecial355.png',
+                      'assets/imgs/Beerhouse/ModeloEspecial355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -338,7 +338,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Modelo Trigo 355ml',
                       '\$16.00',
-                      'imgs/Beerhouse/ModeloTrigo355.png',
+                      'assets/imgs/Beerhouse/ModeloTrigo355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -346,7 +346,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Montejo 355ml',
                       '\$16.00',
-                      'imgs/Beerhouse/Montejo355.png',
+                      'assets/imgs/Beerhouse/Montejo355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -354,7 +354,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Negra Modelo 355ml',
                       '\$16.00',
-                      'imgs/Beerhouse/NegraModelo355.png',
+                      'assets/imgs/Beerhouse/NegraModelo355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -362,7 +362,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Noche Buena 355ml',
                       '\$15.00',
-                      'imgs/Beerhouse/NocheBuena355ml.png',
+                      'assets/imgs/Beerhouse/NocheBuena355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -370,7 +370,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Pacifico 355',
                       '\$14.00',
-                      'imgs/Beerhouse/Pacifico355.png',
+                      'assets/imgs/Beerhouse/Pacifico355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -378,7 +378,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Pacifico Ampolleta',
                       '\$10.00',
-                      'imgs/Beerhouse/PacificoAmpolleta.png',
+                      'assets/imgs/Beerhouse/PacificoAmpolleta.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -386,7 +386,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Pacifico Light Ampolleta',
                       '\$10.00',
-                      'imgs/Beerhouse/PacificoLightAmpolleta.png',
+                      'assets/imgs/Beerhouse/PacificoLightAmpolleta.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -394,7 +394,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Quilmes 355ml',
                       '\$25.00',
-                      'imgs/Beerhouse/Quilmes355ml.png',
+                      'assets/imgs/Beerhouse/Quilmes355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -402,7 +402,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Sol 355',
                       '\$13.00',
-                      'imgs/Beerhouse/Sol355.png',
+                      'assets/imgs/Beerhouse/Sol355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -410,7 +410,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Sol 940ml',
                       '\$25.00',
-                      'imgs/Beerhouse/Sol940ml.png',
+                      'assets/imgs/Beerhouse/Sol940ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -418,7 +418,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Sol Ampolleta',
                       '\$7.00',
-                      'imgs/Beerhouse/SolAmpolleta.png',
+                      'assets/imgs/Beerhouse/SolAmpolleta.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -426,7 +426,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Sol No retornable 355ml',
                       '\$13.00',
-                      'imgs/Beerhouse/SolNoretornable355.png',
+                      'assets/imgs/Beerhouse/SolNoretornable355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -434,7 +434,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Stella Artois 310ml',
                       '\$19.00',
-                      'imgs/Beerhouse/StellaArtois310ml.png',
+                      'assets/imgs/Beerhouse/StellaArtois310ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -442,7 +442,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Superior 355ml',
                       '\$13.00',
-                      'imgs/Beerhouse/Superior355ml.png',
+                      'assets/imgs/Beerhouse/Superior355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -450,7 +450,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Tecate Ambar 355ml',
                       '\$10.00',
-                      'imgs/Beerhouse/TecateAmbar355.png',
+                      'assets/imgs/Beerhouse/TecateAmbar355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -458,7 +458,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Tecate Ambar 940ml',
                       '\$25.00',
-                      'imgs/Beerhouse/TecateAmbar940ml.png',
+                      'assets/imgs/Beerhouse/TecateAmbar940ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -466,7 +466,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Tecate Light 1.18L',
                       '\$31.00',
-                      'imgs/Beerhouse/TecateLight118L.png',
+                      'assets/imgs/Beerhouse/TecateLight118L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -474,7 +474,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Tecate Light 355ml',
                       '\$13.00',
-                      'imgs/Beerhouse/TecateLight355.png',
+                      'assets/imgs/Beerhouse/TecateLight355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -482,7 +482,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Tecate Light No Retornable 355ml',
                       '\$10.00',
-                      'imgs/Beerhouse/TecateLightNoRetornable355.png',
+                      'assets/imgs/Beerhouse/TecateLightNoRetornable355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -490,7 +490,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Tecate Roja 1.18L',
                       '\$31.00',
-                      'imgs/Beerhouse/TecateRoja118L.png',
+                      'assets/imgs/Beerhouse/TecateRoja118L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -498,7 +498,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Tecate Roja 355ml',
                       '\$10.00',
-                      'imgs/Beerhouse/TecateRoja355.png',
+                      'assets/imgs/Beerhouse/TecateRoja355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -506,7 +506,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Tempus 355ml',
                       '\$30.00',
-                      'imgs/Beerhouse/Tempus355ml.png',
+                      'assets/imgs/Beerhouse/Tempus355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -514,7 +514,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Tuborg 330ml',
                       '\$16.00',
-                      'imgs/Beerhouse/Tuborg330ml.png',
+                      'assets/imgs/Beerhouse/Tuborg330ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -522,7 +522,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Victoria 1.2L',
                       '\$34.00',
-                      'imgs/Beerhouse/Victoria12L.png',
+                      'assets/imgs/Beerhouse/Victoria12L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -530,7 +530,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Victoria 355ml',
                       '\$14.00',
-                      'imgs/Beerhouse/Victoria355ml.png',
+                      'assets/imgs/Beerhouse/Victoria355ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -538,7 +538,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Victoria 940ml',
                       '\$30.00',
-                      'imgs/Beerhouse/Victoria940ml.png',
+                      'assets/imgs/Beerhouse/Victoria940ml.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -546,7 +546,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'Victoria Ampolleta',
                       '\$10.00',
-                      'imgs/Beerhouse/VictoriaAmpolleta.png',
+                      'assets/imgs/Beerhouse/VictoriaAmpolleta.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -554,7 +554,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'XX Lager 1.18L',
                       '\$34.00',
-                      'imgs/Beerhouse/XXLager118L.png',
+                      'assets/imgs/Beerhouse/XXLager118L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -562,7 +562,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'XX Lager 355ml',
                       '\$11.00',
-                      'imgs/Beerhouse/XXLager355.png',
+                      'assets/imgs/Beerhouse/XXLager355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -570,7 +570,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'XX Lager Ambar 1.18L',
                       '\$34.00',
-                      'imgs/Beerhouse/XXLagerAmbar118L.png',
+                      'assets/imgs/Beerhouse/XXLagerAmbar118L.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -578,7 +578,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'XX Lager Ambar 355',
                       '\$11.00',
-                      'imgs/Beerhouse/XXLagerAmbar355.png',
+                      'assets/imgs/Beerhouse/XXLagerAmbar355.png',
                       false,
                       false,
                       "Detalle de Producto",
@@ -586,7 +586,7 @@ class BeerHouse extends StatelessWidget {
                   productpage.build(
                       'XX lager Ampolleta',
                       '\$8.00',
-                      'imgs/Beerhouse/XXlagerAmpolleta.png',
+                      'assets/imgs/Beerhouse/XXlagerAmpolleta.png',
                       false,
                       false,
                       "Detalle de Producto",

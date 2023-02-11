@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:map_launcher/map_launcher.dart';
 import 'package:blogapp/Helpers/maps_sheet.dart';
+import '../models/api_response.dart';
+import '../models/orders.dart';
+import '../services/user_service.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class ShowDirections extends StatefulWidget {
   const ShowDirections({Key? key}) : super(key: key);
@@ -17,15 +21,58 @@ class _ShowDirectionsState extends State<ShowDirections> {
   double originLatitude = 37.8078513;
   double originLongitude = -122.404604;
   String originTitle = 'Pier 33';
-
-  // List<Coords> waypoints = [];
-  List<Coords> waypoints = [
-    Coords(37.7705112, -122.4108267),
-    // Coords(37.6988984, -122.4830961),
-    // Coords(37.7935754, -122.483654),
-  ];
-
+  int userId = 0;
+  bool loading = true;
+  late Orders orders;
+  int selectedTabIndex = 0;
   DirectionsMode directionsMode = DirectionsMode.driving;
+  void loadingorders() async {
+    ApiResponse response = await getUserDetail();
+    userId = await getUserId();
+    ApiResponse res = await getorders(userId.toString());
+
+    bool _serviceEnabled;
+    PermissionStatus _permissionGranted;
+    /* LocationData _locationData;
+    Location location = new Location(); */
+
+    _serviceEnabled = await location.serviceEnabled();
+    if (!_serviceEnabled) {
+      _serviceEnabled = await location.requestService();
+      if (!_serviceEnabled) {
+        return;
+      }
+    }
+
+    _permissionGranted = await location.hasPermission();
+    if (_permissionGranted == PermissionStatus.denied) {
+      _permissionGranted = await location.requestPermission();
+      if (_permissionGranted != PermissionStatus.granted) {
+        return;
+      }
+    }
+    if (await Permission.locationAlways.request().isGranted) {
+      print(Permission.locationAlways.status.then((value) {
+        print("value:$value");
+      }));
+    }
+    _locationData = await location.getLocation();
+    var pri = "latitude: " +
+        _locationData.latitude.toString() +
+        " Longitude: " +
+        _locationData.longitude.toString();
+    print(pri);
+    setState(() {
+      orders = res.data as Orders;
+      loading = false;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadingorders();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,40 +81,6 @@ class _ShowDirectionsState extends State<ShowDirections> {
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: <Widget>[
-            FormTitle('Destination'),
-            TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(labelText: 'Destination Latitude'),
-              initialValue: destinationLatitude.toString(),
-              onChanged: (newValue) {
-                setState(() {
-                  destinationLatitude = double.tryParse(newValue) ?? 0;
-                });
-              },
-            ),
-            TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(labelText: 'Destination Longitude'),
-              initialValue: destinationLongitude.toString(),
-              onChanged: (newValue) {
-                setState(() {
-                  destinationLongitude = double.tryParse(newValue) ?? 0;
-                });
-              },
-            ),
-            TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(labelText: 'Destination Title'),
-              initialValue: destinationTitle,
-              onChanged: (newValue) {
-                setState(() {
-                  destinationTitle = newValue;
-                });
-              },
-            ),
             FormTitle('Origin'),
             TextFormField(
               autocorrect: false,
@@ -106,11 +119,37 @@ class _ShowDirectionsState extends State<ShowDirections> {
                 });
               },
             ),
-            WaypointsForm(
-              waypoints: waypoints,
-              onWaypointsUpdated: (updatedWaypoints) {
+            FormTitle('Destination'),
+            TextFormField(
+              autocorrect: false,
+              autovalidateMode: AutovalidateMode.disabled,
+              decoration: InputDecoration(labelText: 'Destination Latitude'),
+              initialValue: destinationLatitude.toString(),
+              onChanged: (newValue) {
                 setState(() {
-                  waypoints = updatedWaypoints;
+                  destinationLatitude = double.tryParse(newValue) ?? 0;
+                });
+              },
+            ),
+            TextFormField(
+              autocorrect: false,
+              autovalidateMode: AutovalidateMode.disabled,
+              decoration: InputDecoration(labelText: 'Destination Longitude'),
+              initialValue: destinationLongitude.toString(),
+              onChanged: (newValue) {
+                setState(() {
+                  destinationLongitude = double.tryParse(newValue) ?? 0;
+                });
+              },
+            ),
+            TextFormField(
+              autocorrect: false,
+              autovalidateMode: AutovalidateMode.disabled,
+              decoration: InputDecoration(labelText: 'Destination Title'),
+              initialValue: destinationTitle,
+              onChanged: (newValue) {
+                setState(() {
+                  destinationTitle = newValue;
                 });
               },
             ),
@@ -146,7 +185,6 @@ class _ShowDirectionsState extends State<ShowDirections> {
                       destinationTitle: destinationTitle,
                       origin: Coords(originLatitude, originLongitude),
                       originTitle: originTitle,
-                      waypoints: waypoints,
                       directionsMode: directionsMode,
                     );
                   },
@@ -187,84 +225,6 @@ class FormTitle extends StatelessWidget {
             if (trailing != null) trailing!,
           ],
         ),
-      ],
-    );
-  }
-}
-
-class WaypointsForm extends StatelessWidget {
-  final List<Coords> waypoints;
-  final void Function(List<Coords> waypoints) onWaypointsUpdated;
-
-  WaypointsForm({required this.waypoints, required this.onWaypointsUpdated});
-
-  void updateWaypoint(Coords waypoint, int index) {
-    final tempWaypoints = [...waypoints];
-    tempWaypoints[index] = waypoint;
-    onWaypointsUpdated(tempWaypoints);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ...waypoints.map((waypoint) {
-          final waypointIndex = waypoints.indexOf(waypoint);
-          return [
-            FormTitle(
-              'Waypoint #${waypointIndex + 1}',
-              trailing: IconButton(
-                icon: Icon(Icons.delete, color: Colors.red[300]),
-                onPressed: () {
-                  onWaypointsUpdated([...waypoints]..removeAt(waypointIndex));
-                },
-              ),
-            ),
-            TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(
-                labelText: 'Waypoint #${waypointIndex + 1} latitude',
-              ),
-              initialValue: waypoint.latitude.toString(),
-              onChanged: (newValue) {
-                updateWaypoint(
-                  Coords(double.tryParse(newValue) ?? 0, waypoint.longitude),
-                  waypointIndex,
-                );
-              },
-            ),
-            TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(
-                labelText: 'Waypoint #$waypointIndex longitude',
-              ),
-              initialValue: waypoint.longitude.toString(),
-              onChanged: (newValue) {
-                updateWaypoint(
-                  Coords(waypoint.latitude, double.tryParse(newValue) ?? 0),
-                  waypointIndex,
-                );
-              },
-            ),
-          ];
-        }).expand((element) => element),
-        SizedBox(height: 20),
-        Row(children: [
-          MaterialButton(
-            child: Text(
-              'Add Waypoint',
-              style: TextStyle(
-                // color: Colors.blue,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            onPressed: () {
-              onWaypointsUpdated([...waypoints]..add(Coords(0, 0)));
-            },
-          ),
-        ]),
       ],
     );
   }

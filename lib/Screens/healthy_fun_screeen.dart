@@ -26,7 +26,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Alka Seltzer  2pzs',
                       '\$10.00',
-                      'imgs/Healthyfun/AlkaSeltzer.png',
+                      'assets/imgs/Healthyfun/AlkaSeltzer.png',
                       false,
                       false,
                       "Detalle de AlkaSeltzer",
@@ -34,7 +34,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Aspirina 10pzs',
                       '\$15.00',
-                      'imgs/Healthyfun/Aspirina.png',
+                      'assets/imgs/Healthyfun/Aspirina.png',
                       false,
                       false,
                       "Detalle Aspirina",
@@ -42,7 +42,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Copade cristal para vino 1pz',
                       '\$50.00',
-                      'imgs/Healthyfun/Copadecristalparavino.png',
+                      'assets/imgs/Healthyfun/Copadecristalparavino.png',
                       false,
                       false,
                       "Detalle copa",
@@ -50,7 +50,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Cucharas Medianos Biodegradables 25pzs',
                       '\$26.00',
-                      'imgs/Healthyfun/CucharasMedianoBiodegradables.png',
+                      'assets/imgs/Healthyfun/CucharasMedianoBiodegradables.png',
                       false,
                       false,
                       "Detalle cucharas",
@@ -58,7 +58,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Cuchillos Medianos Biodegradables 25pzs',
                       '\$26.00',
-                      'imgs/Healthyfun/CuchillosMedianosBiodegradables.png',
+                      'assets/imgs/Healthyfun/CuchillosMedianosBiodegradables.png',
                       false,
                       false,
                       "Detalle Cuchillos",
@@ -66,7 +66,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Descorchador de dos tiempos 1pz',
                       '\$100.00',
-                      'imgs/Healthyfun/DescorchadordedosTiempos.png',
+                      'assets/imgs/Healthyfun/DescorchadordedosTiempos.png',
                       false,
                       false,
                       "Detalle Descorchador",
@@ -74,7 +74,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Encendedor Tokai 1pz',
                       '\$10.00',
-                      'imgs/Healthyfun/EncendedorTokai.png',
+                      'assets/imgs/Healthyfun/EncendedorTokai.png',
                       false,
                       false,
                       "Detalle encendedor",
@@ -82,7 +82,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Peptobismol 2pzs',
                       '\$10.00',
-                      'imgs/Healthyfun/PeptoBismol.png',
+                      'assets/imgs/Healthyfun/PeptoBismol.png',
                       false,
                       false,
                       "Detalle Peptobismol",
@@ -90,7 +90,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Encendedor Tokai',
                       '\$2.99',
-                      'imgs/Healthyfun/EncendedorTokai.png',
+                      'assets/imgs/Healthyfun/EncendedorTokai.png',
                       false,
                       false,
                       "Detalle pepto bismol",
@@ -98,7 +98,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Pistolitro',
                       '\$499.00',
-                      'imgs/Healthyfun/pistoslitro.png',
+                      'assets/imgs/Healthyfun/pistoslitro.png',
                       false,
                       false,
                       "Detalle Pistolitro",
@@ -106,7 +106,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Plato cuadrado Biodegradable 10pzs',
                       '\$50.00',
-                      'imgs/Healthyfun/PlatocuadradoBiodegradable.png',
+                      'assets/imgs/Healthyfun/PlatocuadradoBiodegradable.png',
                       false,
                       false,
                       "Detalle plato cuadrado",
@@ -114,7 +114,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Plato redondo Biodegradable 10pzs',
                       '\$35.00',
-                      'imgs/Healthyfun/PlatoredondoBiodegradable.png',
+                      'assets/imgs/Healthyfun/PlatoredondoBiodegradable.png',
                       false,
                       false,
                       "Detalle Plato redondo",
@@ -122,7 +122,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Playboy preservativo fresa 1pz',
                       '\$15.00',
-                      'imgs/Healthyfun/Playboypreservativofresa.png',
+                      'assets/imgs/Healthyfun/Playboypreservativofresa.png',
                       false,
                       false,
                       "Detalle Fresa",
@@ -130,7 +130,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Playboy preservativo Uva 1pz',
                       '\$15.00',
-                      'imgs/Healthyfun/PlayboypreservativoUva.png',
+                      'assets/imgs/Healthyfun/PlayboypreservativoUva.png',
                       false,
                       false,
                       "Detalle Uva",
@@ -138,7 +138,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Tenedores Medianos Biodegradables 25pzs',
                       '\$26.00',
-                      'imgs/Healthyfun/TenedoresMedianosBiodegradables.png',
+                      'assets/imgs/Healthyfun/TenedoresMedianosBiodegradables.png',
                       false,
                       false,
                       "Detalle Tenedores",
@@ -146,7 +146,7 @@ class HealthyFun extends StatelessWidget {
                   productpage.build(
                       'Vasos Rojos 10pzs',
                       '\$10.00',
-                      'imgs/Healthyfun/VasosRojos.png',
+                      'assets/imgs/Healthyfun/VasosRojos.png',
                       false,
                       false,
                       "Detalle vasos rojos",
