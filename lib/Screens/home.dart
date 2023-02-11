@@ -1,7 +1,7 @@
-import 'package:blogapp/screens/pedidos.dart';
-import 'package:blogapp/screens/home_screen.dart';
-import 'package:blogapp/screens/profile.dart';
-import 'package:blogapp/screens/shoppingbag_screen.dart';
+import 'package:ikelapp/screens/client/pedidos.dart';
+import 'package:ikelapp/screens/home_screen.dart';
+import 'package:ikelapp/screens/general/profile.dart';
+import 'package:ikelapp/screens/client/shoppingbag_screen.dart';
 import 'package:flutter/material.dart';
 import '../constant.dart';
 

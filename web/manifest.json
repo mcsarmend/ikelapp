@@ -1,6 +1,6 @@
 {
-    "name": "blogapp",
-    "short_name": "blogapp",
+    "name": "ikelapp",
+    "short_name": "ikelapp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
