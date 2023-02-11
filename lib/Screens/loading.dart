@@ -1,12 +1,12 @@
 import 'package:blogapp/constant.dart';
 import 'package:blogapp/models/api_response.dart';
-import 'package:blogapp/screens/delivery_user_screen.dart';
+import 'package:blogapp/screens/delivery/delivery_user_screen.dart';
 import 'package:blogapp/screens/home.dart';
 import 'package:blogapp/services/user_service.dart';
 import 'package:flutter/material.dart';
 
 import '../models/user.dart';
-import 'login.dart';
+import 'login/login.dart';
 
 class Loading extends StatefulWidget {
   @override

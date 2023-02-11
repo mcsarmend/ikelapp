@@ -1,11 +1,11 @@
 import 'package:blogapp/constant.dart';
-import 'package:blogapp/screens/beer_house_screen.dart';
-import 'package:blogapp/screens/candys_party_screen.dart';
-import 'package:blogapp/screens/hard_drinks_screen.dart';
+import 'package:blogapp/screens/client/beer_house_screen.dart';
+import 'package:blogapp/screens/client/candys_party_screen.dart';
+import 'package:blogapp/screens/client/hard_drinks_screen.dart';
 import 'package:flutter/material.dart';
-import 'pistos_mixes_screen.dart';
-import 'healthy_fun_screeen.dart';
-import 'package:blogapp/screens/product_page.dart';
+import 'client/pistos_mixes_screen.dart';
+import 'client/healthy_fun_screeen.dart';
+import 'package:blogapp/screens/client/product_page.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:map_launcher/map_launcher.dart';
 import 'package:blogapp/Helpers/maps_sheet.dart';
+import '../models/api_response.dart';
+import '../models/orders.dart';
+import '../services/user_service.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:location/location.dart' as Loc;
 
 class ShowDirections extends StatefulWidget {
   const ShowDirections({Key? key}) : super(key: key);
@@ -10,22 +15,67 @@ class ShowDirections extends StatefulWidget {
 }
 
 class _ShowDirectionsState extends State<ShowDirections> {
-  double destinationLatitude = 37.759392;
-  double destinationLongitude = -122.5107336;
-  String destinationTitle = 'Ocean Beach';
-
-  double originLatitude = 37.8078513;
-  double originLongitude = -122.404604;
+  TextEditingController destinationLatitude = TextEditingController();
+  TextEditingController destinationLongitude = TextEditingController();
+  String destinationTitle = 'Destino';
+  TextEditingController originLatitude = TextEditingController();
+  TextEditingController originLongitude = TextEditingController();
   String originTitle = 'Pier 33';
-
-  // List<Coords> waypoints = [];
-  List<Coords> waypoints = [
-    Coords(37.7705112, -122.4108267),
-    // Coords(37.6988984, -122.4830961),
-    // Coords(37.7935754, -122.483654),
-  ];
-
+  int userId = 0;
+  bool loading = true;
+  late Orders orders;
+  int selectedTabIndex = 0;
   DirectionsMode directionsMode = DirectionsMode.driving;
+  late Loc.LocationData _locationData;
+
+  void loadingorders() async {
+    ApiResponse response = await getUserDetail();
+    userId = await getUserId();
+    ApiResponse res = await getorders(userId.toString());
+    var data = res.data as Orders;
+    getLocationPer();
+    setState(() {
+      destinationLatitude.text = data.lat_destiny.toString();
+      destinationLongitude.text = data.lat_destiny.toString();
+      destinationTitle = data.internal_id.toString();
+      originLatitude.text = "19.7604256";
+      originLongitude.text = "-99.1981014";
+      originTitle = "Origen  viaje";
+    });
+  }
+
+  void getLocationPer() async {
+    var status = await Permission.location.status;
+    if (status.isGranted) {
+      print("Status granted");
+    } else if (status.isDenied) {
+      print("Status denied");
+    }
+
+    if (await Permission.locationWhenInUse.serviceStatus.isEnabled) {
+      print("Permissions granted");
+      getlocationData();
+    } else {
+      print("Permissions Denied");
+      Map<Permission, PermissionStatus> status2 =
+          await [Permission.location].request();
+      if (await Permission.location.isPermanentlyDenied) {
+        openAppSettings();
+      }
+    }
+  }
+
+  void getlocationData() async {
+    Loc.Location locat = new Loc.Location();
+    _locationData = await locat.getLocation();
+    print("GetLocation");
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadingorders();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,85 +84,27 @@ class _ShowDirectionsState extends State<ShowDirections> {
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: <Widget>[
-            FormTitle('Destination'),
+            FormTitle(originTitle),
             TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(labelText: 'Destination Latitude'),
-              initialValue: destinationLatitude.toString(),
-              onChanged: (newValue) {
-                setState(() {
-                  destinationLatitude = double.tryParse(newValue) ?? 0;
-                });
-              },
+              decoration: InputDecoration(labelText: 'Latitud Destino'),
+              controller: originLatitude,
+              readOnly: true,
             ),
             TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(labelText: 'Destination Longitude'),
-              initialValue: destinationLongitude.toString(),
-              onChanged: (newValue) {
-                setState(() {
-                  destinationLongitude = double.tryParse(newValue) ?? 0;
-                });
-              },
+              decoration: InputDecoration(labelText: 'Longitud Destino'),
+              controller: originLongitude,
+              readOnly: true,
+            ),
+            FormTitle(destinationTitle),
+            TextFormField(
+              decoration: InputDecoration(labelText: 'Latitud Destino'),
+              controller: destinationLatitude,
+              readOnly: true,
             ),
             TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(labelText: 'Destination Title'),
-              initialValue: destinationTitle,
-              onChanged: (newValue) {
-                setState(() {
-                  destinationTitle = newValue;
-                });
-              },
-            ),
-            FormTitle('Origin'),
-            TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(
-                labelText: 'Origin Latitude (uses current location if empty)',
-              ),
-              initialValue: originLatitude.toString(),
-              onChanged: (newValue) {
-                setState(() {
-                  originLatitude = double.tryParse(newValue) ?? 0;
-                });
-              },
-            ),
-            TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(
-                labelText: 'Origin Longitude (uses current location if empty)',
-              ),
-              initialValue: originLongitude.toString(),
-              onChanged: (newValue) {
-                setState(() {
-                  originLongitude = double.tryParse(newValue) ?? 0;
-                });
-              },
-            ),
-            TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(labelText: 'Origin Title'),
-              initialValue: originTitle,
-              onChanged: (newValue) {
-                setState(() {
-                  originTitle = newValue;
-                });
-              },
-            ),
-            WaypointsForm(
-              waypoints: waypoints,
-              onWaypointsUpdated: (updatedWaypoints) {
-                setState(() {
-                  waypoints = updatedWaypoints;
-                });
-              },
+              decoration: InputDecoration(labelText: 'Longitud Destino'),
+              controller: destinationLongitude,
+              readOnly: true,
             ),
             FormTitle('Directions Mode'),
             Container(
@@ -140,13 +132,13 @@ class _ShowDirectionsState extends State<ShowDirections> {
                   onMapTap: (map) {
                     map.showDirections(
                       destination: Coords(
-                        destinationLatitude,
-                        destinationLongitude,
+                        double.parse(destinationLatitude.text.toString()),
+                        double.parse(destinationLongitude.text.toString()),
                       ),
                       destinationTitle: destinationTitle,
-                      origin: Coords(originLatitude, originLongitude),
+                      origin: Coords(double.parse(originLatitude.text),
+                          double.parse(originLongitude.text)),
                       originTitle: originTitle,
-                      waypoints: waypoints,
                       directionsMode: directionsMode,
                     );
                   },
@@ -187,84 +179,6 @@ class FormTitle extends StatelessWidget {
             if (trailing != null) trailing!,
           ],
         ),
-      ],
-    );
-  }
-}
-
-class WaypointsForm extends StatelessWidget {
-  final List<Coords> waypoints;
-  final void Function(List<Coords> waypoints) onWaypointsUpdated;
-
-  WaypointsForm({required this.waypoints, required this.onWaypointsUpdated});
-
-  void updateWaypoint(Coords waypoint, int index) {
-    final tempWaypoints = [...waypoints];
-    tempWaypoints[index] = waypoint;
-    onWaypointsUpdated(tempWaypoints);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ...waypoints.map((waypoint) {
-          final waypointIndex = waypoints.indexOf(waypoint);
-          return [
-            FormTitle(
-              'Waypoint #${waypointIndex + 1}',
-              trailing: IconButton(
-                icon: Icon(Icons.delete, color: Colors.red[300]),
-                onPressed: () {
-                  onWaypointsUpdated([...waypoints]..removeAt(waypointIndex));
-                },
-              ),
-            ),
-            TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(
-                labelText: 'Waypoint #${waypointIndex + 1} latitude',
-              ),
-              initialValue: waypoint.latitude.toString(),
-              onChanged: (newValue) {
-                updateWaypoint(
-                  Coords(double.tryParse(newValue) ?? 0, waypoint.longitude),
-                  waypointIndex,
-                );
-              },
-            ),
-            TextFormField(
-              autocorrect: false,
-              autovalidateMode: AutovalidateMode.disabled,
-              decoration: InputDecoration(
-                labelText: 'Waypoint #$waypointIndex longitude',
-              ),
-              initialValue: waypoint.longitude.toString(),
-              onChanged: (newValue) {
-                updateWaypoint(
-                  Coords(waypoint.latitude, double.tryParse(newValue) ?? 0),
-                  waypointIndex,
-                );
-              },
-            ),
-          ];
-        }).expand((element) => element),
-        SizedBox(height: 20),
-        Row(children: [
-          MaterialButton(
-            child: Text(
-              'Add Waypoint',
-              style: TextStyle(
-                // color: Colors.blue,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            onPressed: () {
-              onWaypointsUpdated([...waypoints]..add(Coords(0, 0)));
-            },
-          ),
-        ]),
       ],
     );
   }
