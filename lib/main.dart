@@ -1,4 +1,4 @@
-import 'package:blogapp/screens/login/prelogin.dart';
+import 'package:ikelapp/screens/login/prelogin.dart';
 import 'package:flutter/material.dart';
 
 void main() {
