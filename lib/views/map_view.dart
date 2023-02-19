@@ -27,13 +27,8 @@ class MapView extends StatelessWidget {
         myLocationEnabled: true,
         zoomControlsEnabled: false,
         myLocationButtonEnabled: false,
-
         onMapCreated: (controller) =>
             mapBloc.add(OnMapInitialzedEvent(controller)),
-
-        // TODO: Markers
-        // TODO: polylines
-        // TODO: Cuando se mueve el mapa
       ),
     );
   }

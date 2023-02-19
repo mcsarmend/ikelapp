@@ -1,6 +1,4 @@
 import 'package:map_launcher/map_launcher.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../constant.dart';
 import 'package:flutter/material.dart';
 
 class MapUtils extends StatefulWidget {
