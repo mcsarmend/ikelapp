@@ -3,6 +3,7 @@ import 'package:counter_button/counter_button.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../constant.dart';
+import '../home.dart';
 
 class ProductDetail extends StatefulWidget {
   final assetPath, price, productname, detail;
@@ -15,11 +16,64 @@ class ProductDetail extends StatefulWidget {
 
 class _ProductDetailState extends State<ProductDetail> {
   int _counterValue = 0;
+  String t = "texto";
 
   void addToCar(List<String> bag) async {
     print(bag.toString());
     SharedPreferences pref = await SharedPreferences.getInstance();
-    await pref.setStringList('shoppingbag', bag);
+    var b = await pref.getStringList('shoppingbag');
+    var newgfgList = [];
+    if (b == null) {
+      if (bag[3] != 0) {
+        newgfgList = bag;
+        t = "Articulo agregado";
+      } else {
+        t = "Falta agregar cantidad";
+      }
+    } else {
+      if (bag[3] != 0) {
+        newgfgList = b! + bag;
+        t = "Articulo agregado";
+      } else {
+        t = "Falta agregar cantidad";
+      }
+    }
+
+    await pref.setStringList('shoppingbag', newgfgList as List<String>);
+
+    showAlertDialog(context);
+  }
+
+  showAlertDialog(BuildContext context) {
+    // Create button
+    Widget okButton = TextButton(
+      child: Text("OK"),
+      onPressed: () {
+        Navigator.of(context).pop();
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => Home(),
+            ));
+      },
+    );
+
+    // Create AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text(t),
+      content: Text(""),
+      actions: [
+        okButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
   }
 
   @override
