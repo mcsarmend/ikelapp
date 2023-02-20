@@ -31,7 +31,7 @@ class prelogin_screen extends StatelessWidget {
                   );
                 },
                 style: TextButton.styleFrom(
-                    foregroundColor: SECONDARY_COLOR,
+                    shadowColor: SECONDARY_COLOR,
                     elevation: 2,
                     backgroundColor: Colors.white),
                 child: Text("Accede"),
@@ -47,7 +47,7 @@ class prelogin_screen extends StatelessWidget {
                       (route) => false);
                 },
                 style: TextButton.styleFrom(
-                    foregroundColor: Colors.white,
+                    shadowColor: Colors.white,
                     elevation: 2,
                     backgroundColor: PRYMARY_COLOR),
                 child: Text("Registrate"),
