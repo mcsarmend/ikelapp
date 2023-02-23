@@ -33,10 +33,11 @@ class _HomeState extends State<Home> {
               color: SECONDARY_COLOR,
             ),
             tooltip: 'Carrito',
-            onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => shoppingbag()),
-                  (route) => false);
+            onPressed: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => shoppingbag()),
+              );
             },
           ),
         ],

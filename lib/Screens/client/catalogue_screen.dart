@@ -3,29 +3,46 @@ import 'package:ikelapp/screens/client/beer_house_screen.dart';
 import 'package:ikelapp/screens/client/candys_party_screen.dart';
 import 'package:ikelapp/screens/client/hard_drinks_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:ikelapp/screens/client/home_sc.dart';
-import 'client/pistos_mixes_screen.dart';
-import 'client/healthy_fun_screeen.dart';
+import '../home.dart';
+import 'pistos_mixes_screen.dart';
+import 'healthy_fun_screeen.dart';
 import 'package:ikelapp/screens/client/product_page.dart';
 
-class HomeScreen extends StatefulWidget {
+class CatalogueScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _CatalogueScreenState createState() => _CatalogueScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
+class _CatalogueScreenState extends State<CatalogueScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   ProductPage productpage = ProductPage();
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 6, vsync: this);
+    _tabController = TabController(length: 5, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: PRYMARY_COLOR,
+        title: Text('Catálogo'),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+        centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) => Home()),
+                    (route) => false);
+              },
+              icon: Icon(Icons.arrow_back))
+        ],
+      ),
       body: ListView(
         padding: EdgeInsets.only(left: 20.0),
         children: <Widget>[
@@ -38,15 +55,6 @@ class _HomeScreenState extends State<HomeScreen>
               labelPadding: EdgeInsets.only(right: 45.0),
               unselectedLabelColor: Color(0xFFCDCDCD),
               tabs: [
-                Tab(
-                  child: Container(
-                    child: Text('Home',
-                        style: TextStyle(
-                          fontFamily: 'Varela',
-                          fontSize: 11,
-                        )),
-                  ),
-                ),
                 Tab(
                   child: Container(
                     child: Text('Pistos Mix',
@@ -86,10 +94,9 @@ class _HomeScreenState extends State<HomeScreen>
                 ),
               ]),
           Container(
-              height: MediaQuery.of(context).size.height - 250.0,
+              height: MediaQuery.of(context).size.height - 50.0,
               width: double.infinity,
               child: TabBarView(controller: _tabController, children: [
-                HomeSc(_tabController),
                 PistosMix(),
                 HardDrinks(),
                 BeerHouse(),

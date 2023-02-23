@@ -20,8 +20,18 @@ class _shoppingbagState extends State<shoppingbag> {
   bool loading = true;
   String location = "Sin ubicación";
   String description = "";
+  List<String> _cartItems = [];
+  List<double> _costItems = [];
+  List<String> _countItems = [];
+  List<double> totalCostList = [];
+  List<String> ca = [];
+  List<String> co = [];
+  List<String> cu = [];
   String carrito = "";
+  double cost = 0.0;
   String t = "";
+  double shippingCost = 50.0;
+  double total = 50.0;
   void getUser() async {
     ApiResponse response = await getUserDetail();
     userId = await getUserId();
@@ -54,31 +64,64 @@ class _shoppingbagState extends State<shoppingbag> {
 
   void setOrderBag() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    var bag = await pref.getStringList('shoppingbag');
-    if (bag != null) {
-      int j = 0;
-      String d = "";
-      int c = 0;
-      for (var i = 0; i < bag.length; i++) {
-        if (j == 1) {
-          d = d + bag[i].toString();
-        }
-        if (j == 3) {
-          d = d + "( " + bag[i] + " ),";
-        }
-        if (j == 2) {
-          var co = bag[i];
-          var cost = int.tryParse(co.substring(1, co.length - 3));
-          c += cost!;
-        }
-        j++;
-        if (j == 4) j = 0;
+    var cartItems = await pref.getStringList('cartItems');
+    var costItems = await pref.getStringList('costItems');
+    var countItems = await pref.getStringList('countItems');
+
+    if (cartItems != null) {
+      ca = cartItems;
+      co = costItems!;
+      cu = countItems!;
+      for (var i = 0; i < cartItems.length; i++) {
+        var costTemp =
+            int.tryParse(countItems[i])! * double.tryParse(costItems![i])!;
+        var ele = cartItems[i] +
+            " (" +
+            countItems[i] +
+            ")" +
+            " \$" +
+            costTemp!.toString();
+        _cartItems.add(ele);
+      }
+
+      for (var i = 0; i < cartItems.length; i++) {
+        totalCostList.add(
+            int.tryParse(countItems![i])! * double.tryParse(costItems![i])!);
       }
 
       setState(() {
-        description = d;
-        carrito = "Carrito: \$" + c.toString();
+        cost = totalCostList.reduce((a, b) => a + b);
+        total = (shippingCost + cost);
       });
+    }
+  }
+
+  void deleteitem(index) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    if (_cartItems.length > 0) {
+      ca.removeAt(index);
+      co.removeAt(index);
+      cu.removeAt(index);
+      _cartItems.removeAt(index);
+      totalCostList = [];
+      for (var i = 0; i < ca.length; i++) {
+        totalCostList.add(int.tryParse(cu![i])! * double.tryParse(co![i])!);
+      }
+
+      if (_cartItems.length == 0) {
+        setState(() {
+          cost = 0;
+          total = (shippingCost + cost);
+        });
+      } else {
+        await pref.setStringList('cartItems', ca);
+        await pref.setStringList('costItems', co);
+        await pref.setStringList('countItems', cu);
+        setState(() {
+          cost = totalCostList.reduce((a, b) => a + b);
+          total = (shippingCost + cost);
+        });
+      }
     }
   }
 
@@ -114,16 +157,17 @@ class _shoppingbagState extends State<shoppingbag> {
     );
   }
 
-  void buy(BuildContext context) {
-    if (carrito == "") {
+  void buy(BuildContext context) async {
+    if (_cartItems.length == 0) {
       setState(() {
         t = "No tienes nada en el carrito";
       });
       showAlertDialog(context);
     } else {
-      Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => tracking()),
-          (route) => false);
+      await Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MapScreen()),
+      );
     }
   }
 
@@ -138,134 +182,75 @@ class _shoppingbagState extends State<shoppingbag> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
+        title: Text('Carrito de compras'),
+        backgroundColor: PRYMARY_COLOR,
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Color(0xFF545D68)),
-          onPressed: () {
-            Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => Home()),
-                (route) => false);
-          },
-        ),
-        title: Text('',
-            style: TextStyle(
-                fontFamily: 'Varela',
-                fontSize: 20.0,
-                color: Color(0xFF545D68))),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.notifications_none, color: Color(0xFF545D68)),
-            onPressed: () {},
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: _cartItems.length,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  title: Text(_cartItems[index]),
+                  trailing: IconButton(
+                    icon: Icon(Icons.delete),
+                    onPressed: () {
+                      setState(() {
+                        deleteitem(index);
+                      });
+                    },
+                  ),
+                );
+              },
+            ),
           ),
+          Divider(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Subtotal:'),
+                Text('\$' + cost.toString()),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Costo de envío:'),
+                Text('\$$shippingCost'),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Total:'),
+                Text('\$' + total.toString()),
+              ],
+            ),
+          ),
+          SizedBox(height: 24.0),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              "Dirección de entrega: " + location,
+              style: TextStyle(fontSize: 18, color: SECONDARY_COLOR),
+            ),
+          ),
+          SizedBox(height: 16.0),
+          kTextButton('  Finalizar compra  ', () {
+            buy(context);
+          }),
         ],
       ),
-      body: ListView(children: [
-        SizedBox(height: 10.0),
-        Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Text('Carrito de compras',
-              style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 42.0,
-                  fontWeight: FontWeight.bold,
-                  color: PRYMARY_COLOR)),
-        ),
-        SizedBox(height: 10.0),
-        Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Text(description,
-              style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: SECONDARY_COLOR)),
-        ),
-        SizedBox(height: 10.0),
-        Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Text(carrito,
-              style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: SECONDARY_COLOR)),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Text("Envío \$: 50.00 ",
-              style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: SECONDARY_COLOR)),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Text("Dirección de entrega: ",
-              style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: SECONDARY_COLOR)),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Text(location,
-              style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey[700])),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Text("Total a pagar \$",
-              style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey[700])),
-        ),
-        SizedBox(height: 10.0),
-        Container(
-          color: PRYMARY_COLOR,
-          padding: EdgeInsets.only(left: 20.0),
-          child: TextButton(
-              onPressed: () {
-                buy(context);
-              },
-              child: Text('Comprar',
-                  style: TextStyle(
-                      fontFamily: 'Varela',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white))),
-        ),
-        SizedBox(height: 10.0),
-        Container(
-          color: PRYMARY_COLOR,
-          padding: EdgeInsets.only(left: 20.0),
-          child: TextButton(
-              onPressed: () async {
-                SharedPreferences pref = await SharedPreferences.getInstance();
-                await pref.setStringList('shoppingbag', []);
-                setState(() {
-                  t = "Carrito vaciado";
-                  description = "";
-                  carrito = "";
-                });
-                showAlertDialog(context);
-              },
-              child: Text('Vaciar carrito',
-                  style: TextStyle(
-                      fontFamily: 'Varela',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white))),
-        )
-      ]),
     );
   }
 }

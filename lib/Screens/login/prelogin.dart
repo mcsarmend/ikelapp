@@ -24,10 +24,10 @@ class prelogin_screen extends StatelessWidget {
               width: 100,
               height: 50,
               child: TextButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
+                onPressed: () async {
+                  await Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => (Loading())),
+                    MaterialPageRoute(builder: (context) => Loading()),
                   );
                 },
                 style: TextButton.styleFrom(
@@ -41,10 +41,11 @@ class prelogin_screen extends StatelessWidget {
               width: 100,
               height: 50,
               child: TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(builder: (context) => Register()),
-                      (route) => false);
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Register()),
+                  );
                 },
                 style: TextButton.styleFrom(
                     foregroundColor: Colors.white,
