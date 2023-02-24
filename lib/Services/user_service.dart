@@ -40,7 +40,8 @@ Future<ApiResponse> login(String email, String password) async {
 }
 
 // Register
-Future<ApiResponse> register(String name, String email, String password) async {
+Future<ApiResponse> register(
+    String name, String email, String password, String number) async {
   ApiResponse apiResponse = ApiResponse();
   try {
     final response = await http.post(Uri.parse(registerURL), headers: {
@@ -48,8 +49,11 @@ Future<ApiResponse> register(String name, String email, String password) async {
     }, body: {
       'name': name,
       'email': email,
+      'pass': password,
       'password': password,
-      'password_confirmation': password
+      'password_confirmation': password,
+      'type': '1',
+      'number': number
     });
 
     switch (response.statusCode) {
@@ -215,6 +219,7 @@ Future<ApiResponse> updateUser(
   String name,
   String? image,
   String? email,
+  String? number,
 ) async {
   ApiResponse apiResponse = ApiResponse();
   try {
@@ -225,8 +230,17 @@ Future<ApiResponse> updateUser(
           'Authorization': 'Bearer $token'
         },
         body: image == null
-            ? {'name': name, "email": email}
-            : {'name': name, 'image': image});
+            ? {
+                'name': name,
+                "email": email,
+                "number": number,
+              }
+            : {
+                'name': name,
+                'image': image,
+                "email": email,
+                "number": number,
+              });
     // user can update his/her name or name and image
 
     switch (response.statusCode) {

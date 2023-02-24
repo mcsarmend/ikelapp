@@ -10,7 +10,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  static const LatLng _initialPosition = LatLng(37.77483, -122.41942);
+  static const LatLng _initialPosition = LatLng(19.63343, -99.20404);
   GoogleMapController? _mapController;
   final Set<Marker> _markers = {};
 

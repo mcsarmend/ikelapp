@@ -23,7 +23,7 @@ class _LoadingState extends State<Loading> {
       ApiResponse response = await getUserDetail();
       if (response.error == null) {
         var n = response.data as User;
-        if (n.type == 1) {
+        if (n.type == '1') {
           Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => Home()),
               (route) => false);

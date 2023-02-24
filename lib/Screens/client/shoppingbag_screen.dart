@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ikelapp/screens/client/tracking_screen.dart';
+import 'package:ikelapp/screens/client/confirmation_screen.dart';
 import 'package:ikelapp/screens/home.dart';
 import 'package:ikelapp/models/address.dart';
 import 'package:ikelapp/models/api_response.dart';
@@ -68,7 +68,7 @@ class _shoppingbagState extends State<shoppingbag> {
     var costItems = await pref.getStringList('costItems');
     var countItems = await pref.getStringList('countItems');
 
-    if (cartItems != null) {
+    if (cartItems != null && cartItems.length > 0) {
       ca = cartItems;
       co = costItems!;
       cu = countItems!;
@@ -164,9 +164,14 @@ class _shoppingbagState extends State<shoppingbag> {
       });
       showAlertDialog(context);
     } else {
+      SharedPreferences pref = await SharedPreferences.getInstance();
+      List<String> clear = [];
+      await pref.setStringList('cartItems', clear);
+      await pref.setStringList('costItems', clear);
+      await pref.setStringList('countItems', clear);
       await Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => MapScreen()),
+        MaterialPageRoute(builder: (context) => ConfirmationScreen()),
       );
     }
   }

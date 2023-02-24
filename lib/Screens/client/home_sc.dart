@@ -33,6 +33,8 @@ class _HomeScState extends State<HomeSc> {
             options: CarouselOptions(
               height: 200,
               viewportFraction: 1,
+              autoPlay: true,
+              autoPlayInterval: Duration(seconds: 3),
               onPageChanged: (index, _) {
                 setState(() {
                   _currentIndex = index;
@@ -77,60 +79,55 @@ class _HomeScState extends State<HomeSc> {
           GridView.count(
             shrinkWrap: true,
             crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 150 / 200,
             children: [
               Card(
                 child: Column(
                   children: [
-                    Image.asset(
-                      'assets/imgs/category_2.png',
-                      height: 120,
-                      fit: BoxFit.cover,
-                    ),
-                    Text('Arma tu fiesta'),
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context).pushAndRemoveUntil(
-                            MaterialPageRoute(
-                                builder: (context) => PartyScreen()),
-                            (route) => false);
+                    GestureDetector(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PartyScreen()),
+                        );
                       },
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'Ir',
-                          style: TextStyle(color: PRYMARY_COLOR, fontSize: 8),
-                        ),
-                      ),
+                      child: Image.asset('assets/imgs/category_2.png'),
                     ),
+                    Text('Arma tu fiesta', style: TextStyle(fontSize: 18)),
+                    Text(
+                      "LOREM IPSUM 123",
+                      style: TextStyle(color: PRYMARY_COLOR),
+                    )
                   ],
                 ),
               ),
               Card(
                 child: Column(
                   children: [
-                    Image.asset(
-                      'assets/imgs/category_1.png',
-                      height: 120,
-                      fit: BoxFit.cover,
-                    ),
-                    Text('Pedidos Grandes'),
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context).pushAndRemoveUntil(
-                            MaterialPageRoute(
-                                builder: (context) => WholeSaleScreen()),
-                            (route) => false);
+                    GestureDetector(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WholeSaleScreen()),
+                        );
                       },
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('Ir',
-                            style:
-                                TextStyle(color: PRYMARY_COLOR, fontSize: 8)),
-                      ),
+                      child: Image.asset('assets/imgs/category_1.png'),
                     ),
+                    Text(
+                      'Pedidos Grandes',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    Text(
+                      "LOREM IPSUM 123",
+                      style: TextStyle(color: PRYMARY_COLOR),
+                    )
                   ],
                 ),
-              ),
+              )
             ],
           ),
           Padding(

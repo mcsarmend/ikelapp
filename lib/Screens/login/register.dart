@@ -19,12 +19,13 @@ class _RegisterState extends State<Register> {
   bool loading = false;
   TextEditingController nameController = TextEditingController(),
       emailController = TextEditingController(),
+      numberController = TextEditingController(),
       passwordController = TextEditingController(),
       passwordConfirmController = TextEditingController();
 
   void _registerUser() async {
-    ApiResponse response = await register(
-        nameController.text, emailController.text, passwordController.text);
+    ApiResponse response = await register(nameController.text,
+        emailController.text, passwordController.text, numberController.text);
     if (response.error == null) {
       _saveAndRedirectToHome(response.data as User);
     } else {
@@ -107,6 +108,14 @@ class _RegisterState extends State<Register> {
                 keyboardType: TextInputType.emailAddress,
                 validator: (val) => val!.isEmpty ? 'Correo inválido' : null,
                 decoration: kInputDecoration('Email')),
+            SizedBox(
+              height: 20,
+            ),
+            TextFormField(
+                controller: numberController,
+                keyboardType: TextInputType.emailAddress,
+                validator: (val) => val!.isEmpty ? 'Número inválido' : null,
+                decoration: kInputDecoration('Número')),
             SizedBox(
               height: 20,
             ),

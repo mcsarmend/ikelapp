@@ -35,11 +35,11 @@ class _HomeScreenState extends State<HomeScreen>
               indicatorColor: PRYMARY_COLOR,
               labelColor: PRYMARY_COLOR,
               isScrollable: true,
-              labelPadding: EdgeInsets.only(right: 45.0),
+              labelPadding: EdgeInsets.only(right: 35.0),
               unselectedLabelColor: Color(0xFFCDCDCD),
               tabs: [
                 Tab(
-                  child: Container(
+                  child: Center(
                     child: Text('Home',
                         style: TextStyle(
                           fontFamily: 'Varela',
