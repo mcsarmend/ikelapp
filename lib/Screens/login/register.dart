@@ -1,7 +1,9 @@
 import 'package:ikelapp/models/api_response.dart';
 import 'package:ikelapp/models/user.dart';
+import 'package:ikelapp/screens/general/terms_Conditions.dart';
 import 'package:ikelapp/screens/home.dart';
 import 'package:ikelapp/screens/loading.dart';
+import 'package:ikelapp/screens/login/prelogin.dart';
 import 'package:ikelapp/services/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -17,12 +19,13 @@ class _RegisterState extends State<Register> {
   bool loading = false;
   TextEditingController nameController = TextEditingController(),
       emailController = TextEditingController(),
+      numberController = TextEditingController(),
       passwordController = TextEditingController(),
       passwordConfirmController = TextEditingController();
 
   void _registerUser() async {
-    ApiResponse response = await register(
-        nameController.text, emailController.text, passwordController.text);
+    ApiResponse response = await register(nameController.text,
+        emailController.text, passwordController.text, numberController.text);
     if (response.error == null) {
       _saveAndRedirectToHome(response.data as User);
     } else {
@@ -43,13 +46,50 @@ class _RegisterState extends State<Register> {
         MaterialPageRoute(builder: (context) => Home()), (route) => false);
   }
 
+  showAlertDialog(BuildContext context) {
+    // Configurar el botón de OK
+    Widget okButton = TextButton(
+      child: Text("OK"),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+    );
+
+    // Crear el AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Alerta"),
+      content: Text("No haz aceptado los términos y condiciones."),
+      actions: [
+        okButton,
+      ],
+    );
+
+    // Mostrar el AlertDialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
+  bool _isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: PRYMARY_COLOR,
-        title: Text('Registrarse'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => prelogin_screen()),
+            );
+          },
+        ),
         centerTitle: true,
+        title: Text('Registrarse'),
       ),
       body: Form(
         key: formKey,
@@ -72,6 +112,14 @@ class _RegisterState extends State<Register> {
               height: 20,
             ),
             TextFormField(
+                controller: numberController,
+                keyboardType: TextInputType.emailAddress,
+                validator: (val) => val!.isEmpty ? 'Número inválido' : null,
+                decoration: kInputDecoration('Número')),
+            SizedBox(
+              height: 20,
+            ),
+            TextFormField(
                 controller: passwordController,
                 obscureText: true,
                 validator: (val) => val!.length < 6
@@ -90,17 +138,50 @@ class _RegisterState extends State<Register> {
                 decoration: kInputDecoration('Confirmar contraseña')),
             SizedBox(
               height: 20,
+              child: Text(""),
+            ),
+            Row(
+              children: [
+                Center(
+                  child: Checkbox(
+                    value: _isChecked,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        _isChecked = value!;
+                      });
+                    },
+                  ),
+                ),
+                Center(
+                  child: Text("Acepto después de haber leído los"),
+                ),
+              ],
+            ),
+            kLoginRegisterHint(
+                '', 'Términos, condiciones y politicas de privacidad', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TermsAndConditions()),
+              );
+            }),
+            SizedBox(
+              height: 20,
+              child: Text(""),
             ),
             loading
                 ? Center(child: CircularProgressIndicator())
                 : kTextButton(
                     'Registrarse',
                     () {
-                      if (formKey.currentState!.validate()) {
-                        setState(() {
-                          loading = !loading;
-                          _registerUser();
-                        });
+                      if (_isChecked == true) {
+                        if (formKey.currentState!.validate()) {
+                          setState(() {
+                            loading = !loading;
+                            _registerUser();
+                          });
+                        }
+                      } else {
+                        showAlertDialog(context);
                       }
                     },
                   ),
