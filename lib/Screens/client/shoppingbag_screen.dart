@@ -7,6 +7,8 @@ import 'package:ikelapp/models/user.dart';
 import 'package:ikelapp/services/user_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../constant.dart';
+import 'package:intl/intl.dart';
+import 'package:geolocator/geolocator.dart';
 
 class shoppingbag extends StatefulWidget {
   @override
@@ -16,6 +18,7 @@ class shoppingbag extends StatefulWidget {
 class _shoppingbagState extends State<shoppingbag> {
   int userId = 0;
   User? user;
+  String? userName = "";
   User? email;
   bool loading = true;
   String location = "Sin ubicación";
@@ -32,14 +35,19 @@ class _shoppingbagState extends State<shoppingbag> {
   String t = "";
   double shippingCost = 50.0;
   double total = 50.0;
+  double lat = 0.0;
+  double lon = 0.0;
+  String internalId = "";
   void getUser() async {
     ApiResponse response = await getUserDetail();
+    var te = response.data as User;
     userId = await getUserId();
     ApiResponse res = await getaddress(userId.toString());
 
     if (response.error == null) {
       setState(() {
         user = response.data as User;
+        userName = user?.name.toString();
         loading = false;
 
         if (res.error != null) {
@@ -185,15 +193,45 @@ class _shoppingbagState extends State<shoppingbag> {
   }
 
   Future orderGenerator() async {
-    var internal_id = userId;
-/*     setorders(
-        internal_id: "internal_id",
-        client_name: "client_name",
-        client_number: "client_number",
-        order_description: "order_description",
-        cost: "cost",
-        lat_destiny: 1.2,
-        lon_destiny: 1.3); */
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('yyMMddHHmmss').format(now);
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    internalId = userId.toString() +
+        "-" +
+        formattedDate.replaceAll(RegExp(r'[^\w\s]+'), '');
+    await pref.setString("internalId", internalId);
+    String orderDescription = "";
+    for (var element in _cartItems) {
+      orderDescription = element + ", ";
+    }
+    String co = totalCostList[0].toString();
+    await getCurrentPosition();
+    setorders(
+        internal_id: internalId,
+        client_name: userName,
+        client_number: userId.toString(),
+        order_description: orderDescription,
+        cost: co,
+        lat_destiny: lat,
+        lon_destiny: lon);
+  }
+
+  Future getCurrentPosition() async {
+    // Verificar si la aplicación tiene permiso para acceder a la ubicación
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        // Si el usuario deniega el permiso, puedes mostrar un diálogo o un mensaje de error.
+        return;
+      }
+    }
+
+    // Obtener la ubicación actual del dispositivo
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    lat = position.latitude;
+    lon = position.longitude;
   }
 
   @override

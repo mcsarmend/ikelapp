@@ -12,6 +12,7 @@ const postsURL = baseURL + '/posts';
 const commentsURL = baseURL + '/comments';
 const addressURL = baseURL + '/address';
 const ordersURL = baseURL + '/getorders';
+const setOrder = baseURL + '/setorders';
 const addressByCpURL = baseURL + '/addressbycp';
 const setaddressByCpURL = baseURL + '/insertupdateaddress';
 const headers = {'Accept': 'application/json'};
