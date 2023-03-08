@@ -164,16 +164,36 @@ class _shoppingbagState extends State<shoppingbag> {
       });
       showAlertDialog(context);
     } else {
-      SharedPreferences pref = await SharedPreferences.getInstance();
-      List<String> clear = [];
-      await pref.setStringList('cartItems', clear);
-      await pref.setStringList('costItems', clear);
-      await pref.setStringList('countItems', clear);
-      await Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => ConfirmationScreen()),
-      );
+      if (location.contains("registrada")) {
+        setState(() {
+          t = "No tienes dirección registrada";
+        });
+        showAlertDialog(context);
+      } else {
+        SharedPreferences pref = await SharedPreferences.getInstance();
+        List<String> clear = [];
+        await pref.setStringList('cartItems', clear);
+        await pref.setStringList('costItems', clear);
+        await pref.setStringList('countItems', clear);
+        await orderGenerator();
+        await Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ConfirmationScreen()),
+        );
+      }
     }
+  }
+
+  Future orderGenerator() async {
+    var internal_id = userId;
+/*     setorders(
+        internal_id: "internal_id",
+        client_name: "client_name",
+        client_number: "client_number",
+        order_description: "order_description",
+        cost: "cost",
+        lat_destiny: 1.2,
+        lon_destiny: 1.3); */
   }
 
   @override

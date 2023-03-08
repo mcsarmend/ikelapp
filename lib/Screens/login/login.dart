@@ -24,7 +24,7 @@ class _LoginState extends State<Login> {
     ApiResponse response = await login(txtEmail.text, txtPassword.text);
     if (response.error == null) {
       var n = response.data as User;
-      if (n.type == 1) {
+      if (n.type == "1") {
         _saveAndRedirectToHome(n);
       } else {
         _saveAndRedirectToHomeR(n);
