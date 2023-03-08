@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'dart:async';
 
 class GpsAccessScreen extends StatefulWidget {
-  const GpsAccessScreen({super.key});
+  const GpsAccessScreen({key});
 
   @override
   State<GpsAccessScreen> createState() => _GpsAccessScreenState();

@@ -3,7 +3,7 @@ description: Aplicacion para venta de bebidas .
 publish_to: 'none' 
 version: 1.0.0+1
 environment:
-  sdk: '>=2.18.6 <3.0.0'
+  sdk: '>=2.14.4 <3.0.0'
 dependencies:
   counter_button: ^1.0.1
   cupertino_icons: ^1.0.2
