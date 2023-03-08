@@ -1,12 +1,34 @@
 import 'dart:ui';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:ikelapp/constant.dart';
 import 'package:ikelapp/screens/client/orders_screen.dart';
 
 import '../home.dart';
 
-class ConfirmationScreen extends StatelessWidget {
+class ConfirmationScreen extends StatefulWidget {
+  @override
+  State<ConfirmationScreen> createState() => _ConfirmationScreenState();
+}
+
+class _ConfirmationScreenState extends State<ConfirmationScreen> {
+  String txt = "";
+
+  @override
+  void initState() {
+    getOrderName();
+  }
+
+  Future getOrderName() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var orderName = await pref.getString('internalId');
+    setState(() {
+      txt =
+          'Tu págo fue realizado correctamente, en la sección de pedidos podrás seguir tu compra con la clave de rastreo ' +
+              orderName.toString();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +57,7 @@ class ConfirmationScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'Tu págo fue realizado correctamente, en la sección de pedidos podrás seguir tu compra con la clave de rastreo XXXXXXXX',
+                      txt,
                       style: TextStyle(fontSize: 16.0),
                     ),
                   ],
@@ -50,6 +72,8 @@ class ConfirmationScreen extends StatelessWidget {
                     MaterialStateProperty.all<Color>(PRYMARY_COLOR),
               ),
               onPressed: () async {
+                SharedPreferences pref = await SharedPreferences.getInstance();
+                await pref.setString("internalId", "");
                 await Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Home()),
@@ -63,6 +87,8 @@ class ConfirmationScreen extends StatelessWidget {
                     MaterialStateProperty.all<Color>(PRYMARY_COLOR),
               ),
               onPressed: () async {
+                SharedPreferences pref = await SharedPreferences.getInstance();
+                await pref.setString("internalId", "");
                 await Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => OrderScreen()),

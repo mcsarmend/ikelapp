@@ -153,18 +153,19 @@ Future<ApiResponse> getorders(String userId) async {
   return apiResponse;
 }
 
-Future<ApiResponse> setorders(
-    String internal_id,
-    String client_name,
-    String client_number,
-    String order_description,
-    String cost,
-    double lat_destiny,
-    double lon_destiny) async {
+Future<ApiResponse> setorders({
+  String? internal_id,
+  String? client_name,
+  String? client_number,
+  String? order_description,
+  String? cost,
+  double? lat_destiny,
+  double? lon_destiny,
+}) async {
   ApiResponse apiResponse = ApiResponse();
 
   try {
-    final response = await http.post(Uri.parse(ordersURL), headers: {
+    final response = await http.post(Uri.parse(setOrder), headers: {
       'Accept': 'application/json'
     }, body: {
       'internal_id': internal_id,
@@ -172,13 +173,13 @@ Future<ApiResponse> setorders(
       "client_number": client_number,
       "order_description": order_description,
       "cost": cost,
-      "lat_destiny": lat_destiny,
-      "lon_destiny": lon_destiny
+      "lat_destiny": lat_destiny.toString(),
+      "lon_destiny": lon_destiny.toString()
     });
 
     switch (response.statusCode) {
       case 200:
-        apiResponse.data = Orders.fromJson(jsonDecode(response.body));
+        apiResponse.data = "Orden guardada correctamente";
         break;
       case 422:
         apiResponse.error = jsonDecode(response.body)["error"];

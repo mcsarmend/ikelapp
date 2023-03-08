@@ -120,28 +120,11 @@ class _ProfileState extends State<Profile> {
             child: ListView(
               children: [
                 Center(
-                    child: GestureDetector(
-                  child: Container(
-                    width: 110,
-                    height: 110,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(60),
-                        image: /* _imageFile == null
-                            ? user!.image != null
-                                ? DecorationImage(
-                                    image: NetworkImage('${user!.image}'),
-                                    fit: BoxFit.cover)
-                                : null 
-                            :*/
-                            DecorationImage(
-                                image: FileImage(_imageFile ?? File('')),
-                                fit: BoxFit.cover),
-                        color: PRYMARY_COLOR),
+                  child: CircleAvatar(
+                    radius: 50,
+                    backgroundColor: PRYMARY_COLOR,
                   ),
-                  onTap: () {
-                    getImage();
-                  },
-                )),
+                ),
                 SizedBox(
                   height: 20,
                 ),
