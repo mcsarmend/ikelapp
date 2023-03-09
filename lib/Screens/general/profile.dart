@@ -24,6 +24,7 @@ class _ProfileState extends State<Profile> {
   final _picker = ImagePicker();
   TextEditingController txtNameController = TextEditingController();
   TextEditingController txtEmailController = TextEditingController();
+  TextEditingController txtNumberController = TextEditingController();
   String location = "Sin ubicación";
   Future getImage() async {
     final pickedFile = await _picker.getImage(source: ImageSource.gallery);
@@ -46,6 +47,7 @@ class _ProfileState extends State<Profile> {
         loading = false;
         txtNameController.text = user!.name ?? '';
         txtEmailController.text = user!.email ?? '';
+        txtNumberController.text = user!.number ?? '';
 
         if (res.error != null) {
           location = "Sin dirección registrada";
@@ -78,8 +80,11 @@ class _ProfileState extends State<Profile> {
 
   //update profile
   void updateProfile() async {
-    ApiResponse response = await updateUser(txtNameController.text,
-        getStringImage(_imageFile), txtEmailController.text);
+    ApiResponse response = await updateUser(
+        txtNameController.text,
+        getStringImage(_imageFile),
+        txtEmailController.text,
+        txtNumberController.text);
     setState(() {
       loading = false;
     });
@@ -115,27 +120,11 @@ class _ProfileState extends State<Profile> {
             child: ListView(
               children: [
                 Center(
-                    child: GestureDetector(
-                  child: Container(
-                    width: 110,
-                    height: 110,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(60),
-                        image: _imageFile == null
-                            ? user!.image != null
-                                ? DecorationImage(
-                                    image: NetworkImage('${user!.image}'),
-                                    fit: BoxFit.cover)
-                                : null
-                            : DecorationImage(
-                                image: FileImage(_imageFile ?? File('')),
-                                fit: BoxFit.cover),
-                        color: Colors.amber),
+                  child: CircleAvatar(
+                    radius: 50,
+                    backgroundColor: PRYMARY_COLOR,
                   ),
-                  onTap: () {
-                    getImage();
-                  },
-                )),
+                ),
                 SizedBox(
                   height: 20,
                 ),
@@ -144,7 +133,7 @@ class _ProfileState extends State<Profile> {
                     child: Column(
                       children: [
                         TextFormField(
-                          decoration: kInputDecoration('Name'),
+                          decoration: kInputDecoration('Nombre'),
                           controller: txtNameController,
                           validator: (val) =>
                               val!.isEmpty ? 'Invalid Name' : null,
@@ -153,8 +142,17 @@ class _ProfileState extends State<Profile> {
                           height: 20,
                         ),
                         TextFormField(
-                          decoration: kInputDecoration('email'),
+                          decoration: kInputDecoration('Correo'),
                           controller: txtEmailController,
+                          validator: (val) =>
+                              val!.isEmpty ? 'Invalid Name' : null,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          decoration: kInputDecoration('Teléfono'),
+                          controller: txtNumberController,
                           validator: (val) =>
                               val!.isEmpty ? 'Invalid Name' : null,
                         ),
@@ -185,15 +183,16 @@ class _ProfileState extends State<Profile> {
                 SizedBox(
                   height: 20,
                 ),
-                kTextButton('Actualizar ubicación', () {
+                kTextButton('Actualizar ubicación', () async {
                   if (formKey.currentState!.validate()) {
                     setState(() {
                       loading = true;
                     });
-                    Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(
-                            builder: (context) => address_register()),
-                        (route) => false);
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => address_register()),
+                    );
                   }
                 }),
                 SizedBox(

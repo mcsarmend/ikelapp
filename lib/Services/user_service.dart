@@ -40,7 +40,8 @@ Future<ApiResponse> login(String email, String password) async {
 }
 
 // Register
-Future<ApiResponse> register(String name, String email, String password) async {
+Future<ApiResponse> register(
+    String name, String email, String password, String number) async {
   ApiResponse apiResponse = ApiResponse();
   try {
     final response = await http.post(Uri.parse(registerURL), headers: {
@@ -48,8 +49,11 @@ Future<ApiResponse> register(String name, String email, String password) async {
     }, body: {
       'name': name,
       'email': email,
+      'pass': password,
       'password': password,
-      'password_confirmation': password
+      'password_confirmation': password,
+      'type': '1',
+      'number': number
     });
 
     switch (response.statusCode) {
@@ -149,6 +153,47 @@ Future<ApiResponse> getorders(String userId) async {
   return apiResponse;
 }
 
+Future<ApiResponse> setorders({
+  String? internal_id,
+  String? client_name,
+  String? client_number,
+  String? order_description,
+  String? cost,
+  double? lat_destiny,
+  double? lon_destiny,
+}) async {
+  ApiResponse apiResponse = ApiResponse();
+
+  try {
+    final response = await http.post(Uri.parse(setOrder), headers: {
+      'Accept': 'application/json'
+    }, body: {
+      'internal_id': internal_id,
+      "client_name": client_name,
+      "client_number": client_number,
+      "order_description": order_description,
+      "cost": cost,
+      "lat_destiny": lat_destiny.toString(),
+      "lon_destiny": lon_destiny.toString()
+    });
+
+    switch (response.statusCode) {
+      case 200:
+        apiResponse.data = "Orden guardada correctamente";
+        break;
+      case 422:
+        apiResponse.error = jsonDecode(response.body)["error"];
+        break;
+      default:
+        apiResponse.error = somethingWentWrong;
+        break;
+    }
+  } catch (e) {
+    apiResponse.error = serverError;
+  }
+  return apiResponse;
+}
+
 Future<ApiResponse> updateaddressbycp(String userId, String state, String city,
     String suburb, String street, String number, String cp) async {
   ApiResponse apiResponse = ApiResponse();
@@ -215,6 +260,7 @@ Future<ApiResponse> updateUser(
   String name,
   String? image,
   String? email,
+  String? number,
 ) async {
   ApiResponse apiResponse = ApiResponse();
   try {
@@ -225,8 +271,17 @@ Future<ApiResponse> updateUser(
           'Authorization': 'Bearer $token'
         },
         body: image == null
-            ? {'name': name, "email": email}
-            : {'name': name, 'image': image});
+            ? {
+                'name': name,
+                "email": email,
+                "number": number,
+              }
+            : {
+                'name': name,
+                'image': image,
+                "email": email,
+                "number": number,
+              });
     // user can update his/her name or name and image
 
     switch (response.statusCode) {

@@ -18,28 +18,35 @@ class _ProductDetailState extends State<ProductDetail> {
   int _counterValue = 0;
   String t = "texto";
 
-  void addToCar(List<String> bag) async {
-    print(bag.toString());
+  void addToCar(path, name, price, count) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
-    var b = await pref.getStringList('shoppingbag');
-    var newgfgList = [];
-    if (b == null) {
-      if (bag[3] != 0) {
-        newgfgList = bag;
-        t = "Articulo agregado";
-      } else {
-        t = "Falta agregar cantidad";
-      }
+    if (count == 0) {
+      t = "No has indicado la cantidad";
     } else {
-      if (bag[3] != 0) {
-        newgfgList = b! + bag;
-        t = "Articulo agregado";
-      } else {
-        t = "Falta agregar cantidad";
-      }
-    }
+      var cartItems = await pref.getStringList('cartItems');
+      var costItems = await pref.getStringList('costItems');
+      var countItems = await pref.getStringList('countItems');
 
-    await pref.setStringList('shoppingbag', newgfgList as List<String>);
+      if (cartItems == null) {
+        cartItems = [];
+      }
+      if (costItems == null) {
+        costItems = [];
+      }
+      if (countItems == null) {
+        countItems = [];
+      }
+
+      var p = price.substring(1, price.length - 3);
+      cartItems.add(name);
+      costItems.add(p);
+      countItems.add(count.toString());
+
+      await pref.setStringList('cartItems', cartItems);
+      await pref.setStringList('costItems', costItems);
+      await pref.setStringList('countItems', countItems);
+      t = "Producto agregado correctamente";
+    }
 
     showAlertDialog(context);
   }
@@ -171,13 +178,8 @@ class _ProductDetailState extends State<ProductDetail> {
                 child: Center(
                     child: TextButton(
                         onPressed: () {
-                          List<String> bag = [
-                            widget.assetPath,
-                            widget.productname,
-                            widget.price,
-                            _counterValue.toString()
-                          ];
-                          addToCar(bag);
+                          addToCar(widget.assetPath, widget.productname,
+                              widget.price, _counterValue);
                         },
                         child: Text('Add to cart',
                             style: TextStyle(

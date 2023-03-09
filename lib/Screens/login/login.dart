@@ -1,5 +1,6 @@
 import 'package:ikelapp/models/api_response.dart';
 import 'package:ikelapp/models/user.dart';
+import 'package:ikelapp/screens/login/prelogin.dart';
 import 'package:ikelapp/services/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,7 +24,7 @@ class _LoginState extends State<Login> {
     ApiResponse response = await login(txtEmail.text, txtPassword.text);
     if (response.error == null) {
       var n = response.data as User;
-      if (n.type == 1) {
+      if (n.type == "1") {
         _saveAndRedirectToHome(n);
       } else {
         _saveAndRedirectToHomeR(n);
@@ -59,8 +60,17 @@ class _LoginState extends State<Login> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: PRYMARY_COLOR,
-        title: Text('Acceder'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => prelogin_screen()),
+            );
+          },
+        ),
         centerTitle: true,
+        title: Text('Acceder'),
       ),
       body: Form(
         key: formkey,

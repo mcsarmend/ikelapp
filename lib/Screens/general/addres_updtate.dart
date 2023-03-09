@@ -86,118 +86,109 @@ class _address_registerState extends State<address_register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text('Acualizar ubicación'),
         backgroundColor: PRYMARY_COLOR,
-        title: Text("Actualizar ubicacióm"),
-        elevation: 0.0,
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => Home()),
-                (route) => false);
-          },
-        ),
       ),
       body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Column(children: [
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              width: 200,
-              height: 30,
-              child: kTextButton('Buscar por código', () {
-                get_addres_by_cp(cpVal);
-                setState(() {
-                  loading = true;
-                });
-              }),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Form(
-                key: formKey,
-                child: Column(children: [
-                  TextFormField(
-                    decoration: kInputDecoration('Código Postal'),
-                    validator: (val) => val!.isEmpty ? 'Código inávildo' : null,
-                    onChanged: (val) => {
-                      setState(() {
-                        cpVal = val;
-                        loading = false;
-                      })
-                    },
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    decoration: kInputDecoration('Estado'),
-                    controller: txtStateController,
-                    readOnly: true,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    decoration: kInputDecoration('Municipio'),
-                    controller: txtCityController,
-                    readOnly: true,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    decoration: kInputDecoration('Colonia'),
-                    controller: txtSuburbController,
-                    readOnly: true,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    decoration: kInputDecoration('Calle'),
-                    controller: txtStreetController,
-                    validator: (val) => val!.isEmpty ? 'Calle no válida' : null,
-                    onChanged: (val) => {street = val},
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    decoration: kInputDecoration('Numero'),
-                    controller: txtNumberController,
-                    validator: (val) =>
-                        val!.isEmpty ? 'Número no válido' : null,
-                    onChanged: (val) => {number = val},
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  loading
-                      ? Center(
-                          child: CircularProgressIndicator(),
-                        )
-                      : Container(
-                          width: 200,
-                          height: 30,
-                          child: kTextButton('Actualizar ubicación', () {
-                            if (formKey.currentState!.validate()) {
-                              setState(() {
-                                loading = true;
-                                update_address(cpVal);
-                              });
-                            }
-                          }),
-                        ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                ]))
-          ])),
+        padding: const EdgeInsets.all(16.0),
+        child: ListView(children: [
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            width: 200,
+            height: 40,
+            child: kTextButton('Buscar por código', () {
+              get_addres_by_cp(cpVal);
+              setState(() {
+                loading = true;
+              });
+            }),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Form(
+              key: formKey,
+              child: Column(children: [
+                TextFormField(
+                  decoration: kInputDecoration('Código Postal'),
+                  validator: (val) => val!.isEmpty ? 'Código inávildo' : null,
+                  onChanged: (val) => {
+                    setState(() {
+                      cpVal = val;
+                      loading = false;
+                    })
+                  },
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  decoration: kInputDecoration('Estado'),
+                  controller: txtStateController,
+                  readOnly: true,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  decoration: kInputDecoration('Municipio'),
+                  controller: txtCityController,
+                  readOnly: true,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  decoration: kInputDecoration('Colonia'),
+                  controller: txtSuburbController,
+                  readOnly: true,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  decoration: kInputDecoration('Calle'),
+                  controller: txtStreetController,
+                  validator: (val) => val!.isEmpty ? 'Calle no válida' : null,
+                  onChanged: (val) => {street = val},
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  decoration: kInputDecoration('Numero'),
+                  controller: txtNumberController,
+                  validator: (val) => val!.isEmpty ? 'Número no válido' : null,
+                  onChanged: (val) => {number = val},
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                loading
+                    ? Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : Container(
+                        width: 200,
+                        height: 40,
+                        child: kTextButton('Actualizar ubicación', () {
+                          if (formKey.currentState!.validate()) {
+                            setState(() {
+                              loading = true;
+                              update_address(cpVal);
+                            });
+                          }
+                        }),
+                      ),
+                SizedBox(
+                  height: 10,
+                ),
+              ]))
+        ]),
+      ),
     );
   }
 
