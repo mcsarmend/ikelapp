@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ikelapp/constant.dart';
-import 'package:ikelapp/screens/client/map_scren.dart';
 import 'package:ikelapp/screens/client/purchase_detail_screen.dart';
-import '../../models/orders.dart';
 import '../../models/api_response.dart';
 import '../../services/user_service.dart';
 

@@ -1,9 +1,7 @@
-import 'package:ikelapp/screens/client/pedidos.dart';
 import 'package:ikelapp/screens/home_screen.dart';
 import 'package:ikelapp/screens/general/profile.dart';
 import 'package:ikelapp/screens/client/shoppingbag_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../constant.dart';
 import 'client/orders_screen.dart';
 

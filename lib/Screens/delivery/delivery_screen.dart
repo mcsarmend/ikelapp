@@ -3,7 +3,6 @@ import '../../Helpers/show_directions.dart';
 import '../../models/api_response.dart';
 import '../../models/orders.dart';
 import '../../services/user_service.dart';
-import 'gps_access_screen.dart';
 
 class delivery_screen extends StatefulWidget {
   @override
@@ -17,7 +16,6 @@ class _delivery_screenState extends State<delivery_screen> {
   int selectedTabIndex = 0;
 
   void loadingorders() async {
-    ApiResponse response = await getUserDetail();
     userId = await getUserId();
     ApiResponse res = await getorders(userId.toString());
 
@@ -30,7 +28,7 @@ class _delivery_screenState extends State<delivery_screen> {
   @override
   void initState() {
     super.initState();
-    loadingorders();
+    // loadingorders();
   }
 
   @override

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ikelapp/screens/client/product_detail.dart';
+import 'package:ikelapp/constant.dart';
 import 'package:ikelapp/screens/client/product_page.dart';
-import '../../constant.dart';
 
 class HealthyFun extends StatelessWidget {
   ProductPage productpage = ProductPage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFCFAF8),
+      backgroundColor: SECONDARY_COLOR,
       body: ListView(
         children: <Widget>[
           SizedBox(height: 15.0),

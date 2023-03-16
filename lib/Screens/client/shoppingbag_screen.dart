@@ -24,8 +24,6 @@ class _shoppingbagState extends State<shoppingbag> {
   String location = "Sin ubicación";
   String description = "";
   List<String> _cartItems = [];
-  List<double> _costItems = [];
-  List<String> _countItems = [];
   List<double> totalCostList = [];
   List<String> ca = [];
   List<String> co = [];
@@ -40,7 +38,6 @@ class _shoppingbagState extends State<shoppingbag> {
   String internalId = "";
   void getUser() async {
     ApiResponse response = await getUserDetail();
-    var te = response.data as User;
     userId = await getUserId();
     ApiResponse res = await getaddress(userId.toString());
 
@@ -82,19 +79,19 @@ class _shoppingbagState extends State<shoppingbag> {
       cu = countItems!;
       for (var i = 0; i < cartItems.length; i++) {
         var costTemp =
-            int.tryParse(countItems[i])! * double.tryParse(costItems![i])!;
+            int.tryParse(countItems[i])! * double.tryParse(costItems[i])!;
         var ele = cartItems[i] +
             " (" +
             countItems[i] +
             ")" +
             " \$" +
-            costTemp!.toString();
+            costTemp.toString();
         _cartItems.add(ele);
       }
 
       for (var i = 0; i < cartItems.length; i++) {
-        totalCostList.add(
-            int.tryParse(countItems![i])! * double.tryParse(costItems![i])!);
+        totalCostList
+            .add(int.tryParse(countItems[i])! * double.tryParse(costItems[i])!);
       }
 
       setState(() {
@@ -113,7 +110,7 @@ class _shoppingbagState extends State<shoppingbag> {
       _cartItems.removeAt(index);
       totalCostList = [];
       for (var i = 0; i < ca.length; i++) {
-        totalCostList.add(int.tryParse(cu![i])! * double.tryParse(co![i])!);
+        totalCostList.add(int.tryParse(cu[i])! * double.tryParse(co[i])!);
       }
 
       if (_cartItems.length == 0) {
@@ -204,7 +201,6 @@ class _shoppingbagState extends State<shoppingbag> {
     for (var element in _cartItems) {
       orderDescription = orderDescription + element + ", ";
     }
-    String co = totalCostList[0].toString();
     await getCurrentPosition();
     setorders(
         internal_id: internalId,

@@ -1,9 +1,5 @@
 import 'package:ikelapp/constant.dart';
-import 'package:ikelapp/screens/client/beer_house_screen.dart';
-import 'package:ikelapp/screens/client/candys_party_screen.dart';
-import 'package:ikelapp/screens/client/hard_drinks_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:ikelapp/screens/client/home_sc.dart';
 import 'package:ikelapp/screens/client/product_page.dart';
 
 import 'order_active_screen.dart';

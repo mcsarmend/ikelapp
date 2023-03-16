@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:counter_button/counter_button.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ikelapp/screens/client/catalogue_screen.dart';
 import 'package:ikelapp/screens/client/party_screen.dart';
 import 'package:ikelapp/screens/client/wholesale_screen.dart';
 
