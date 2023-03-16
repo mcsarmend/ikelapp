@@ -33,7 +33,7 @@ Future<ApiResponse> login(String email, String password) async {
         break;
     }
   } catch (e) {
-    apiResponse.error = serverError;
+    apiResponse.error = serverError + " " + e.toString();
   }
 
   return apiResponse;
@@ -138,7 +138,7 @@ Future<ApiResponse> getorders(String userId) async {
 
     switch (response.statusCode) {
       case 200:
-        apiResponse.data = Orders.fromJson(jsonDecode(response.body));
+        apiResponse.data = jsonDecode(response.body);
         break;
       case 422:
         apiResponse.error = jsonDecode(response.body)["error"];

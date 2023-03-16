@@ -30,7 +30,7 @@ class _OrderScreenState extends State<OrderScreen>
       body: ListView(
         padding: EdgeInsets.only(left: 20.0),
         children: <Widget>[
-          SizedBox(height: 15.0),
+          SizedBox(height: 20.0),
           Center(
             child: TabBar(
                 controller: _tabController,
@@ -38,14 +38,14 @@ class _OrderScreenState extends State<OrderScreen>
                 labelColor: PRYMARY_COLOR,
                 isScrollable: true,
                 labelPadding: EdgeInsets.only(right: 35.0),
-                unselectedLabelColor: Color(0xFFCDCDCD),
+                unselectedLabelColor: SECONDARY_COLOR,
                 tabs: [
                   Tab(
                     child: Container(
                       child: Text('Activos',
                           style: TextStyle(
                             fontFamily: 'Varela',
-                            fontSize: 11,
+                            fontSize: 22,
                           )),
                     ),
                   ),
@@ -54,7 +54,7 @@ class _OrderScreenState extends State<OrderScreen>
                       child: Text('Historico',
                           style: TextStyle(
                             fontFamily: 'Varela',
-                            fontSize: 11,
+                            fontSize: 22,
                           )),
                     ),
                   ),

@@ -81,7 +81,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
               },
               child: Text('Sigue comprando'),
             ),
-            ElevatedButton(
+            /* ElevatedButton(
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all<Color>(PRYMARY_COLOR),
@@ -95,7 +95,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                 );
               },
               child: Text('Rastrear tu pedido'),
-            ),
+            ), */
           ],
         ),
       ),

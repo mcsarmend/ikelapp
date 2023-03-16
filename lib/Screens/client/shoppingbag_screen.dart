@@ -202,7 +202,7 @@ class _shoppingbagState extends State<shoppingbag> {
     await pref.setString("internalId", internalId);
     String orderDescription = "";
     for (var element in _cartItems) {
-      orderDescription = element + ", ";
+      orderDescription = orderDescription + element + ", ";
     }
     String co = totalCostList[0].toString();
     await getCurrentPosition();
@@ -211,7 +211,7 @@ class _shoppingbagState extends State<shoppingbag> {
         client_name: userName,
         client_number: userId.toString(),
         order_description: orderDescription,
-        cost: co,
+        cost: total.toString(),
         lat_destiny: lat,
         lon_destiny: lon);
   }
