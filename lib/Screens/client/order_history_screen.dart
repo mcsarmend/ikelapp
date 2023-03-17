@@ -30,8 +30,10 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
 
     setState(() {
       for (var element in dat) {
-        orderList.add(element["internal_id"]);
-        orderCost.add(element["cost"]);
+        if (element["status"] == 0) {
+          orderList.add(element["internal_id"]);
+          orderCost.add(element["cost"]);
+        }
       }
       loading = false;
     });

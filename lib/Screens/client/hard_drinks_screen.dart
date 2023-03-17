@@ -8,7 +8,7 @@ class HardDrinks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: SECONDARY_COLOR,
+      backgroundColor: Color(0xFFFCFAF8),
       body: ListView(
         children: <Widget>[
           SizedBox(height: 15.0),

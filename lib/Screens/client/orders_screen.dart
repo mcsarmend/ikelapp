@@ -4,6 +4,7 @@ import 'package:ikelapp/screens/client/product_page.dart';
 
 import 'order_active_screen.dart';
 import 'order_history_screen.dart';
+import 'order_inline_screen.dart';
 
 class OrderScreen extends StatefulWidget {
   @override
@@ -17,7 +18,7 @@ class _OrderScreenState extends State<OrderScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -41,7 +42,7 @@ class _OrderScreenState extends State<OrderScreen>
                       child: Text('Activos',
                           style: TextStyle(
                             fontFamily: 'Varela',
-                            fontSize: 22,
+                            fontSize: 20,
                           )),
                     ),
                   ),
@@ -50,7 +51,16 @@ class _OrderScreenState extends State<OrderScreen>
                       child: Text('Historico',
                           style: TextStyle(
                             fontFamily: 'Varela',
-                            fontSize: 22,
+                            fontSize: 20,
+                          )),
+                    ),
+                  ),
+                  Tab(
+                    child: Container(
+                      child: Text('Pendientes',
+                          style: TextStyle(
+                            fontFamily: 'Varela',
+                            fontSize: 20,
                           )),
                     ),
                   ),
@@ -65,6 +75,7 @@ class _OrderScreenState extends State<OrderScreen>
               child: TabBarView(controller: _tabController, children: [
                 OrderActiveScreen(),
                 OrderHistoryScreen(),
+                OrderInlineScreen(),
               ]))
         ],
       ),

@@ -125,6 +125,90 @@ Future<ApiResponse> getaddress(String userId) async {
   return apiResponse;
 }
 
+Future<ApiResponse> getDeliverys(String userId) async {
+  ApiResponse apiResponse = ApiResponse();
+  try {
+    final response = await http.post(Uri.parse(deliverysURL), headers: {
+      'Accept': 'application/json'
+    }, body: {
+      'user_id': userId,
+    });
+
+    switch (response.statusCode) {
+      case 200:
+        apiResponse.data = jsonDecode(response.body);
+        break;
+      case 422:
+        apiResponse.error = jsonDecode(response.body)["error"];
+        break;
+      default:
+        apiResponse.error = somethingWentWrong;
+        break;
+    }
+  } catch (e) {
+    apiResponse.error = serverError;
+  }
+  return apiResponse;
+}
+
+Future<ApiResponse> startProgress(
+    String userId, String status, String orderstatus) async {
+  ApiResponse apiResponse = ApiResponse();
+  try {
+    final response = await http.post(Uri.parse(startProgressURL), headers: {
+      'Accept': 'application/json'
+    }, body: {
+      'status': status,
+      'user_id': userId,
+      'orderstatus': orderstatus
+    });
+
+    switch (response.statusCode) {
+      case 200:
+        apiResponse.data = jsonDecode(response.body);
+        break;
+      case 422:
+        apiResponse.error = jsonDecode(response.body)["error"];
+        break;
+      default:
+        apiResponse.error = somethingWentWrong;
+        break;
+    }
+  } catch (e) {
+    apiResponse.error = serverError;
+  }
+  return apiResponse;
+}
+
+Future<ApiResponse> endProgress(
+    String userId, String status, String orderstatus) async {
+  ApiResponse apiResponse = ApiResponse();
+  try {
+    final response = await http.post(Uri.parse(endProgressURL), headers: {
+      'Accept': 'application/json'
+    }, body: {
+      'status': status,
+      'user_id': userId,
+      'orderstatus': orderstatus
+    });
+
+    switch (response.statusCode) {
+      case 200:
+        apiResponse.data = jsonDecode(response.body);
+        break;
+      case 422:
+        apiResponse.error = jsonDecode(response.body)["error"];
+        break;
+      default:
+        apiResponse.error = somethingWentWrong;
+        break;
+    }
+  } catch (e) {
+    apiResponse.error = serverError;
+  }
+  return apiResponse;
+}
+
 Future<ApiResponse> getorders(String userId) async {
   ApiResponse apiResponse = ApiResponse();
   try {
