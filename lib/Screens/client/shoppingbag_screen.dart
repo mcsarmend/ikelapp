@@ -36,6 +36,7 @@ class _shoppingbagState extends State<shoppingbag> {
   double lat = 0.0;
   double lon = 0.0;
   String internalId = "";
+  bool doingshipment = false;
   void getUser() async {
     ApiResponse response = await getUserDetail();
     userId = await getUserId();
@@ -175,6 +176,7 @@ class _shoppingbagState extends State<shoppingbag> {
         });
         showAlertDialog(context);
       } else {
+
         SharedPreferences pref = await SharedPreferences.getInstance();
         List<String> clear = [];
         await pref.setStringList('cartItems', clear);
@@ -305,9 +307,21 @@ class _shoppingbagState extends State<shoppingbag> {
             ),
           ),
           SizedBox(height: 16.0),
-          kTextButton('  Finalizar compra  ', () {
-            buy(context);
-          }),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                  elevation: 0.0,
+                  backgroundColor: PRYMARY_COLOR, 
+            ),
+              onPressed: (){
+                if(doingshipment){
+                  print("Shipment");
+                }else{
+                  doingshipment = true;
+                  buy(context);
+                }
+             }, // El botón está desactivado
+            child: Text('Finalizar compra'),
+           ),
         ],
       ),
     );
