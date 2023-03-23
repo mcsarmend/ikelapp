@@ -6,14 +6,16 @@ import '../../constant.dart';
 class PurchaseDetailScreen extends StatelessWidget {
   final String itemName;
   final String itemDescription;
-  final double itemPrice;
+  final String itemPrice;
   final String itemImageUrl;
+  final bool itemtype;
 
   PurchaseDetailScreen({
     required this.itemName,
     required this.itemDescription,
     required this.itemPrice,
     required this.itemImageUrl,
+    required this.itemtype,
   });
 
   @override
@@ -26,7 +28,6 @@ class PurchaseDetailScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(child: Image.asset(itemImageUrl)),
           SizedBox(height: 16),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -41,7 +42,7 @@ class PurchaseDetailScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              'Precio: \$${itemPrice.toStringAsFixed(2)}',
+              'Precio: \$' + itemPrice,
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.grey[600],
@@ -58,22 +59,26 @@ class PurchaseDetailScreen extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all<Color>(PRYMARY_COLOR),
-              ),
-              onPressed: () async {
-                await Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MapScreen()),
-                );
-              },
-              child: Text('Rastrear en mapa'),
-            ),
-          ),
+          itemtype
+              ? Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(PRYMARY_COLOR),
+                    ),
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MapScreen()),
+                      );
+                    },
+                    child: Text('Rastrear en mapa'),
+                  ),
+                )
+              : SizedBox(
+                  height: 20,
+                ),
         ],
       ),
     );

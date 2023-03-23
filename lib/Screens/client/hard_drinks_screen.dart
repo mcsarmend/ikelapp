@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ikelapp/screens/client/product_detail.dart';
+import 'package:ikelapp/constant.dart';
 import 'package:ikelapp/screens/client/product_page.dart';
-import '../../constant.dart';
 
+// ignore: must_be_immutable
 class HardDrinks extends StatelessWidget {
   ProductPage productpage = ProductPage();
   @override

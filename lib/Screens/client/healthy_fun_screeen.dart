@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ikelapp/screens/client/product_detail.dart';
+import 'package:ikelapp/constant.dart';
 import 'package:ikelapp/screens/client/product_page.dart';
-import '../../constant.dart';
 
 class HealthyFun extends StatelessWidget {
   ProductPage productpage = ProductPage();
