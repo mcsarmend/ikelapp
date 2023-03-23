@@ -1,6 +1,4 @@
 import 'package:ikelapp/screens/general/profile.dart';
-import 'package:ikelapp/screens/client/shoppingbag_screen.dart';
-import 'package:map_launcher/map_launcher.dart';
 import 'package:flutter/material.dart';
 import '../../constant.dart';
 import 'delivery_screen.dart';
@@ -16,12 +14,12 @@ class _delivery_user_screenState extends State<delivery_user_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+/*       appBar: AppBar(
         backgroundColor: PRYMARY_COLOR,
         automaticallyImplyLeading: false,
         title: Text("Repartidor"),
         actions: <Widget>[],
-      ),
+      ), */
       body: _buildChild(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(

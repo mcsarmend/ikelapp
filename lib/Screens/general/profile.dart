@@ -198,17 +198,25 @@ class _ProfileState extends State<Profile> {
                 SizedBox(
                   height: 20,
                 ),
-                IconButton(
-                  tooltip: "Cerrar Sesión",
-                  icon: Icon(Icons.exit_to_app),
-                  onPressed: () {
-                    logout().then((value) => {
-                          Navigator.of(context).pushAndRemoveUntil(
-                              MaterialPageRoute(builder: (context) => Login()),
-                              (route) => false)
-                        });
-                  },
-                )
+                Center(
+                  child: Row(
+                    children: [
+                      Text("Cerra sesión"),
+                      IconButton(
+                        tooltip: "Cerrar Sesión",
+                        icon: Icon(Icons.exit_to_app_outlined),
+                        onPressed: () {
+                          logout().then((value) => {
+                                Navigator.of(context).pushAndRemoveUntil(
+                                    MaterialPageRoute(
+                                        builder: (context) => Login()),
+                                    (route) => false)
+                              });
+                        },
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
           );

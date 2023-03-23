@@ -1,13 +1,10 @@
 import 'package:ikelapp/constant.dart';
-import 'package:ikelapp/screens/client/beer_house_screen.dart';
-import 'package:ikelapp/screens/client/candys_party_screen.dart';
-import 'package:ikelapp/screens/client/hard_drinks_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:ikelapp/screens/client/home_sc.dart';
 import 'package:ikelapp/screens/client/product_page.dart';
 
 import 'order_active_screen.dart';
 import 'order_history_screen.dart';
+import 'order_inline_screen.dart';
 
 class OrderScreen extends StatefulWidget {
   @override
@@ -21,7 +18,7 @@ class _OrderScreenState extends State<OrderScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -30,7 +27,7 @@ class _OrderScreenState extends State<OrderScreen>
       body: ListView(
         padding: EdgeInsets.only(left: 20.0),
         children: <Widget>[
-          SizedBox(height: 15.0),
+          SizedBox(height: 20.0),
           Center(
             child: TabBar(
                 controller: _tabController,
@@ -38,14 +35,14 @@ class _OrderScreenState extends State<OrderScreen>
                 labelColor: PRYMARY_COLOR,
                 isScrollable: true,
                 labelPadding: EdgeInsets.only(right: 35.0),
-                unselectedLabelColor: Color(0xFFCDCDCD),
+                unselectedLabelColor: SECONDARY_COLOR,
                 tabs: [
                   Tab(
                     child: Container(
                       child: Text('Activos',
                           style: TextStyle(
                             fontFamily: 'Varela',
-                            fontSize: 11,
+                            fontSize: 20,
                           )),
                     ),
                   ),
@@ -54,7 +51,16 @@ class _OrderScreenState extends State<OrderScreen>
                       child: Text('Historico',
                           style: TextStyle(
                             fontFamily: 'Varela',
-                            fontSize: 11,
+                            fontSize: 20,
+                          )),
+                    ),
+                  ),
+                  Tab(
+                    child: Container(
+                      child: Text('Pendientes',
+                          style: TextStyle(
+                            fontFamily: 'Varela',
+                            fontSize: 20,
                           )),
                     ),
                   ),
@@ -69,6 +75,7 @@ class _OrderScreenState extends State<OrderScreen>
               child: TabBarView(controller: _tabController, children: [
                 OrderActiveScreen(),
                 OrderHistoryScreen(),
+                OrderInlineScreen(),
               ]))
         ],
       ),

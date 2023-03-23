@@ -98,13 +98,16 @@ class _WholeSaleScreenState extends State<WholeSaleScreen> {
                         final String message = '¡Hola!';
                         final String whatsappUrl =
                             'https://wa.me/$phoneNumber?text=${Uri.encodeFull(message)}';
+                        // ignore: deprecated_member_use
                         if (await canLaunch(whatsappUrl)) {
+                          // ignore: deprecated_member_use
                           await launch(whatsappUrl);
                         } else {
                           throw 'No se pudo abrir $whatsappUrl';
                         }
                       },
                       style: ElevatedButton.styleFrom(
+                        // ignore: deprecated_member_use
                         primary: Colors.green, // color de fondo del botón
                         shape: RoundedRectangleBorder(
                           // forma del botón

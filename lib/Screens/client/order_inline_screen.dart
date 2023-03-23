@@ -3,12 +3,12 @@ import 'package:ikelapp/screens/client/purchase_detail_screen.dart';
 import '../../models/api_response.dart';
 import '../../services/user_service.dart';
 
-class OrderActiveScreen extends StatefulWidget {
+class OrderInlineScreen extends StatefulWidget {
   @override
-  _OrderActiveScreenState createState() => _OrderActiveScreenState();
+  _OrderInlineScreenState createState() => _OrderInlineScreenState();
 }
 
-class _OrderActiveScreenState extends State<OrderActiveScreen> {
+class _OrderInlineScreenState extends State<OrderInlineScreen> {
   List<String> orderList = [];
   List<String> orderCost = [];
   var loading = true;
@@ -30,7 +30,7 @@ class _OrderActiveScreenState extends State<OrderActiveScreen> {
 
     setState(() {
       for (var element in dat) {
-        if (element["status"] == 1) {
+        if (element["status"] == 2) {
           orderList.add(element["internal_id"]);
           orderCost.add(element["cost"]);
         }
@@ -70,7 +70,7 @@ class _OrderActiveScreenState extends State<OrderActiveScreen> {
                                     itemPrice: dat[index]["cost"],
                                     itemImageUrl:
                                         'assets/imgs/Beerhouse/Barrilito355ml.png',
-                                    itemtype: true,
+                                    itemtype: false,
                                   )),
                         );
                       },

@@ -1,9 +1,6 @@
-import 'dart:ui';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:ikelapp/constant.dart';
-import 'package:ikelapp/screens/client/orders_screen.dart';
-
 import '../home.dart';
 
 class ConfirmationScreen extends StatefulWidget {
@@ -16,6 +13,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
 
   @override
   void initState() {
+    super.initState();
     getOrderName();
   }
 
@@ -81,7 +79,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
               },
               child: Text('Sigue comprando'),
             ),
-            ElevatedButton(
+            /* ElevatedButton(
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all<Color>(PRYMARY_COLOR),
@@ -95,7 +93,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                 );
               },
               child: Text('Rastrear tu pedido'),
-            ),
+            ), */
           ],
         ),
       ),

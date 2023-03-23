@@ -11,6 +11,7 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   static const LatLng _initialPosition = LatLng(19.63343, -99.20404);
+  // ignore: unused_field
   GoogleMapController? _mapController;
   final Set<Marker> _markers = {};
 
@@ -45,7 +46,6 @@ class _MapScreenState extends State<MapScreen> {
   }
 
   void _getMarkers() {
-    var cameraPosition;
     final marker = Marker(
       markerId: MarkerId(_markers.length.toString()),
       position: _initialPosition,
