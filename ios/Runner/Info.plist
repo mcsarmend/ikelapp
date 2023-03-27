@@ -28,8 +28,12 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This app needs access to location when in the background.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This application collects location data to provide location-based services to the user.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to location when open.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>this app requires the user's permission to access location information, which is necessary for the proper functioning of the app.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -52,6 +56,6 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
-		<string>This app requires access to the photo library.</string>
+	<string>This app requires access to the photo library.</string>
 </dict>
 </plist>
