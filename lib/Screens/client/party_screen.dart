@@ -40,7 +40,7 @@ class _PartyScreenState extends State<PartyScreen> {
                   children: <Widget>[
                     Text(
                       'FIESTAS',
-                      style: TextStyle(fontSize: 50.0, color: SECONDARY_COLOR),
+                      style: TextStyle(fontSize: 40.0, color: SECONDARY_COLOR),
                     ),
                   ],
                 ),
@@ -53,7 +53,7 @@ class _PartyScreenState extends State<PartyScreen> {
                     children: <InlineSpan>[],
                   ),
                 ),
-                SizedBox(height: 30.0),
+                SizedBox(height: 10.0),
                 Row(
                   children: <Widget>[
                     Image(
@@ -76,7 +76,7 @@ class _PartyScreenState extends State<PartyScreen> {
                               height:
                                   8.0), // Espacio entre el título y el texto del párrafo
                           Text(
-                            'Texto del párrafo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                            'Encuentra la mejor selección de bebidas alcohólicas para tu próxima fiesta en nuestra app. Navega fácilmente por nuestras categorías, busca por marca y agrega productos a tu carrito de compras en segundos. Además, programa la entrega directamente a tu evento para disfrutar de un servicio personalizado y eficiente. ¡Regístrate ahora y haz de tu fiesta un éxito con nuestras bebidas de alta calidad!',
                             style: TextStyle(fontSize: 16.0),
                           ),
                         ],
@@ -89,7 +89,7 @@ class _PartyScreenState extends State<PartyScreen> {
                     padding: const EdgeInsets.all(8.0), // Ancho máximo
                     child: Text(
                       "CONTRATA MEDIANTE",
-                      style: TextStyle(fontSize: 30, color: PRYMARY_COLOR),
+                      style: TextStyle(fontSize: 15, color: PRYMARY_COLOR),
                     )),
                 Padding(
                     padding: const EdgeInsets.all(8.0), // Ancho máximo
@@ -128,7 +128,7 @@ class _PartyScreenState extends State<PartyScreen> {
                         .scaleDown, // Escalar el texto hacia abajo si es necesario
                     child: Text(
                       'CONSULTA NUESTROS TÉRMINOS Y CONDICIONES.',
-                      style: TextStyle(fontSize: 20.0),
+                      style: TextStyle(fontSize: 10.0),
                     ),
                   ),
                 ),
@@ -138,8 +138,8 @@ class _PartyScreenState extends State<PartyScreen> {
                     fit: BoxFit
                         .scaleDown, // Escalar el texto hacia abajo si es necesario
                     child: Text(
-                      'TODA NUESTRA ACTIVIDAD DE VENTA  ESTÄ DETERMINADO  POR NUESTRAS POLITOCAS DE LA EMPRESA.',
-                      style: TextStyle(fontSize: 20.0),
+                      'TODA NUESTRA ACTIVIDAD DE VENTA  ESTÁ DETERMINADO  POR NUESTRAS POLITOCAS DE LA EMPRESA.',
+                      style: TextStyle(fontSize: 10.0),
                     ),
                   ),
                 ),

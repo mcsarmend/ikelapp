@@ -39,7 +39,7 @@ class _WholeSaleScreenState extends State<WholeSaleScreen> {
                   children: <Widget>[
                     Text(
                       'MAYOREO',
-                      style: TextStyle(fontSize: 50.0, color: SECONDARY_COLOR),
+                      style: TextStyle(fontSize: 40.0, color: SECONDARY_COLOR),
                     ),
                   ],
                 ),
@@ -52,7 +52,7 @@ class _WholeSaleScreenState extends State<WholeSaleScreen> {
                     children: <InlineSpan>[],
                   ),
                 ),
-                SizedBox(height: 30.0),
+                SizedBox(height: 10.0),
                 Row(
                   children: <Widget>[
                     Image(
@@ -75,7 +75,7 @@ class _WholeSaleScreenState extends State<WholeSaleScreen> {
                               height:
                                   8.0), // Espacio entre el título y el texto del párrafo
                           Text(
-                            'Texto del párrafo. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                            'Descubre una amplia selección de productos de alta calidad a precios competitivos para tu negocio en nuestra app de venta al por mayor. Navega fácilmente por nuestras categorías, agrega productos a tu carrito y accede a precios especiales por volumen. ¡Regístrate ahora y comienza a disfrutar de todas las ventajas que te ofrecemos!',
                             style: TextStyle(fontSize: 16.0),
                           ),
                         ],
@@ -88,7 +88,7 @@ class _WholeSaleScreenState extends State<WholeSaleScreen> {
                     padding: const EdgeInsets.all(8.0), // Ancho máximo
                     child: Text(
                       "CONTRATA MEDIANTE",
-                      style: TextStyle(fontSize: 30, color: PRYMARY_COLOR),
+                      style: TextStyle(fontSize: 20, color: PRYMARY_COLOR),
                     )),
                 Padding(
                     padding: const EdgeInsets.all(8.0), // Ancho máximo
