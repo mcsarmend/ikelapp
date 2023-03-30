@@ -80,7 +80,14 @@ class _ProfileState extends State<Profile> {
 
   //update profile
   void updateProfile() async {
-    ApiResponse response = await updateUser(txtNameController.text,txtEmailController.text,txtNumberController.text);
+    ApiResponse response = await updateUser(
+        txtNameController.text,
+        getStringImage(_imageFile),
+        txtEmailController.text,
+        txtNumberController.text);
+    setState(() {
+      loading = false;
+    });
     setState(() {
       loading = false;
     });
