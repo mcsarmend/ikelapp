@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>IkelDrinks</string>
+	<string>IkelDrinksAlpha</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -26,14 +26,14 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app needs access to location when in the background.</string>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>This application collects location data to provide location-based services to the user.</string>
+	<string>Tu ubicaion se ocupara para proporcionarla al repartidor y poder enviar tu pedido. esta misma se almacena en el sitio https://seges.com.mx/</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Tu ubicaion se ocupara para proporcionarla al repartidor y poder enviar tu pedido. esta misma se almacena en el sitio https://seges.com.mx/</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Tu ubicaion se ocupara para proporcionarla al repartidor y poder enviar tu pedido. esta misma se almacena en el sitio https://seges.com.mx/</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app needs access to location when open.</string>
-	<key>NSLocationUsageDescription</key>
-	<string>this app requires the user's permission to access location information, which is necessary for the proper functioning of the app.</string>
+	<string>TTu ubicaion se ocupara para proporcionarla al repartidor y poder enviar tu pedido. esta misma se almacena en el sitio https://seges.com.mx/</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -55,7 +55,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app requires access to the photo library.</string>
 </dict>
 </plist>
