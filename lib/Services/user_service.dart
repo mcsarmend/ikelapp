@@ -340,8 +340,9 @@ Future<ApiResponse> getaddressbycp(String cp) async {
 // Update user
 Future<ApiResponse> updateUser(
   String name,
+  String? image,
   String? email,
-  String? number
+  String? number,
 ) async {
   ApiResponse apiResponse = ApiResponse();
   try {
@@ -351,8 +352,15 @@ Future<ApiResponse> updateUser(
           'Accept': 'application/json',
           'Authorization': 'Bearer $token'
         },
-        body: {
+        body: image == null
+            ? {
                 'name': name,
+                "email": email,
+                "number": number,
+              }
+            : {
+                'name': name,
+                'image': image,
                 "email": email,
                 "number": number,
               });
