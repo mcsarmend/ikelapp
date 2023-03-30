@@ -1,4 +1,4 @@
-package com.example.ikelapp
+package com.begroup.IkelDrinksAlpha
 
 import io.flutter.embedding.android.FlutterActivity
 
