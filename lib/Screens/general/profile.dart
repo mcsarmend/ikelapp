@@ -117,7 +117,7 @@ class _ProfileState extends State<Profile> {
               children: [
                 Center(
                   child: CircleAvatar(
-                    radius: 50,
+                    radius: 40,
                     backgroundColor: PRYMARY_COLOR,
                   ),
                 ),
@@ -168,7 +168,7 @@ class _ProfileState extends State<Profile> {
                 SizedBox(
                   height: 20,
                 ),
-                kTextButton('Actualizar perfil', () {
+                kTextButton('Actualizar Perfil', () {
                   if (formKey.currentState!.validate()) {
                     setState(() {
                       loading = true;
@@ -179,7 +179,7 @@ class _ProfileState extends State<Profile> {
                 SizedBox(
                   height: 20,
                 ),
-                kTextButton('Actualizar ubicación', () async {
+                kTextButton('Actualizar Ubicación', () async {
                   if (formKey.currentState!.validate()) {
                     setState(() {
                       loading = true;
@@ -190,6 +190,12 @@ class _ProfileState extends State<Profile> {
                           builder: (context) => address_register()),
                     );
                   }
+                }),
+                SizedBox(
+                  height: 20,
+                ),
+                kTextButton('Borrar cuenta', () async {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Próximamente')));
                 }),
                 SizedBox(
                   height: 20,
