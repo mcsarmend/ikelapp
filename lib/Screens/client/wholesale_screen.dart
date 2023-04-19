@@ -29,7 +29,7 @@ class _WholeSaleScreenState extends State<WholeSaleScreen> {
             },
           ),
         ),
-        body: Padding(
+        body: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               children: <Widget>[

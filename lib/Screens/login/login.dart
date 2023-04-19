@@ -1,6 +1,6 @@
 import 'package:ikelapp/models/api_response.dart';
 import 'package:ikelapp/models/user.dart';
-import 'package:ikelapp/screens/login/prelogin.dart';
+
 import 'package:ikelapp/services/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -60,64 +60,10 @@ class _LoginState extends State<Login> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: PRYMARY_COLOR,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () async {
-            await Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => prelogin_screen()),
-            );
-          },
-        ),
         centerTitle: true,
         title: Text('Acceder'),
       ),
-      body: Form(
-        key: formkey,
-        child: ListView(
-          padding: EdgeInsets.all(32),
-          children: [
-            TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                controller: txtEmail,
-                validator: (val) => val!.isEmpty ? 'Correo inválido' : null,
-                decoration: kInputDecoration('Email')),
-            SizedBox(
-              height: 10,
-            ),
-            TextFormField(
-                controller: txtPassword,
-                obscureText: true,
-                validator: (val) => val!.length < 6
-                    ? 'Se requieren al menos 6 caracteres'
-                    : null,
-                decoration: kInputDecoration('Password')),
-            SizedBox(
-              height: 10,
-            ),
-            loading
-                ? Center(
-                    child: CircularProgressIndicator(),
-                  )
-                : kTextButton('Acceder', () {
-                    if (formkey.currentState!.validate()) {
-                      setState(() {
-                        loading = true;
-                        _loginUser();
-                      });
-                    }
-                  }),
-            SizedBox(
-              height: 10,
-            ),
-            kLoginRegisterHint('¿No tienes cuenta? ', 'Registrarse', () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => Register()),
-                  (route) => false);
-            })
-          ],
-        ),
-      ),
+      body:Text("Hola")
     );
   }
 }

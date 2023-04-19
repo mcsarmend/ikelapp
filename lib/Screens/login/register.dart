@@ -3,7 +3,7 @@ import 'package:ikelapp/models/user.dart';
 import 'package:ikelapp/screens/general/terms_Conditions.dart';
 import 'package:ikelapp/screens/home.dart';
 import 'package:ikelapp/screens/loading.dart';
-import 'package:ikelapp/screens/login/prelogin.dart';
+
 import 'package:ikelapp/services/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -81,11 +81,8 @@ class _RegisterState extends State<Register> {
         backgroundColor: PRYMARY_COLOR,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () async {
-            await Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => prelogin_screen()),
-            );
+          onPressed: ()  {
+            Navigator.pop(context);
           },
         ),
         centerTitle: true,
