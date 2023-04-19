@@ -30,7 +30,7 @@ class _PartyScreenState extends State<PartyScreen> {
           ),
           title: Text(''),
         ),
-        body: Padding(
+        body: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               children: <Widget>[
