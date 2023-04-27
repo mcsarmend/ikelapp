@@ -157,7 +157,50 @@ class _ProfileState extends State<Profile> {
         (route) => false);
   }
 
+  void deleteUser() async {
+      userId = await getUserId();
+      ApiResponse response = await drop(userId.toString());
+      
 
+  }
+
+Future<void> _showAlert(context) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // Si el usuario hace clic fuera del dialogo, no lo cierra
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Confirmación'),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+              Text('¿Estás seguro que quieres borrar tu cuenta?'),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: Text('Cancelar'),
+            onPressed: () {
+              Navigator.of(context).pop(); // Cerrar el dialogo
+            },
+          ),
+          TextButton(
+            child: Text('Continuar'),
+            onPressed: () {
+              // Aquí se pone la acción que se quiere realizar si el usuario confirma
+              deleteUser();
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Cuenta eliminada correctamente')));
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => Home()),
+              (route) => false); // Cerrar el dialogo
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
 
   @override
   void initState() {
@@ -252,7 +295,8 @@ class _ProfileState extends State<Profile> {
                   height: 20,
                 ),
                 kTextButton('Borrar cuenta', () async {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Próximamente')));
+                  _showAlert(context);
+                  
                 }),
                 SizedBox(
                   height: 20,
@@ -375,4 +419,6 @@ class _ProfileState extends State<Profile> {
       ),
     );
   }
+  
+
 }
