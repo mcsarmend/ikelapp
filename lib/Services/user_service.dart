@@ -36,6 +36,36 @@ Future<ApiResponse> login(String email, String password) async {
 
   return apiResponse;
 }
+Future<ApiResponse> drop(String userId) async {
+  ApiResponse apiResponse = ApiResponse();
+  try {
+    final response = await http.post(Uri.parse(dropURL),
+        headers: {'Accept': 'application/json'},
+        body: {'id': userId});
+
+    switch (response.statusCode) {
+      case 200:
+        apiResponse.data = jsonDecode(response.body);
+        break;
+      case 422:
+        final errors = jsonDecode(response.body)['errors'];
+        apiResponse.error = errors[errors.keys.elementAt(0)][0];
+        break;
+      case 403:
+        apiResponse.error = jsonDecode(response.body)['message'];
+        break;
+      default:
+        apiResponse.error = somethingWentWrong;
+        break;
+    }
+  } catch (e) {
+    apiResponse.error = serverError + " " + e.toString();
+  }
+
+  return apiResponse;
+}
+
+
 
 // Register
 Future<ApiResponse> register(

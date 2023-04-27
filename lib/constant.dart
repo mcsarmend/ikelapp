@@ -5,6 +5,7 @@ const baseURL = 'https://seges.com.mx/api';
 // const baseURL = 'http://127.0.0.1:8000/api';
 
 const loginURL = baseURL + '/login';
+const dropURL = baseURL + '/drop';
 const registerURL = baseURL + '/register';
 const logoutURL = baseURL + '/logout';
 const userURL = baseURL + '/user';

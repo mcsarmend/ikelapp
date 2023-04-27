@@ -97,7 +97,7 @@ class _HomeScState extends State<HomeSc> {
                     ),
                     Text('Arma tu fiesta', style: TextStyle(fontSize: 18)),
                     Text(
-                      "LOREM IPSUM 123",
+                      "Presiona la imágen",
                       style: TextStyle(color: PRYMARY_COLOR),
                     )
                   ],
@@ -121,7 +121,7 @@ class _HomeScState extends State<HomeSc> {
                       style: TextStyle(fontSize: 18),
                     ),
                     Text(
-                      "LOREM IPSUM 123",
+                      "Presiona la imágen",
                       style: TextStyle(color: PRYMARY_COLOR),
                     )
                   ],
