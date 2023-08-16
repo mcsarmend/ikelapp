@@ -3,22 +3,26 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ikelapp/constant.dart';
 
 class MapScreen extends StatefulWidget {
-  const MapScreen({Key? key}) : super(key: key);
+  final double itemlatitude;
+  final double itemlongitude;
+
+  const MapScreen(this.itemlatitude, this.itemlongitude, {Key? key}) : super(key: key);
 
   @override
   _MapScreenState createState() => _MapScreenState();
 }
 
 class _MapScreenState extends State<MapScreen> {
-  static const LatLng _initialPosition = LatLng(19.63343, -99.20404);
-  // ignore: unused_field
+  late LatLng _initialPosition;
   GoogleMapController? _mapController;
   final Set<Marker> _markers = {};
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    _initialPosition = LatLng(widget.itemlatitude, widget.itemlongitude);
+    print(widget.itemlatitude);
+    print(widget.itemlongitude);
     _getMarkers();
   }
 

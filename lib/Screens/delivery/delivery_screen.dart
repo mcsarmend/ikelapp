@@ -1,3 +1,7 @@
+import 'dart:async';
+import 'dart:convert';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:ikelapp/constant.dart';
@@ -10,6 +14,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_dialogs/flutter_dialogs.dart';
+import 'package:http/http.dart' as http;
+import 'dart:io';
 
 class delivery_screen extends StatefulWidget {
   @override
@@ -26,6 +32,7 @@ class _delivery_screenState extends State<delivery_screen> {
   var contacto = "Contacto: ";
   var dateOrder = "Fecha: ";
   var internalId = "No. de Orden: ";
+  var order_id = "";
   var address = "Dirección: ";
   var latLng;
   var pos;
@@ -40,10 +47,14 @@ class _delivery_screenState extends State<delivery_screen> {
   String destinationTitle = 'Destino';
   String originTitle = 'Origen';
   String status = 'Iniciar';
+  late Timer _timer;
+  final Geolocator _geolocator = Geolocator();
+  Position? _currentPosition;
 
-  Future getCurrentPosition() async {
+  Future getCurrentPositioninitial() async {
     pos = await Geolocator.getCurrentPosition();
     print(pos);
+
     setState(() {
       originLat = double.tryParse(pos.latitude.toString());
       originLon = double.tryParse(pos.longitude.toString());
@@ -51,17 +62,30 @@ class _delivery_screenState extends State<delivery_screen> {
     });
   }
 
+  Future getCurrentPosition() async {
+    pos = await Geolocator.getCurrentPosition();
+    print(pos);
+    var position = {
+      "latitude": double.tryParse(pos.latitude.toString()),
+      "longitude": double.tryParse(pos.longitude.toString()),
+    };
+    setCurrentPosition(position["latitude"].toString(),
+        position["longitude"].toString(), userId.toString(), order_id);
+    return position;
+  }
+
   void loadingorders() async {
     userId = await getUserId();
     ApiResponse res = await getDeliverys(userId.toString());
-    dat = (res.data as Map)['orders'];
-    print(dat);
 
-    setState(() async {
+    if (res.error != null) {
+      print(res.error);
+    } else {
+      dat = (res.data as Map)['orders'];
+      print(dat);
       if (dat.length > 0) {
         var latitud = dat[0]["lat_destiny"];
         var longitud = dat[0]["lon_destiny"];
-        // Crea un objeto LatLng con la latitud y longitud de la ubicación
         latLng = LatLng(latitud!, longitud!);
 
         // Usa la API de geocoding de Google Maps para convertir la ubicación en una dirección
@@ -72,25 +96,32 @@ class _delivery_screenState extends State<delivery_screen> {
         final Placemark place = placemarks[0];
         final String direccion =
             "${place.street}, ${place.locality}, ${place.country},${place.postalCode}";
+        setState(() async {
+          if (dat.length > 0) {
+            // Crea un objeto LatLng con la latitud y longitud de la ubicación
 
-        var dateOrderConv = dat[0]["internal_id"].toString().substring(2, 8);
-        haveDeliverys = true;
-        contacto = contacto + dat[0]["number"];
-        dateOrder = dateOrder + dateOrderConv;
-        internalId = internalId + dat[0]["internal_id"];
-        address = address + direccion;
-        order_description = dat[0]["order_description"];
-        cost = dat[0]["cost"];
-        inprogress = dat[0]["inprogress"];
-        if (inprogress == 0) {
-          status = "Iniciar";
-        } else {
-          status = "Terminar";
-        }
+            var dateOrderConv =
+                dat[0]["internal_id"].toString().substring(2, 8);
+            haveDeliverys = true;
+            contacto = contacto + dat[0]["number"];
+            dateOrder = dateOrder + dateOrderConv;
+            internalId = internalId + dat[0]["internal_id"];
+            order_id = dat[0]["internal_id"];
+            address = address + direccion;
+            order_description = dat[0]["order_description"];
+            cost = dat[0]["cost"];
+            inprogress = dat[0]["inprogress"];
+            if (inprogress == 0) {
+              status = "Iniciar";
+            } else {
+              status = "Terminar";
+            }
+          }
+          // orders = res.data as Orders;
+          loading = false;
+        });
       }
-      // orders = res.data as Orders;
-      loading = false;
-    });
+    }
   }
 
   void changeProgressStatus(st) async {
@@ -98,13 +129,15 @@ class _delivery_screenState extends State<delivery_screen> {
     ApiResponse res;
     if (inprogress == 0) {
       res = await startProgress(userId.toString(), '1', '1');
+      _startLocationTimer();
       setState(() {
         status = "Terminar";
         inprogress = 1;
       });
     } else {
-      res = await endProgress(userId.toString(), '0', '0');
+      res = await endProgress(userId.toString(), '0', order_id);
       setState(() {
+        _stopLocationTimer();
         loadingorders();
       });
     }
@@ -119,11 +152,253 @@ class _delivery_screenState extends State<delivery_screen> {
     }
   }
 
+  String note = "";
+  // Función para mostrar el pop-up de agregar nota
+  void _showAddNoteDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Agregar Nota'),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextField(
+                  decoration: InputDecoration(labelText: 'Ingrese la nota'),
+                  maxLines: null, // Permite varias líneas de texto
+                  onChanged: (value) {
+                    note = value;
+                  },
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Cerrar el pop-up
+              },
+              child: Text('Cancelar'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                if (note.isNotEmpty) {
+                  await setNote(order_id, note);
+                  Navigator.of(context).pop(); // Cerrar el diálogo principal
+
+                  // Mostrar el segundo diálogo con el mensaje de éxito
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text('Éxito'),
+                        content: Text("Nota agregada correctamente"),
+                        actions: <Widget>[
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pop(); // Cerrar el segundo diálogo
+                            },
+                            child: Text('Aceptar'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text('Error'),
+                        content: Text("La nota no puede estar vacía"),
+                        actions: <Widget>[
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pop(); // Cerrar el diálogo de error
+                            },
+                            child: Text('Aceptar'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                }
+              },
+              child: Text('Guardar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+// Función para mostrar el pop-up de ver notas
+  Future<void> _showViewNotesDialog(BuildContext context) async {
+    final Object? response = await getNotes(order_id);
+
+    if (response is List<dynamic>) {
+      final List<Map<String, dynamic>> notes =
+          response.cast<Map<String, dynamic>>();
+
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Notas'),
+            content: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (notes.isNotEmpty)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: notes.map((noteMap) {
+                        final note = noteMap['note'] as String;
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4),
+                          child: Row(
+                            children: [
+                              Text('•'), // Viñeta
+                              SizedBox(width: 8),
+                              Expanded(child: Text(note)),
+                            ],
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  if (notes.isEmpty) Text('No hay notas disponibles'),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // Cerrar el pop-up
+                },
+                child: Text('Cerrar'),
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      print('Error: Respuesta inesperada de notas');
+    }
+  }
+
+  Future<ApiResponse> setNote(String order_id, String note) async {
+    ApiResponse apiResponse = ApiResponse();
+    try {
+      final Uri uri = Uri.parse(setnotefromdelivery)
+          .replace(queryParameters: {'order_id': order_id, 'note': note});
+
+      final response =
+          await http.get(uri, headers: {'Accept': 'application/json'});
+
+      switch (response.statusCode) {
+        case 200:
+          apiResponse.data = jsonDecode(response.body);
+          break;
+        case 422:
+          apiResponse.error = jsonDecode(response.body)["error"];
+          break;
+        default:
+          apiResponse.error = somethingWentWrong;
+          break;
+      }
+    } catch (e) {
+      apiResponse.error = serverError;
+    }
+    return apiResponse;
+  }
+
+  Future<ApiResponse> setCurrentPosition(String latitude, String longitude,
+      String delivery_id, String order_id) async {
+    ApiResponse apiResponse = ApiResponse();
+    try {
+      final Uri uri = Uri.parse(setcurentposition).replace(queryParameters: {
+        'latitude': latitude,
+        'longitude': longitude,
+        "delivery_id": delivery_id,
+        "order_id": order_id
+      });
+
+      final response =
+          await http.get(uri, headers: {'Accept': 'application/json'});
+
+      switch (response.statusCode) {
+        case 200:
+          apiResponse.data = jsonDecode(response.body);
+          break;
+        case 422:
+          apiResponse.error = jsonDecode(response.body)["error"];
+          break;
+        default:
+          apiResponse.error = somethingWentWrong;
+          break;
+      }
+    } catch (e) {
+      apiResponse.error = serverError;
+    }
+    return apiResponse;
+  }
+
+  Future<Object?> getNotes(String order_id) async {
+    ApiResponse apiResponse = ApiResponse();
+    try {
+      final Uri uri = Uri.parse(getnotestodelivery)
+          .replace(queryParameters: {'pedido': order_id});
+
+      final response =
+          await http.get(uri, headers: {'Accept': 'application/json'});
+
+      switch (response.statusCode) {
+        case 200:
+          apiResponse.data = jsonDecode(response.body);
+          break;
+        case 422:
+          apiResponse.error = jsonDecode(response.body)["error"];
+          break;
+        default:
+          apiResponse.error = somethingWentWrong;
+          break;
+      }
+    } catch (e) {
+      apiResponse.error = serverError;
+    }
+    return apiResponse.data;
+  }
+
+  void _startLocationTimer() async {
+    const Duration interval = Duration(minutes: 3);
+    var position = await getCurrentPosition();
+    _timer = Timer.periodic(interval, (Timer timer) async {
+      var position = await getCurrentPosition();
+      if (position != null) {
+        var posti = 'Ubicación emitida:' +
+            position["latitude"].toString() +
+            ", " +
+            position["longitude"].toString();
+        // Emitir la ubicación (enviar a un servidor, etc.)
+        print(posti);
+      } else {
+        print('No se pudo obtener la ubicación');
+      }
+    });
+  }
+
+  void _stopLocationTimer() {
+    _timer.cancel();
+  }
+
   @override
   void initState() {
     super.initState();
     loadingorders();
-    getCurrentPosition();
+    getCurrentPositioninitial();
   }
 
   @override
@@ -139,22 +414,22 @@ class _delivery_screenState extends State<delivery_screen> {
             height: 50,
           ),
           Container(
-            height: 150,
+            height: 130,
             color: Colors.transparent,
             child: Center(
               child: Image.asset('assets/imgs/delivery.png'),
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 5),
           Text(
             'BUZÓN DE ENTREGAS',
             style: TextStyle(
-                fontSize: 24,
+                fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: SECONDARY_COLOR),
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 5),
           haveDeliverys
               ? Container(
                   margin: EdgeInsets.all(20),
@@ -279,6 +554,29 @@ class _delivery_screenState extends State<delivery_screen> {
                           )
                         ],
                       ),
+                      Row(
+                        children: [
+                          MaterialButton(
+                            color: PRYMARY_COLOR,
+                            textColor: Colors.white,
+                            onPressed: () {
+                              _showAddNoteDialog(
+                                context,
+                              );
+                            },
+                            child: Text('Agregar nota'),
+                          ),
+                          Spacer(),
+                          MaterialButton(
+                            color: PRYMARY_COLOR,
+                            textColor: Colors.white,
+                            onPressed: () {
+                              _showViewNotesDialog(context);
+                            },
+                            child: Text('Ver notas'),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 )

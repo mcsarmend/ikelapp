@@ -15,6 +15,9 @@ class _OrderActiveScreenState extends State<OrderActiveScreen> {
   var userId = 0;
   var orders;
   var dat;
+  
+ List<Map<String, dynamic>> locations = [];
+
   @override
   void initState() {
     super.initState();
@@ -33,8 +36,15 @@ class _OrderActiveScreenState extends State<OrderActiveScreen> {
         if (element["status"] == 1) {
           orderList.add(element["internal_id"]);
           orderCost.add(element["cost"]);
+            Map<String, dynamic> newLocation = {
+              "latitude":element["current_latitude"],
+              "longitude": element["current_longitude"],
+            };
+
+          locations.add(newLocation);
         }
       }
+      print(locations);
       loading = false;
     });
   }
@@ -71,6 +81,8 @@ class _OrderActiveScreenState extends State<OrderActiveScreen> {
                                     itemImageUrl:
                                         'assets/imgs/Beerhouse/Barrilito355ml.png',
                                     itemtype: true,
+                                    itemlatitude: locations[index]["latitude"],
+                                    itemlongitude: locations[index]["longitude"]
                                   )),
                         );
                       },

@@ -20,10 +20,11 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: TextField(
-          decoration: InputDecoration(
-              hintText: 'Buscar', prefixIcon: Icon(Icons.search)),
-        ),
+        title: Text("Inicio"),
+        // TextField(
+        //   decoration: InputDecoration(
+        //       hintText: 'Buscar', prefixIcon: Icon(Icons.search)),
+        // ),
         actions: <Widget>[
           Image(
             image: AssetImage('assets/imgs/ikellogo.png'),
