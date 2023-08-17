@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 const baseURL = 'https://seges.com.mx/api';
+const baseURL2 = 'https://seges.com.mx/pedidos';
 // const baseURL = 'http://127.0.0.1:8000/api';
 
 const loginURL = baseURL + '/login';
@@ -13,6 +14,9 @@ const postsURL = baseURL + '/posts';
 const commentsURL = baseURL + '/comments';
 const addressURL = baseURL + '/address';
 const ordersURL = baseURL + '/getorders';
+const setnotefromdelivery = baseURL2 + '/aux1';
+const getnotestodelivery = baseURL2 + '/vernota';
+const setcurentposition = baseURL2 + '/aux2';
 const deliverysURL = baseURL + '/aux1';
 const startProgressURL = baseURL + '/aux2';
 const endProgressURL = baseURL + '/aux3';

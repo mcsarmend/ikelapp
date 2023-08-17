@@ -36,12 +36,12 @@ Future<ApiResponse> login(String email, String password) async {
 
   return apiResponse;
 }
+
 Future<ApiResponse> drop(String userId) async {
   ApiResponse apiResponse = ApiResponse();
   try {
     final response = await http.post(Uri.parse(dropURL),
-        headers: {'Accept': 'application/json'},
-        body: {'id': userId});
+        headers: {'Accept': 'application/json'}, body: {'id': userId});
 
     switch (response.statusCode) {
       case 200:
@@ -64,8 +64,6 @@ Future<ApiResponse> drop(String userId) async {
 
   return apiResponse;
 }
-
-
 
 // Register
 Future<ApiResponse> register(
@@ -172,11 +170,13 @@ Future<ApiResponse> getDeliverys(String userId) async {
         apiResponse.error = jsonDecode(response.body)["error"];
         break;
       default:
-        apiResponse.error = somethingWentWrong;
+        var error =  somethingWentWrong + " " + jsonDecode(response.body)["error"];
+        apiResponse.error = error;
         break;
     }
   } catch (e) {
-    apiResponse.error = serverError;
+    var error = serverError + e.toString();
+    apiResponse.error =error ;
   }
   return apiResponse;
 }
@@ -211,7 +211,7 @@ Future<ApiResponse> startProgress(
 }
 
 Future<ApiResponse> endProgress(
-    String userId, String status, String orderstatus) async {
+    String userId, String status, String order_id) async {
   ApiResponse apiResponse = ApiResponse();
   try {
     final response = await http.post(Uri.parse(endProgressURL), headers: {
@@ -219,7 +219,7 @@ Future<ApiResponse> endProgress(
     }, body: {
       'status': status,
       'user_id': userId,
-      'orderstatus': orderstatus
+      'order_id': order_id
     });
 
     switch (response.statusCode) {
@@ -238,6 +238,7 @@ Future<ApiResponse> endProgress(
   }
   return apiResponse;
 }
+
 
 Future<ApiResponse> getorders(String userId) async {
   ApiResponse apiResponse = ApiResponse();

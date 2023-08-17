@@ -8,6 +8,8 @@ class PurchaseDetailScreen extends StatelessWidget {
   final String itemDescription;
   final String itemPrice;
   final String itemImageUrl;
+  final double itemlatitude;
+  final double itemlongitude;
   final bool itemtype;
 
   PurchaseDetailScreen({
@@ -15,6 +17,8 @@ class PurchaseDetailScreen extends StatelessWidget {
     required this.itemDescription,
     required this.itemPrice,
     required this.itemImageUrl,
+    required this.itemlatitude,
+    required this.itemlongitude,
     required this.itemtype,
   });
 
@@ -70,7 +74,7 @@ class PurchaseDetailScreen extends StatelessWidget {
                     onPressed: () async {
                       await Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MapScreen()),
+                        MaterialPageRoute(builder: (context) => MapScreen(itemlatitude, itemlongitude)),
                       );
                     },
                     child: Text('Rastrear en mapa'),

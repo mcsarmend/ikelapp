@@ -37,6 +37,8 @@ class _shoppingbagState extends State<shoppingbag> {
   double lon = 0.0;
   String internalId = "";
   bool doingshipment = false;
+  bool isloagged = false;
+
   void getUser() async {
     ApiResponse response = await getUserDetail();
     userId = await getUserId();
@@ -164,29 +166,39 @@ class _shoppingbagState extends State<shoppingbag> {
   }
 
   void buy(BuildContext context) async {
-    if (_cartItems.length == 0) {
-      setState(() {
-        t = "No tienes nada en el carrito";
-      });
-      showAlertDialog(context);
+    ApiResponse response = await getUserDetail();
+    if (response.error == unauthorized) {
+      isloagged = false;
+       setState(() {
+          t = "Por favor inicia sesión en la sección perfil.";
+        });
+        showAlertDialog(context);
+
     } else {
-      if (location.contains("registrada")) {
+      if (_cartItems.length == 0) {
         setState(() {
-          t = "No tienes dirección registrada";
+          t = "No tienes productos en el carrito";
         });
         showAlertDialog(context);
       } else {
-
-        SharedPreferences pref = await SharedPreferences.getInstance();
-        List<String> clear = [];
-        await pref.setStringList('cartItems', clear);
-        await pref.setStringList('costItems', clear);
-        await pref.setStringList('countItems', clear);
-        await orderGenerator();
-        await Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => ConfirmationScreen()),
-        );
+        if (location.contains("registrada")) {
+          setState(() {
+            t = "No tienes dirección registrada";
+          });
+          showAlertDialog(context);
+        } else {
+          SharedPreferences pref = await SharedPreferences.getInstance();
+          List<String> clear = [];
+          await pref.setStringList('cartItems', clear);
+          await pref.setStringList('costItems', clear);
+          await pref.setStringList('countItems', clear);
+          await orderGenerator();
+          
+          await Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ConfirmationScreen()),
+          );
+        }
       }
     }
   }
@@ -309,19 +321,19 @@ class _shoppingbagState extends State<shoppingbag> {
           SizedBox(height: 16.0),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                  elevation: 0.0,
-                  backgroundColor: PRYMARY_COLOR, 
+              elevation: 0.0,
+              backgroundColor: PRYMARY_COLOR,
             ),
-              onPressed: (){
-                if(doingshipment){
-                  print("Shipment");
-                }else{
-                  doingshipment = true;
-                  buy(context);
-                }
-             }, // El botón está desactivado
+            onPressed: () {
+              if (doingshipment) {
+                print("Shipment");
+              } else {
+                doingshipment = true;
+                buy(context);
+              }
+            }, // El botón está desactivado
             child: Text('Finalizar compra'),
-           ),
+          ),
         ],
       ),
     );

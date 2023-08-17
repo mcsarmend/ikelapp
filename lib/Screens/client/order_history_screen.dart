@@ -71,6 +71,8 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                                     itemImageUrl:
                                         'assets/imgs/Beerhouse/Barrilito355ml.png',
                                     itemtype: false,
+                                    itemlatitude: 123456,
+                                    itemlongitude: 123456
                                   )),
                         );
                       },
