@@ -16,10 +16,11 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
   void _loadUserInfo() async {
     String token = await getToken();
-    if (token == '') {
-      Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => Login()), (route) => false);
-    } else {
+    // if (token == '') {
+    //   ApiResponse response = await getUserDetail();
+    //   Navigator.of(context).pushAndRemoveUntil(
+    //       MaterialPageRoute(builder: (context) => Login()), (route) => false);
+    // } else {
       ApiResponse response = await getUserDetail();
       if (response.error == null) {
         var n = response.data as User;
@@ -34,13 +35,14 @@ class _LoadingState extends State<Loading> {
         }
       } else if (response.error == unauthorized) {
         Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => Login()), (route) => false);
+              MaterialPageRoute(builder: (context) => Home()),
+              (route) => false);
       } else {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text('${response.error}'),
         ));
       }
-    }
+    // }
   }
 
   @override

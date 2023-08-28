@@ -48,7 +48,7 @@ class _PartyScreenState extends State<PartyScreen> {
                 RichText(
                   text: TextSpan(
                     text:
-                        'CONOCE TODOS LOS BENEFICIOS DE UNA FIESTA CON LA COMPRA DE TU ALCOHOL POR MAYOREO.',
+                        'CONOCE TODOS LOS BENEFICIOS DE UNA FIESTA CON LA COMPRA DE TU ALCOHOL AL POR MAYOR.',
                     style: TextStyle(fontSize: 20.0, color: SECONDARY_COLOR),
                     children: <InlineSpan>[],
                   ),
@@ -67,11 +67,11 @@ class _PartyScreenState extends State<PartyScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(
-                            'Título del párrafo',
-                            style: TextStyle(
-                                fontSize: 20.0, fontWeight: FontWeight.bold),
-                          ),
+                          // Text(
+                          //   'Título del párrafo',
+                          //   style: TextStyle(
+                          //       fontSize: 20.0, fontWeight: FontWeight.bold),
+                          // ),
                           SizedBox(
                               height:
                                   8.0), // Espacio entre el título y el texto del párrafo
@@ -138,7 +138,7 @@ class _PartyScreenState extends State<PartyScreen> {
                     fit: BoxFit
                         .scaleDown, // Escalar el texto hacia abajo si es necesario
                     child: Text(
-                      'TODA NUESTRA ACTIVIDAD DE VENTA  ESTÁ DETERMINADO  POR NUESTRAS POLITOCAS DE LA EMPRESA.',
+                      'TODA NUESTRA ACTIVIDAD DE VENTA ESTÁ DETERMINADA POR NUESTRAS POLÍTICAS DE LA EMPRESA.',
                       style: TextStyle(fontSize: 10.0),
                     ),
                   ),

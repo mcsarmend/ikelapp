@@ -61,9 +61,9 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         backgroundColor: PRYMARY_COLOR,
         centerTitle: true,
-        title: Text('Acceder'),
+        title: Text('Error al ingresar'),
       ),
-      body:Text("Hola")
+      body:Text("No se pudo iniciar la aplicación")
     );
   }
 }

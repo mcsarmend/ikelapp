@@ -156,9 +156,19 @@ class _ProductDetailState extends State<ProductDetail> {
           child: CounterButton(
             loading: false,
             onChange: (int val) {
-              setState(() {
-                _counterValue = val;
-              });
+              if (val >= 0 && val <= 100) {
+                setState(() {
+                  _counterValue = val;
+                });
+              } else if (val < 0) {
+                setState(() {
+                  _counterValue = 0;
+                });
+              } else {
+                setState(() {
+                  _counterValue = 100;
+                });
+              }
             },
             count: _counterValue,
             countColor: Colors.black,
@@ -180,7 +190,7 @@ class _ProductDetailState extends State<ProductDetail> {
                           addToCar(widget.assetPath, widget.productname,
                               widget.price, _counterValue);
                         },
-                        child: Text('Add to cart',
+                        child: Text('Añadir al carrito',
                             style: TextStyle(
                                 fontFamily: 'Varela',
                                 fontSize: 14.0,

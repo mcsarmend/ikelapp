@@ -197,7 +197,7 @@ class _PistosDetailState extends State<PistosDetail> {
                     ? Column(
                         children: [
                           Text(
-                            "Tipo de Cerbeza",
+                            "Tipo de Cerveza",
                             style:
                                 TextStyle(color: PRYMARY_COLOR, fontSize: 16),
                           ),
@@ -481,9 +481,19 @@ class _PistosDetailState extends State<PistosDetail> {
           child: CounterButton(
             loading: false,
             onChange: (int val) {
-              setState(() {
-                _counterValue = val;
-              });
+              if (val >= 0 && val <= 100) {
+                setState(() {
+                  _counterValue = val;
+                });
+              } else if (val < 0) {
+                setState(() {
+                  _counterValue = 0;
+                });
+              } else {
+                setState(() {
+                  _counterValue = 100;
+                });
+              }
             },
             count: _counterValue,
             countColor: Colors.black,
@@ -517,7 +527,7 @@ class _PistosDetailState extends State<PistosDetail> {
                               clamatoval,
                               flavorsval);
                         },
-                        child: Text('Add to cart',
+                        child: Text('Añadir al carrito',
                             style: TextStyle(
                                 fontFamily: 'Varela',
                                 fontSize: 14.0,

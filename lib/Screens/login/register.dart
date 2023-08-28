@@ -81,7 +81,7 @@ class _RegisterState extends State<Register> {
         backgroundColor: PRYMARY_COLOR,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: ()  {
+          onPressed: () {
             Navigator.pop(context);
           },
         ),
@@ -109,10 +109,20 @@ class _RegisterState extends State<Register> {
               height: 20,
             ),
             TextFormField(
-                controller: numberController,
-                keyboardType: TextInputType.emailAddress,
-                validator: (val) => val!.isEmpty ? 'Número inválido' : null,
-                decoration: kInputDecoration('Número')),
+              controller: numberController,
+              keyboardType:
+                  TextInputType.number, // Cambiamos el tipo de teclado a número
+              validator: (val) {
+                if (val!.isEmpty) {
+                  return 'Número inválido';
+                }
+                if (val.length != 10 || !RegExp(r'^[0-9]+$').hasMatch(val)) {
+                  return 'El número debe contener exactamente 10 dígitos';
+                }
+                return null;
+              },
+              decoration: kInputDecoration('Número'),
+            ),
             SizedBox(
               height: 20,
             ),

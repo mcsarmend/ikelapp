@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int currentIndex = 0;
-  int itemCount = 1;
+  int itemCount = 4;
   @override
   @override
   Widget build(BuildContext context) {
@@ -51,31 +51,31 @@ class _HomeState extends State<Home> {
                   );
                 },
               ),
-              itemCount > 0
-                  ? Positioned(
-                      right: 6,
-                      top: 6,
-                      child: Container(
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        constraints: BoxConstraints(
-                          minWidth: 16,
-                          minHeight: 16,
-                        ),
-                        child: Text(
-                          itemCount.toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    )
-                  : SizedBox.shrink(),
+              // itemCount > 0
+              //     ? Positioned(
+              //         right: 6,
+              //         top: 6,
+              //         child: Container(
+              //           padding: EdgeInsets.all(2),
+              //           decoration: BoxDecoration(
+              //             color: Colors.red,
+              //             borderRadius: BorderRadius.circular(10),
+              //           ),
+              //           constraints: BoxConstraints(
+              //             minWidth: 16,
+              //             minHeight: 16,
+              //           ),
+              //           child: Text(
+              //             itemCount.toString(),
+              //             style: TextStyle(
+              //               color: Colors.white,
+              //               fontSize: 10,
+              //             ),
+              //             textAlign: TextAlign.center,
+              //           ),
+              //         ),
+              //       )
+              //     : SizedBox.shrink(),
             ],
           )
         ],

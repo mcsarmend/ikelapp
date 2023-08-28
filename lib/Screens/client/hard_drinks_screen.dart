@@ -32,7 +32,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle 100 años",
                       context),
                   productpage.build(
-                      '400 Conejo',
+                      '400 Conejos 750ml',
                       '\$435.00',
                       'assets/imgs/HardDrink/400conejos.png',
                       false,
@@ -40,7 +40,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      '1800 Cristalino',
+                      '1800 Cristalino 700ml',
                       '\$635.00',
                       'assets/imgs/HardDrink/1800cristalino.png',
                       false,
@@ -48,7 +48,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Absinth',
+                      'Absinth 700ml',
                       '\$555.00',
                       'assets/imgs/HardDrink/Absinth.png',
                       false,
@@ -56,7 +56,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Absolut Azul',
+                      'Absolut Azul 750 ml',
                       '\$259.00',
                       'assets/imgs/HardDrink/AbsolutAzul.png',
                       false,
@@ -64,7 +64,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Absolut Mandarina',
+                      'Absolut Mandarina 750 ml',
                       '\$259.00',
                       'assets/imgs/HardDrink/AbsolutMandrin.png',
                       false,
@@ -72,7 +72,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Alacrán Jóven ',
+                      'Alacrán Jóven 750 ml ',
                       '\$639.00',
                       'assets/imgs/HardDrink/AlacranJoven.png',
                       false,
@@ -80,7 +80,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Alipús San Juan del Río',
+                      'Alipús San Juan del Río 750ml',
                       '\$717.00',
                       'assets/imgs/HardDrink/AlipusSanJuandelRio.png',
                       false,
@@ -88,7 +88,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Appleton Estate',
+                      'Appleton Estate 750ml',
                       '\$250.00',
                       'assets/imgs/HardDrink/AppletonEstate.png',
                       false,
@@ -96,7 +96,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Appleton Special',
+                      'Appleton Special 750ml',
                       '\$635.00',
                       'assets/imgs/HardDrink/AppletonSpecial.png',
                       false,
@@ -104,7 +104,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Azteca de Oro',
+                      'Azteca de Oro 700 ml',
                       '\$150.00',
                       'assets/imgs/HardDrink/AztecadeOro.png',
                       false,
@@ -112,7 +112,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Bacardí Blanco',
+                      'Bacardí Blanco 750ml',
                       '\$165.00',
                       'assets/imgs/HardDrink/BacardiBlanco.png',
                       false,
@@ -128,7 +128,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Bacardí Blanco 1750',
+                      'Bacardí Blanco 1750ml',
                       '\$310.00',
                       'assets/imgs/HardDrink/BacardiBlanco1750.png',
                       false,
@@ -136,7 +136,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Bacardi Solera',
+                      'Bacardi Solera 750ml',
                       '\$220.00',
                       'assets/imgs/HardDrink/BacardiSolera.png',
                       false,
@@ -144,7 +144,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Baileys Original',
+                      'Baileys Original 700ml',
                       '\$315.00',
                       'assets/imgs/HardDrink/BaileysOriginal.png',
                       false,
@@ -152,7 +152,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Beefeater',
+                      'Beefeater 750ml',
                       '\$412.00',
                       'assets/imgs/HardDrink/Beefeater.png',
                       false,
@@ -160,7 +160,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Beringer White Zinfandel',
+                      'Beringer White Zinfandel 750ml',
                       '\$201.00',
                       'assets/imgs/HardDrink/BeringerWhiteZinfandel.png',
                       false,
@@ -168,7 +168,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Black & White',
+                      'Black & White 700ml',
                       '\$200.00',
                       'assets/imgs/HardDrink/BlackWhite.png',
                       false,
@@ -176,7 +176,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Bombay',
+                      'Bombay Sapphire 750ml',
                       '\$475.00',
                       'assets/imgs/HardDrink/Bombay.png',
                       false,
@@ -184,7 +184,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Bruxo',
+                      'Bruxo No.1 750ml',
                       '\$515.00',
                       'assets/imgs/HardDrink/Bruxo.png',
                       false,
@@ -192,7 +192,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Buchanans 12 años',
+                      'Buchanans 12 años 750ml',
                       '\$780.00',
                       'assets/imgs/HardDrink/Buchanans12anos.png',
                       false,
@@ -200,7 +200,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Buchanans 18 años',
+                      'Buchanan´s 18 años 750ml',
                       '\$780.00',
                       'assets/imgs/HardDrink/Buchanans18anos.png',
                       false,
@@ -208,7 +208,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Buchanans Master',
+                      'Buchanan´s Master 750ml',
                       '\$895.00',
                       'assets/imgs/HardDrink/BuchanansMaster.png',
                       false,
@@ -216,7 +216,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Bulldog',
+                      'Bulldog 750ml',
                       '\$550.00',
                       'assets/imgs/HardDrink/Bulldog.png',
                       false,
@@ -224,7 +224,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Captain Morgan Spiced 750 ml',
+                      'Captain Morgan Spiced 750ml',
                       '\$149.00',
                       'assets/imgs/HardDrink/CaptainMorganSpiced750ml.png',
                       false,
@@ -232,7 +232,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Cardenal de Mendoza',
+                      'Cardenal de Mendoza 700ml',
                       '\$1063.00',
                       'assets/imgs/HardDrink/Cardenaldeendoza.png',
                       false,
@@ -240,7 +240,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Cazadores Reposado',
+                      'Cazadores Reposado 950ml',
                       '\$230.00',
                       'assets/imgs/HardDrink/CazadoresReposado.png',
                       false,
@@ -264,7 +264,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Centenario Reposado',
+                      'Centenario Reposado 950ml',
                       '\$255.00',
                       'assets/imgs/HardDrink/centenarioreposado.png',
                       false,
@@ -272,7 +272,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Chilensis Reserva',
+                      'Chilensis Reserva 750ml',
                       '\$180.00',
                       'assets/imgs/HardDrink/ChilensisReserva.png',
                       false,
@@ -280,7 +280,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Chivas Regal 12 años',
+                      'Chivas Regal 12 años 750ml',
                       '\$695.00',
                       'assets/imgs/HardDrink/ChivasRegal12anos.png',
                       false,
@@ -288,7 +288,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Courvoisier V.S.',
+                      'Courvoisier V.S. 700ml',
                       '\$625.00',
                       'assets/imgs/HardDrink/COURVOISIERVS.png',
                       false,
@@ -296,7 +296,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Cune de Rioja Semidulce',
+                      'Cune de Rioja Semidulce 750ml',
                       '\$200.00',
                       'assets/imgs/HardDrink/CuneRiojaSemidulce.png',
                       false,
@@ -304,7 +304,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Don julio 70',
+                      'Don julio 70 700ml',
                       '\$570.00',
                       'assets/imgs/HardDrink/Donjulio70.png',
                       false,
@@ -312,7 +312,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Don Julio 70 Añejo Cristalino',
+                      'Don Julio Reposado 700ml',
                       '\$835.00',
                       'assets/imgs/HardDrink/DonJulioReposado.png',
                       false,
@@ -320,7 +320,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Don Pedro',
+                      'Don Pedro 750ml',
                       '\$160.00',
                       'assets/imgs/HardDrink/DonPedro.png',
                       false,
@@ -328,7 +328,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'El Jimador reposado',
+                      'El Jimador reposado 700ml',
                       '\$195.00',
                       'assets/imgs/HardDrink/ElJimadorreposado.png',
                       false,
@@ -336,7 +336,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Finca las Moras Malbec',
+                      'Finca las Moras Malbec 750ml',
                       '\$142.00',
                       'assets/imgs/HardDrink/FincalasMorasMalbec.png',
                       false,
@@ -344,7 +344,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Frangelico',
+                      'Frangelico 700ml',
                       '\$350.00',
                       'assets/imgs/HardDrink/Frangelico.png',
                       false,
@@ -352,7 +352,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Fundador',
+                      'Fundador 700ml',
                       '\$185.00',
                       'assets/imgs/HardDrink/Fundador.png',
                       false,
@@ -360,7 +360,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Glenfiddich 12 años',
+                      'Glenfiddich 12 años 750ml',
                       '\$915.00',
                       'assets/imgs/HardDrink/Glenfiddich12anos.png',
                       false,
@@ -368,7 +368,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Grey Goose',
+                      'Grey Goose 750ml',
                       '\$660.00',
                       'assets/imgs/HardDrink/GreyGoose.png',
                       false,
@@ -392,7 +392,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Hennessy V.S.O.P',
+                      'Hennessy V.S.O.P 700ml',
                       '\$1080.00',
                       'assets/imgs/HardDrink/HennessyVSOP.png',
                       false,
@@ -400,7 +400,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Herradura Reposado 700',
+                      'Herradura Reposado 700ml',
                       '\$549.00',
                       'assets/imgs/HardDrink/HerraduraReposado700.png',
                       false,
@@ -408,7 +408,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Hornitos Reposado 700',
+                      'Hornitos Reposado 700ml',
                       '\$275.00',
                       'assets/imgs/HardDrink/HornitosReposado700.png',
                       false,
@@ -416,7 +416,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Hpnotiq',
+                      'Hpnotiq 750ml',
                       '\$650.00',
                       'assets/imgs/HardDrink/Hpnotiq.png',
                       false,
@@ -424,7 +424,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Jack Daniels',
+                      'Jack Daniels 700ml',
                       '\$415.00',
                       'assets/imgs/HardDrink/JackDaniels.png',
                       false,
@@ -432,7 +432,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Jagermeifter',
+                      'Jagermeister 700ml',
                       '\$320.00',
                       'assets/imgs/HardDrink/Jagermeifter.png',
                       false,
@@ -440,7 +440,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Jameson',
+                      'Jameson 750ml',
                       '\$371.00',
                       'assets/imgs/HardDrink/Jameson.png',
                       false,
@@ -448,7 +448,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'J B',
+                      'J & B 750ml',
                       '\$240.00',
                       'assets/imgs/HardDrink/JB.png',
                       false,
@@ -456,7 +456,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Johnnie Walker Etiqueta Negra',
+                      'Johnnie Walker Etiqueta Negra 750ml',
                       '\$830.00',
                       'assets/imgs/HardDrink/JohnnieWalkerEtiquetaNegra.png',
                       false,
@@ -464,7 +464,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Johnnie Walker Etiqueta Roja',
+                      'Johnnie Walker Etiqueta Roja 700ml',
                       '\$325.00',
                       'assets/imgs/HardDrink/JohnnieWalkerEtiquetaRoja.png',
                       false,
@@ -472,7 +472,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Jose Cuervo Especial',
+                      'Jose Cuervo Especial 990ml',
                       '\$205.00',
                       'assets/imgs/HardDrink/JoseCuervoEspecial.png',
                       false,
@@ -480,7 +480,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Jose Cuervo tradicional',
+                      'Jose Cuervo tradicional 950ml',
                       '\$330.00',
                       'assets/imgs/HardDrink/JoseCuervotradicional.png',
                       false,
@@ -488,7 +488,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Kahlua Licor de Cafe',
+                      'Kahlúa 1L',
                       '\$166.00',
                       'assets/imgs/HardDrink/KahluaLicordeCafe.png',
                       false,
@@ -496,7 +496,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Karat 1 lt',
+                      'Karat 1L',
                       '\$130.00',
                       'assets/imgs/HardDrink/Karat1lt.png',
                       false,
@@ -504,7 +504,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Kraken Black Spiced',
+                      'Kraken Black Spiced 750ml',
                       '\$165.00',
                       'assets/imgs/HardDrink/KrakenBlackSpiced.png',
                       false,
@@ -512,7 +512,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'L.A. Cetto Cabernet Sauvignon',
+                      'L.A. Cetto Cabernet Sauvignon 750ml',
                       '\$136.00',
                       'assets/imgs/HardDrink/LACetto.png',
                       false,
@@ -520,7 +520,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'L.A. Cetto Blanc Zinfandel',
+                      'L.A. Cetto Blanc Zinfandel 750ml',
                       '\$131.00',
                       'assets/imgs/HardDrink/LACettoBlancdeZinfandel.png',
                       false,
@@ -528,7 +528,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Licor 43',
+                      'Licor 43 700ml',
                       '\$430.00',
                       'assets/imgs/HardDrink/Licor43.png',
                       false,
@@ -536,7 +536,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Macallan Doble Cask',
+                      'Macallan Double Cask 700ml',
                       '\$1260.00',
                       'assets/imgs/HardDrink/MacallanDobleCask.png',
                       false,
@@ -544,7 +544,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Maestro Dobel',
+                      'Maestro Dobel Diamante 700ml',
                       '\$650.00',
                       'assets/imgs/HardDrink/MaestroDobel.png',
                       false,
@@ -552,7 +552,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Malibu',
+                      'Malibu 750ml',
                       '\$187.00',
                       'assets/imgs/HardDrink/Malibu.png',
                       false,
@@ -560,7 +560,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Martell V.S.',
+                      'Martell V.S. 700ml',
                       '\$700.00',
                       'assets/imgs/HardDrink/Martellvs.png',
                       false,
@@ -568,7 +568,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Martell V.S.O.P',
+                      'Martell V.S.O.P 700ml',
                       '\$949.00',
                       'assets/imgs/HardDrink/MartellVSOP.png',
                       false,
@@ -576,7 +576,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Matusalem Clasico',
+                      'Matusalem Clásico 750ml',
                       '\$224.00',
                       'assets/imgs/HardDrink/MatusalemClasico.png',
                       false,
@@ -584,23 +584,23 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Matusalem Platino',
+                      'Matusalem Platino 750ml',
                       '\$190.00',
                       'assets/imgs/HardDrink/MatusalemPlatino.png',
                       false,
                       false,
                       "Detalle producto",
                       context),
+                  // productpage.build(
+                  //     'Mezcal Union Uno',
+                  //     '\$N/A.00',
+                  //     'assets/imgs/HardDrink/MezcalUnionUno.png',
+                  //     false,
+                  //     false,
+                  //     "Detalle producto",
+                  //     context),
                   productpage.build(
-                      'Mezcal Union Uno',
-                      '\$N/A.00',
-                      'assets/imgs/HardDrink/MezcalUnionUno.png',
-                      false,
-                      false,
-                      "Detalle producto",
-                      context),
-                  productpage.build(
-                      'Midori',
+                      'Midori 750ml',
                       '\$405.00',
                       'assets/imgs/HardDrink/Midori.png',
                       false,
@@ -608,7 +608,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Moet Chandon Brut',
+                      'Moet Chandón Brut 750ml',
                       '\$1050.00',
                       'assets/imgs/HardDrink/MoetChandonBrut.png',
                       false,
@@ -616,7 +616,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Moet Chandon Ice Imperial',
+                      'Moet Chandón Ice Imperial 750ml',
                       '\$1655.00',
                       'assets/imgs/HardDrink/MoetChandonIceImperial.png',
                       false,
@@ -624,7 +624,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Moet Chandon Rose',
+                      'Moet Chandón Rose 750ml',
                       '\$1295.00',
                       'assets/imgs/HardDrink/MoetChandonRose.png',
                       false,
@@ -632,7 +632,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Monte Xanic Merlot',
+                      'Monte Xanic Merlot 750ml',
                       '\$545.00',
                       'assets/imgs/HardDrink/MonteXanicMerlot.png',
                       false,
@@ -640,7 +640,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Nuvo',
+                      'Nuvo 700ml',
                       '\$770.00',
                       'assets/imgs/HardDrink/Nuvo.png',
                       false,
@@ -648,7 +648,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Oso Negro Ginebra',
+                      'Oso Negro Ginebra 1L',
                       '\$120.00',
                       'assets/imgs/HardDrink/OsoNegroGinebra.png',
                       false,
@@ -656,7 +656,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Oso Ngero 1 lt',
+                      'Oso Ngero Vodka 1L',
                       '\$90.00',
                       'assets/imgs/HardDrink/OsoNgero1lt.png',
                       false,
@@ -664,7 +664,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Passport Scotch',
+                      'Passport Scotch 700ml',
                       '\$160.00',
                       'assets/imgs/HardDrink/PassportScotch.png',
                       false,
@@ -672,7 +672,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Remy Martin 1738',
+                      'Remy Martin 1738 700ml',
                       '\$1420.00',
                       'assets/imgs/HardDrink/RemyMartin1738.png',
                       false,
@@ -680,7 +680,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Remy Martin V.S.O.P.',
+                      'Remy Martin V.S.O.P. 700ml',
                       '\$1100.00',
                       'assets/imgs/HardDrink/RemyMartinVSOP.png',
                       false,
@@ -688,7 +688,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Riunite Lambrusco',
+                      'Riunite Lambrusco 750ml',
                       '\$140.00',
                       'assets/imgs/HardDrink/RiuniteLambrusco.png',
                       false,
@@ -696,7 +696,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Riunite Prosecco',
+                      'Riunite Prosecco 750ml',
                       '\$280.00',
                       'assets/imgs/HardDrink/RiuniteProsecco.png',
                       false,
@@ -704,7 +704,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Sauza',
+                      'Sauza 700ml',
                       '\$229.00',
                       'assets/imgs/HardDrink/Sauza.png',
                       false,
@@ -712,7 +712,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Skyy Vodka',
+                      'Skyy Vodka 750ml',
                       '\$165.00',
                       'assets/imgs/HardDrink/SkyyVodka.png',
                       false,
@@ -728,7 +728,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Smirnoff Tamarindo',
+                      'Smirnoff Tamarindo 750ml',
                       '\$200.00',
                       'assets/imgs/HardDrink/SmirnoffTamarindo.png',
                       false,
@@ -736,7 +736,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Stolichnaya',
+                      'Stolichnaya 750ml',
                       '\$265.00',
                       'assets/imgs/HardDrink/Stolichnaya.png',
                       false,
@@ -744,7 +744,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Tanqueray',
+                      'Tanqueray 750ml',
                       '\$455.00',
                       'assets/imgs/HardDrink/Tanqueray.png',
                       false,
@@ -752,7 +752,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Terry Centenario',
+                      'Terry Centenario 700ml',
                       '\$280.00',
                       'assets/imgs/HardDrink/TerryCentenario.png',
                       false,
@@ -760,7 +760,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Torres 10',
+                      'Torres 10 700ml',
                       '\$290.00',
                       'assets/imgs/HardDrink/Torres10.png',
                       false,
@@ -768,7 +768,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Torres 15',
+                      'Torres 15 700ml',
                       '\$510.00',
                       'assets/imgs/HardDrink/Torres15.png',
                       false,
@@ -776,7 +776,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Torres 20',
+                      'Torres 20 700ml',
                       '\$875.00',
                       'assets/imgs/HardDrink/Torres20.png',
                       false,
@@ -784,7 +784,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Wyborowa',
+                      'Wyborowa 750ml',
                       '\$139.00',
                       'assets/imgs/HardDrink/Wyborowa.png',
                       false,
@@ -792,7 +792,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'XA DOMECQ',
+                      'XA DOMECQ 750ml',
                       '\$120.00',
                       'assets/imgs/HardDrink/XADOMECQ.png',
                       false,
@@ -800,7 +800,7 @@ class HardDrinks extends StatelessWidget {
                       "Detalle producto",
                       context),
                   productpage.build(
-                      'Zacapa 23',
+                      'Zacapa 23 750ml',
                       '\$1100.00',
                       'assets/imgs/HardDrink/Zacapa23.png',
                       false,
