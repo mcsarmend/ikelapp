@@ -31,7 +31,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Agua mineral Perrier',
+                      'Agua mineral Perrier 330 ml',
                       '\$29.00',
                       'assets/imgs/Candysparty/AguaMineralPerrier.png',
                       false,
@@ -55,7 +55,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Benson Hedges Gold Cajetilla',
+                      'Benson & Hedges Gold Cajetilla 20pzs',
                       '\$63.00',
                       'assets/imgs/Candysparty/BensonHedgesGoldCajetillas.png',
                       false,
@@ -63,7 +63,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Benson Hedges Mentolados Cajetilla',
+                      'Benson & Hedges Mentolados Cajetilla 20pzs',
                       '\$63.00',
                       'assets/imgs/Candysparty/BensonHedgesMentolCajetillas.png',
                       false,
@@ -71,7 +71,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Bolsa de Hielo',
+                      'Bolsa de Hielo 5kg',
                       '\$27.00',
                       'assets/imgs/Candysparty/BolsadeHielo.png',
                       false,
@@ -87,7 +87,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Botana Mixta',
+                      'Botana Mixta 900gr',
                       '\$29.00',
                       'assets/imgs/Candysparty/BotanaMixta.png',
                       false,
@@ -95,23 +95,23 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Cacahuate Enchilado',
+                      'Cacahuate Enchilado 900gr',
                       '\$29.00',
                       'assets/imgs/Candysparty/CacahuateEnchilado.png',
                       false,
                       false,
                       "Detalle de Producto",
                       context),
+                  // productpage.build(
+                  //     'Cacahuate Garapiñado 200gr',
+                  //     '\$N/A',
+                  //     'assets/imgs/Candysparty/CacahuateGarapinado200gr.png',
+                  //     false,
+                  //     false,
+                  //     "Detalle de Producto",
+                  //     context),
                   productpage.build(
-                      'Cacahuate Garapiñado 200gr',
-                      '\$N/A',
-                      'assets/imgs/Candysparty/CacahuateGarapinado200gr.png',
-                      false,
-                      false,
-                      "Detalle de Producto",
-                      context),
-                  productpage.build(
-                      'Cacahuate Japones',
+                      'Cacahuate Japones 160gr',
                       '\$69',
                       'assets/imgs/Candysparty/CacahuateJapones.png',
                       false,
@@ -127,7 +127,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Cacahuate Salado sol',
+                      'Cacahuate Salado sol 900gr',
                       '\$69',
                       'assets/imgs/Candysparty/CacahuateSaladosol.png',
                       false,
@@ -143,23 +143,23 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Cacahuate Tipo Español con Ajo',
+                      'Cacahuate Tipo Español con Ajo 900gr',
                       '\$69',
                       'assets/imgs/Candysparty/CacahuateTipoEspanolconAjo.png',
                       false,
                       false,
                       "Detalle de Producto",
                       context),
+                  // productpage.build(
+                  //     'Canada Dry 237ml',
+                  //     '\$N/A',
+                  //     'assets/imgs/Candysparty/CanadaDry237ml.png',
+                  //     false,
+                  //     false,
+                  //     "Detalle de Producto",
+                  //     context),
                   productpage.build(
-                      'Canada Dry 237ml',
-                      '\$N/A',
-                      'assets/imgs/Candysparty/CanadaDry237ml.png',
-                      false,
-                      false,
-                      "Detalle de Producto",
-                      context),
-                  productpage.build(
-                      'Candy Camel Cajetilla',
+                      'Camel Cajetilla 20pzs',
                       '\$63.00',
                       'assets/imgs/Candysparty/candycamelcajetilla.png',
                       false,
@@ -167,7 +167,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Charritos chile y limón',
+                      'Charritos chile y limón 150gr',
                       '\$15.00',
                       'assets/imgs/Candysparty/Charritoschileylimon.png',
                       false,
@@ -206,22 +206,22 @@ class CandysParty extends StatelessWidget {
                       false,
                       "Detalle de Producto",
                       context),
-                  productpage.build(
-                      'Crunchi sol Cuadritos',
-                      '\$N/A',
-                      'assets/imgs/Candysparty/CrunchisolCuadritos.png',
-                      false,
-                      false,
-                      "Detalle de Producto",
-                      context),
-                  productpage.build(
-                      'Crunchisol Donitas Enchiladas',
-                      '\$N/A',
-                      'assets/imgs/Candysparty/CrunchisolDonitasEnchiladas.png',
-                      false,
-                      false,
-                      "Detalle de Producto",
-                      context),
+                  // productpage.build(
+                  //     'Crunchi sol Cuadritos',
+                  //     '\$N/A',
+                  //     'assets/imgs/Candysparty/CrunchisolCuadritos.png',
+                  //     false,
+                  //     false,
+                  //     "Detalle de Producto",
+                  //     context),
+                  // productpage.build(
+                  //     'Crunchisol Donitas Enchiladas',
+                  //     '\$N/A',
+                  //     'assets/imgs/Candysparty/CrunchisolDonitasEnchiladas.png',
+                  //     false,
+                  //     false,
+                  //     "Detalle de Producto",
+                  //     context),
                   productpage.build(
                       'Cueritosde Cerdo 750gr',
                       '\$59.00',
@@ -247,7 +247,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Garbanzo Enchilado',
+                      'Garbanzo Enchilado 900gr',
                       '\$69.00',
                       'assets/imgs/Candysparty/GarbanzoEnchilado.png',
                       false,
@@ -271,7 +271,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Haba Enchilada',
+                      'Haba Enchilada 900gr',
                       '\$69.00',
                       'assets/imgs/Candysparty/HabaEnchilada.png',
                       false,
@@ -287,7 +287,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Halls Negras',
+                      'Halls Negras 1 paquete' ,
                       '\$10.00',
                       'assets/imgs/Candysparty/HallsNegras.png',
                       false,
@@ -295,7 +295,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Marlboro gold cajetilla',
+                      'Marlboro gold cajetilla 20pzs',
                       '\$63.00',
                       'assets/imgs/Candysparty/Marlborogoldcajetilla.png',
                       false,
@@ -303,7 +303,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Marlboro Ice Xpress',
+                      'Marlboro Ice Xpress 20pzs',
                       '\$63.00',
                       'assets/imgs/Candysparty/MarlboroIceXpress.png',
                       false,
@@ -311,7 +311,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Marlboro Rojo cajetilla',
+                      'Marlboro Rojo cajetilla 20pzs',
                       '\$63.00',
                       'assets/imgs/Candysparty/marlboroRojocajetilla.png',
                       false,
@@ -319,7 +319,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Maruchan',
+                      'Maruchan 1pz',
                       '\$15.00',
                       'assets/imgs/Candysparty/Maruchan.png',
                       false,
@@ -327,7 +327,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Monster Energy',
+                      'Monster Energy 473ml',
                       '\$42.00',
                       'assets/imgs/Candysparty/MonsterEnergy.png',
                       false,
@@ -335,7 +335,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Mundet Prisco',
+                      'Mundet Prisco 600ml',
                       '\$12.00',
                       'assets/imgs/Candysparty/MundetPrisco.png',
                       false,
@@ -343,7 +343,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Nectar del Valle Naranja',
+                      'Nectar del Valle Naranja 946ml',
                       '\$19.00',
                       'assets/imgs/Candysparty/NectardelValleNaranja.png',
                       false,
@@ -351,7 +351,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Nectar del Valle Uva',
+                      'Nectar del Valle Uva 946ml',
                       '\$19.00',
                       'assets/imgs/Candysparty/NectardelValleUva.png',
                       false,
@@ -359,7 +359,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Nectar del Valle Piña',
+                      'Nectar del Valle Piña 946ml',
                       '\$19.00',
                       'assets/imgs/Candysparty/NectarPinaDelValle.png',
                       false,
@@ -367,7 +367,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Ocean Spray Cranberry',
+                      'Ocean Spray Cranberry 1lt',
                       '\$26.00',
                       'assets/imgs/Candysparty/OceanSprayCranberry.png',
                       false,
@@ -375,7 +375,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Ocean Spray Uva',
+                      'Ocean Spray Uva 1lt',
                       '\$26.00',
                       'assets/imgs/Candysparty/OceanSprayUva.png',
                       false,
@@ -383,7 +383,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Papa Adobada sol',
+                      'Papa Adobada sol 500gr',
                       '\$59.00',
                       'assets/imgs/Candysparty/PapaAdobadasol.png',
                       false,
@@ -391,7 +391,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Papa con queso sol',
+                      'Papa con queso sol 500gr',
                       '\$59.00',
                       'assets/imgs/Candysparty/Papaconquesosol.png',
                       false,
@@ -399,7 +399,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Papa Natural de sal',
+                      'Papa Natural de sal 500gr',
                       '\$59.00',
                       'assets/imgs/Candysparty/PapaNaturaldelsal.png',
                       false,
@@ -415,7 +415,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Pepita frita',
+                      'Pepita frita 850gr',
                       '\$99.00',
                       'assets/imgs/Candysparty/Pepitafrita.png',
                       false,
@@ -423,7 +423,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Pepitarusa100gr',
+                      'Pepita rusa 100gr',
                       '\$20.00',
                       'assets/imgs/Candysparty/Pepitarusa100gr.png',
                       false,
@@ -431,7 +431,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'RedBull Energy',
+                      'Red Bull Energy 250ml',
                       '\$40.00',
                       'assets/imgs/Candysparty/RedBullEnergy.png',
                       false,
@@ -439,7 +439,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'RedBull Sugar Free',
+                      'Red Bull Sugar Free 250ml',
                       '\$40.00',
                       'assets/imgs/Candysparty/RedBullSugarFree.png',
                       false,
@@ -447,7 +447,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'RedBull Tropical',
+                      'Red Bull Tropical 250ml',
                       '\$40.00',
                       'assets/imgs/Candysparty/RedBullTropical.png',
                       false,
@@ -455,7 +455,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Rockaleta',
+                      'Rockaleta 1pz',
                       '\$5.00',
                       'assets/imgs/Candysparty/Rockaleta.png',
                       false,
@@ -463,7 +463,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Sal La Fina',
+                      'Sal La Fina 1kg',
                       '\$15.00',
                       'assets/imgs/Candysparty/SalLaFina.png',
                       false,
@@ -471,7 +471,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Salsa Valentina',
+                      'Salsa Valentina 350ml',
                       '\$15.00',
                       'assets/imgs/Candysparty/SalsaValentina.png',
                       false,
@@ -487,7 +487,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Sangrita Viuda de Sanchez',
+                      'Sangrita Viuda de Sanchez 1lt',
                       '\$71.00',
                       'assets/imgs/Candysparty/SangritaViudadeSanchez.png',
                       false,
@@ -503,7 +503,7 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Skyy Blue',
+                      'Skyy Blue 275ml',
                       '\$22.00',
                       'assets/imgs/Candysparty/SkyyBlue.png',
                       false,
@@ -527,23 +527,23 @@ class CandysParty extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Trident XtraCare Menta Tabletas',
+                      'Trident XtraCare Menta Tabletas 12pzs',
                       '\$10.00',
                       'assets/imgs/Candysparty/Trident.png',
                       false,
                       false,
                       "Detalle de Producto",
                       context),
+                  // productpage.build(
+                  //     'Tubi Charro Naturales',
+                  //     '\$N/A',
+                  //     'assets/imgs/Candysparty/TubiCharroNaturales.png',
+                  //     false,
+                  //     false,
+                  //     "Detalle de Producto",
+                  //     context),
                   productpage.build(
-                      'Tubi Charro Naturales',
-                      '\$N/A',
-                      'assets/imgs/Candysparty/TubiCharroNaturales.png',
-                      false,
-                      false,
-                      "Detalle de Producto",
-                      context),
-                  productpage.build(
-                      'Tupsi Pop',
+                      'Tupsi Pop 1pz',
                       '\$5',
                       'assets/imgs/Candysparty/Tupsi.png',
                       false,

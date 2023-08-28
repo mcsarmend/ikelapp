@@ -29,17 +29,7 @@ class ProductPage {
                       ],
                       color: Colors.white),
                   child: Column(children: [
-                    Padding(
-                        padding: EdgeInsets.all(5.0),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              isFavorite
-                                  ? Icon(Icons.favorite,
-                                      color: Color(0xFFEF7532))
-                                  : Icon(Icons.favorite_border,
-                                      color: Color(0xFFEF7532))
-                            ])),
+                    SizedBox(height: 12),
                     Hero(
                         tag: imgPath,
                         child: Container(

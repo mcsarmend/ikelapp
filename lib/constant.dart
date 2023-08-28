@@ -44,19 +44,22 @@ final List<String> beersList = [
   'XX Ambar',
 ];
 final List<String> frostyList = [
-  'Rocakelta',
+  'Ajonjoli',
   'Bubble Gum',
   'Burbu Soda',
-  'Lucas',
-  'Pelon pelorico',
-  'Picafresa',
+  'Chapulín',
+  'Lucas Mango',
+  'Pelon Pelo Rico',
+  'Pepino',
+  'Pica Fresa',
   'PintaAzul',
   'Pulparindo',
+  'Rockaleta',
+  'Sin escarchado',
   'Super Rebanadas',
   'Tarrito',
   'Truena Pop',
-  'Tupsi Pop',
-  'Sin escarchado',
+  'Tupsi Pop'
 ];
 final List<String> skewerList = [
   'Gomitas Enchiladas',
@@ -84,7 +87,7 @@ final List<String> mezcalList = [
   '400 Conejos',
   '1000 Diablos',
   'Alacrán',
-  'Unión el Viejo',
+  'Union',
 ];
 final List<String> clamatoList = [
   'Clamato Natural',
