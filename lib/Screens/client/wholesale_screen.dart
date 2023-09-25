@@ -66,11 +66,11 @@ class _WholeSaleScreenState extends State<WholeSaleScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(
-                            'Título del párrafo',
-                            style: TextStyle(
-                                fontSize: 20.0, fontWeight: FontWeight.bold),
-                          ),
+                          // Text(
+                          //   'Título del párrafo',
+                          //   style: TextStyle(
+                          //       fontSize: 20.0, fontWeight: FontWeight.bold),
+                          // ),
                           SizedBox(
                               height:
                                   8.0), // Espacio entre el título y el texto del párrafo

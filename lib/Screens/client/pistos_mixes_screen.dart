@@ -418,7 +418,7 @@ class PistosMix extends StatelessWidget {
                       'assets/imgs/PistosMix/Bugatti.png',
                       false,
                       false,
-                      "Refresco sangría preparada con limón y sal ",
+                      "Refresco sangría preparado con limón y sal ",
                       true,
                       false,
                       true,
@@ -515,7 +515,7 @@ class PistosMix extends StatelessWidget {
                       false,
                       context),
                   pistospage.build(
-                      'Lamborghinni',
+                      'Lamborghini',
                       '\$99.00',
                       'assets/imgs/PistosMix/Lamborghinni.png',
                       false,

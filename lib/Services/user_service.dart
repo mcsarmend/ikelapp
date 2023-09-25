@@ -122,7 +122,7 @@ Future<ApiResponse> getUserDetail() async {
         break;
     }
   } catch (e) {
-    apiResponse.error = serverError;
+    apiResponse.error = serverError + e.toString();
   }
   return apiResponse;
 }
