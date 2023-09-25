@@ -455,7 +455,7 @@ class BeerHouse extends StatelessWidget {
                       "Detalle de Producto",
                       context),
                   productpage.build(
-                      'Tecate Ámbar 940 ml Retprmabñe',
+                      'Tecate Ámbar 940 ml Retornable 1pz',
                       '\$25.00',
                       'assets/imgs/Beerhouse/TecateAmbar940ml.png',
                       false,
